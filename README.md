@@ -60,4 +60,13 @@ Friday afternoon & weekend
 - Research how to utilize the DataFire API, how to extract the data, how to manipulate the values to generate the average fantasy score for each player. Setup project. 
 
 Monday
-- 
+- Setup webpacks. Retrieve data and develop functions to find average values for each player. 
+
+Tuesday 
+- Create classes and functions for other possible participants.
+
+Wednesday
+- Develop appearance.
+
+Thursday
+- Finalize pushes to Github.
