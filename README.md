@@ -37,6 +37,8 @@ In addition, this project will include:
 
 # Wireframes 
 
+![BUILD A SQUAD 9000](https://user-images.githubusercontent.com/81173099/139365782-ea344e98-5505-4fd3-8a10-c63df825e452.png)
+
 - Nav links include links to the project's Github repo, LinkedIn, and the About modal
 
 - Parameters will take user input, which will determine how many participants will be generated. 
