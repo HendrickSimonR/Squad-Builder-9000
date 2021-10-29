@@ -37,7 +37,7 @@ In addition, this project will include:
 
 # Wireframes 
 
-![BUILD A SQUAD 9000](https://user-images.githubusercontent.com/81173099/139365782-ea344e98-5505-4fd3-8a10-c63df825e452.png)
+![BUILD A SQUAD 9000](https://user-images.githubusercontent.com/81173099/139365871-ea6715fa-e359-4b98-bf63-f407bddca8b4.png)
 
 - Nav links include links to the project's Github repo, LinkedIn, and the About modal
 
