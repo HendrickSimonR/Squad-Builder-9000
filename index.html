@@ -13,10 +13,10 @@
   <h1 id="title">The Squad Builder 9000</h1>
   <!-- <div id ="main"></div> -->
 
-  <div id="form">
-    <form action="/action_page.php">
-      <label for="fav_player">Favorite Player: </label>
-      <input type="text" id="fav_player" name="fav_player" value="">
+  <div>
+    <form id="form" onsubmit="returnInput();" class="userInput" action="">
+      <label for="favPlayer">Favorite Player: </label>
+      <input type="text" id="favPlayer" name="favPlayer" value="">
       <label for="participants">How many participants?</label>
       <select name="participants" id="participants">
         <option value="2">2</option>
@@ -40,33 +40,31 @@
         <option value="8">8</option>
       </select>
     
-      <input type="submit" value="Draft!">
+      <input id="draft" type="submit" value="Draft!">
     </form>
   </div>
   
   
-  <div class="row">
-    <div class="column">
+  <!-- <div class="row"> -->
+    <!-- <div class="column">
       <h2>Learn More</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit
         nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo
         tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-    </div>
+    </div> -->
     
     <!-- CENTER -->
     <div class="column">
       <h2>Your Squad</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit
-        nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo
-        tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      <p>Some day I will figure out how to center this box.</p>
     </div>
   
-    <div class="column">
-      <h2>Player Stats</h2>
+    <!-- <div class="column"> -->
+      <!-- <h2>Player Stats</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit
         nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo
         tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 </body>
 </html>

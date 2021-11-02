@@ -9,57 +9,49 @@
   color: #181892;
 }
 
-body {
-  background-image: url("https://wallpaperaccess.com/full/1744056.jpg");
+html {
+  background: url("https://www.nba.com/resources/static/team/v2/rockets/20200402-1920x1080-wallpaper-007.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 #title {
-  color: black;
+  color: white;
   font-size: 50px;
   position: relative;
-  bottom: 38px;
-  background-color: #ff8800;
+  bottom: 40px;
+  background-color: rgba(255, 136, 0, 0.95);
   padding: 20px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-align: center;
+  text-underline-offset: #222222;
+  text-shadow: 6px 3px #a14100;
 }
 
 #form {
   display: flex;
   justify-content: center;
-  background-color: rgba(216, 27, 27, 0.5);
+  background-color: rgba(216, 27, 27, 0.8);
   position: relative;
-  bottom: 60px;
+  bottom: 73px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
+  text-shadow: 1.5px 1px #000000;
 }
 
 body {
   margin: 0;
 }
 
-/* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.33%;
   border: black;
   border-radius: #181892;
   text-align: center;
   color: white;
-  background-color: rgba(14, 14, 14, 0.5);
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+  background-color: rgba(14, 14, 14, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
 }

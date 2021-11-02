@@ -1,14 +1,41 @@
 import Example from "./scripts/example";
 import fetchPlayerStats from "./scripts/fetchPlayerStats"
 import players from "./scripts/players"
+import returnInput from "./scripts/userInput"
+import playerIDs from "./scripts/playerIDs"
+import findPlayer from "./scripts/findPlayer"
 
 document.addEventListener("DOMContentLoaded", async () => {
   // const main = document.getElementById("main");
   // new Example(main);
-  
-  let full_details = [];
-    for (let i = 0; i < players.length; i++) {      
-      let playerID = Object.keys(players[i])[0];
+    
+  // const userValues = returnInput();
+  // console.log(userValues);
+  // let nameValue = document.getElementById("uniqueID").value;
+
+  let fullDetails = {};
+  let scores = [];
+
+  function returnInput() {
+    let userInput = document.getElementById('form');
+
+    userInput.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let favorite = e.target[0].value;
+      let participants = e.target[1].value;
+      let order = e.target[2].value;
+
+      let userValues = { fave: favorite, amount: participants, placement: order }
+      console.log(userValues);
+      return userValues;
+    });
+  }
+
+  const userInput = returnInput();
+  userInput;
+
+    for (let i = 0; i < 4; i++) {      
+      let playerID = playerIDs[i];
       let playerObj;
 
       if (i % 1 === 0) {
@@ -19,31 +46,68 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       let stats = playerObj.data[0];
-      let playerName = players[i][playerID].name; 
-      let playerPos = players[i][playerID].pos;
-      let playerTeam = players[i][playerID].team;
+      let playerName;
+      let playerPos;
+      let playerTeam;
 
+      if (players[playerID]) {
+        playerName = players[playerID].name;
+        playerPos = players[playerID].pos;
+        playerTeam = players[playerID].team;
+      }
+
+      // console.log(playerName);
+      // console.log(playerPos);
+      // console.log(playerTeam);
+    
       let offPoints = stats.pts + (stats.ast * 1.5) + stats.ftm;
       let defPoints = (stats.reb * 1.2) + (stats.stl * 2) + (stats.blk * 2);
       let to = stats.turnover;
       let fantasyAvg = (offPoints + defPoints - to) / 7;
 
-      let playerInfo = { [playerID]: {
+      // console.log(fantasyAvg);
+    
+      let playerInfo = {
         name: playerName,
         pos: playerPos,
         team: playerTeam,
         stats: { pts: stats.pts, ast: stats.ast, ftm: stats.ftm, reb: stats.reb, stl: stats.stl, blk: stats.blk, to: stats.turnover },
         avg: fantasyAvg
-        }
       };
-
-      console.log(playerInfo);
-      full_details.push(playerInfo);
-      console.log(full_details.length);
+      
+      fullDetails[playerID] = playerInfo;
     }
+      // console.log(playerInfo);
+    
+    //   // console.log(playerInfo);
+    //   scores.push(fantasyAvg);
+    //   // console.log(fullDetails.length);
+    // }
+  // console.log(players);
+  // console.log(playerIDs);
+  scores.sort().reverse();
+  // console.log(players.length);
 
-  console.log(players.length);
-  console.log(full_details);
+  // console.log(fullDetails[0][15]);
+  // console.log(fullDetails[0][15].name);
+  // console.log(fullDetails[27][57]);
+
+  // console.log(findPlayer("Joel Embiid", fullDetails, playerIDs));
+  // console.log(scores);
+  // {
+  //   favoritePlayer: "Jamal Crawford", 
+  //   participants: 4, 
+
+  // }
+
+
+  // function setAction(form) {
+  //   form.action = "register.html";
+  //   alert(form.action);
+  //   return false;
+  // }
+
+  // const form = document.getElementById('signup');
 });
 
 

@@ -1,38 +1,46 @@
 @import "./styles/example.scss";
 
 $blue: rgb(24, 24, 146);
-$orange: rgb(255, 136, 0);
-$red:rgb(216, 27, 27, 0.5);
+$orange: rgb(255, 136, 0, .95);
+$red:rgb(216, 27, 27, 0.8);
 $black: rgb(34, 34, 34);
 
 #main {
   color: $blue;
 }
-
-body {
-  background-image: url('https://wallpaperaccess.com/full/1744056.jpg');
+html { 
+  background: url('https://www.nba.com/resources/static/team/v2/rockets/20200402-1920x1080-wallpaper-007.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; 
 }
 
+// https://wallpaperaccess.com/full/1744056.jpg
+// https://www.wallpaperup.com/uploads/wallpapers/2013/10/10/158384/028256269b11ff84514786aece1617b1.jpg
 #title {
-  color: black;
+  color: white;
   font-size: 50px;
   position: relative;
-  bottom: 38px;
+  bottom: 40px;
   background-color: $orange;
   padding: 20px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
+  text-underline-offset: $black;
+  text-shadow: 6px 3px rgb(161, 65, 0);
 }
+
 
 #form {
   display: flex;
   justify-content: center;
   background-color: $red;
   position: relative;
-  bottom: 60px;
+  bottom: 73px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
+  text-shadow: 1.5px 1px #000000;
 }
 
 
@@ -67,27 +75,27 @@ body {
 //   justify-content: center;
 // }
 
-/* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.33%;
   border: black;
   border-radius: $blue;
   text-align: center;
   color: white;
-  background-color: rgb(14, 14, 14, 0.5);
+  background-color: rgb(14, 14, 14, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+// /* Clear floats after the columns */
+// .row:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
-    width: 100%;
-  }
-}
+// /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+// @media screen and (max-width:600px) {
+//   .column {
+//     width: 100%;
+//   }
+// }
