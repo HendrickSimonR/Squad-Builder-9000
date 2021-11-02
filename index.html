@@ -10,6 +10,63 @@
   <title>Squad Builder 9000</title>
 </head>
 <body>
-  <div id ="main"></div>
+  <h1 id="title">The Squad Builder 9000</h1>
+  <!-- <div id ="main"></div> -->
+
+  <div id="form">
+    <form action="/action_page.php">
+      <label for="fav_player">Favorite Player: </label>
+      <input type="text" id="fav_player" name="fav_player" value="">
+      <label for="participants">How many participants?</label>
+      <select name="participants" id="participants">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+      <label for="order">Your Position in the Draft: </label>
+      <select name="order" id="order">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    
+      <input type="submit" value="Draft!">
+    </form>
+  </div>
+  
+  
+  <div class="row">
+    <div class="column">
+      <h2>Learn More</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit
+        nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo
+        tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+    
+    <!-- CENTER -->
+    <div class="column">
+      <h2>Your Squad</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit
+        nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo
+        tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+  
+    <div class="column">
+      <h2>Player Stats</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit
+        nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo
+        tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+  </div>
 </body>
 </html>

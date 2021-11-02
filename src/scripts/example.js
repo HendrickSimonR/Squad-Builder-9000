@@ -1,14 +1,14 @@
 class Example {
   constructor(ele) {
     this.ele = ele;
-    this.ele.innerHTML = "<h1>Hooplah!</h1>";
+    this.ele.innerHTML = "<h1><center>Hooplah!</center></h1>";
 
     this.handleClick = this.handleClick.bind(this);
     this.ele.addEventListener("click", this.handleClick);
   }
 
   handleClick() {
-    this.ele.children[0].innerText = "POOP"
+    this.ele.children[0].innerHTML = "<center>POOP</center>"
   }
 }
 
