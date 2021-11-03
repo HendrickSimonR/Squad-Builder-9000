@@ -76,14 +76,13 @@ body {
 // }
 
 .column {
-  float: left;
   border: black;
   border-radius: $blue;
   text-align: center;
   color: white;
   background-color: rgb(14, 14, 14, 0.75);
   font-family: Arial, Helvetica, sans-serif;
-  margin: auto;
+  margin: 0 auto;
 }
 
 // /* Clear floats after the columns */

@@ -46,12 +46,11 @@ body {
 }
 
 .column {
-  float: left;
   border: black;
   border-radius: #181892;
   text-align: center;
   color: white;
   background-color: rgba(14, 14, 14, 0.75);
   font-family: Arial, Helvetica, sans-serif;
-  margin: auto;
+  margin: 0 auto;
 }
