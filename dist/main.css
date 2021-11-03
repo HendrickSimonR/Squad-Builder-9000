@@ -45,7 +45,7 @@ body {
   margin: 0;
 }
 
-.column {
+#draftView {
   border: black;
   border-radius: #181892;
   text-align: center;
