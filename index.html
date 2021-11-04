@@ -10,8 +10,13 @@
   <title>Squad Builder 9000</title>
 </head>
 <body>
-  <h1 id="title">The Squad Builder 9000</h1>
+  <h1 id="title"></h1>
   <!-- <div id ="main"></div> -->
+  <div id="wrapperHeader">
+    <div id="header">
+      <img src="dist/squadTest.png" alt="logo" />
+    </div>
+  </div>
 
   <div>
     <form id="form">
@@ -19,13 +24,15 @@
       <input type="text" id="favPlayer" name="favPlayer" value="">
       <label for="participants">How many participants?</label>
       <select name="participants" id="participants">
-        <option value="2">2</option>
+        <option value="1">1</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
         <option value="6">6</option>
         <option value="7">7</option>
         <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
       </select>
 
       <label for="order">Your Position in the Draft: </label>
@@ -38,6 +45,8 @@
         <option value="6">6</option>
         <option value="7">7</option>
         <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
       </select>
     
       <input id="draft" type="submit" value="Draft!">
@@ -46,10 +55,25 @@
   
 
     <!-- CENTER -->
-    <div id="draftView">
-      <h2>Dear Diary</h2>
-      <p>Today, Abe saved me. Again.</p>
+    <div id="instructions">
+      <h1 id="instructionTitle">BUILD YOUR SQUAD!</h1>
+      <p>Or rather, let the algorithm build it for you! Using the average player stats 
+        for the current NBA season, this app will present your best* possible lineup in a snake-ordered
+        fantasy draft. 
+      </p>
+
+      <h2>Instructions</h2>
+      <p class="instructionsList">
+        <li>Provide a favorite player if you so desire.</li>
+        <li>Pick how many participants will be part of your draft.</li>
+        <li>Select your placement in the draft.</li>
+        <li>Reveal your squad!</li>
+      </p>
+
+      <p id='disclaimer'>* This is objective and based on averages.</p>
     </div>
+
+    <div id="draftView"></div>
   
 
 </body>

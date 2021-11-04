@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   let scores = [];
   let nameAndID = [];
 
-  const userInput = returnInput();
-  userInput;
 
     for (let i = 0; i < playerIDs.length; i++) {      
       let playerID = playerIDs[i];
@@ -40,14 +38,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         nameAndID.push([playerName, playerID]);
       }
 
-    
       let offPoints = stats.pts + (stats.ast * 1.5) + stats.ftm;
       let defPoints = (stats.reb * 1.2) + (stats.stl * 2) + (stats.blk * 2);
       let to = stats.turnover;
       let fantasyAvg = (offPoints + defPoints - to) / 7;
 
-
-    
       let playerInfo = {
         name: playerName,
         pos: playerPos,
@@ -65,11 +60,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   let sortedIDs = sortIDs(sortedScores, playerIDs, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
-  console.log(playerInfo);
+ 
+  // console.log(playerInfo);
 
   console.log(fullDetails);
   
-  console.log(draftTeams(fullDetails, {favorite: "Lebron James", participants: 10, order: 6}, sortedScores, playerInfo));
+  const userInput = returnInput(fullDetails, sortedScores, playerInfo);
+  userInput;
+  // console.log(draftTeams(fullDetails, {favorite: "Lebron James", participants: 10, order: 6}, sortedScores, playerInfo));
 });
 
 
