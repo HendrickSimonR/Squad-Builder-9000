@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         playerObj = await fetchPlayerStats(playerID);
       }
 
+      if (!playerObj) {
+        alert('Please refresh the page! :)');
+        document.getElementById("draft").value = ":(";
+        break;
+      }  
+
       let stats = playerObj.data[0];
       let playerName;
       let playerPos;

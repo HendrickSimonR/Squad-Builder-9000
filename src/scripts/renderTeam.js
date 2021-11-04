@@ -18,8 +18,13 @@ function renderTeam(team) {
     menu.children[i].remove();
   }
   
-  header.innerHTML = 'YOUR SQUAD';
-  menu.appendChild(header);
+  if (team === undefined) {
+    header.innerHTML = 'TRY AGAIN!';
+    menu.appendChild(header);
+  } else {
+    header.innerHTML = 'YOUR SQUAD';
+    menu.appendChild(header);
+  }
 
   for (let player in team) {
     let rowEl = document.createElement('div');
