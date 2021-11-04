@@ -36,7 +36,9 @@ function renderTeam(team) {
       }
 
       if (typeof person[info] === 'object') {
-        continue;
+        let stats = statline(person[info]);
+        col.innerHTML = `${stats}`;
+        rowEl.appendChild(col);
         // let stats = person[info];
         // let statPairs = [];
 
@@ -92,6 +94,22 @@ function nameTransformer(name) {
   let capped = name.toUpperCase();
   newName.innerHTML = capped;
   return newName;
+}
+
+function statline(stats) {
+  let selectStats = [];
+
+  for (let stat in stats) {
+    if (stat === 'pts') {
+      selectStats.push(`PPG: ${stats[stat].toString()}  | `);
+    } else if (stat === 'ast') {
+      selectStats.push(`APG: ${stats[stat].toString()}  | `);
+    } else if (stat === 'reb') {
+      selectStats.push(`RPG: ${stats[stat].toString()}`);
+    }
+  }
+
+  return selectStats.join(' ');
 }
 
 

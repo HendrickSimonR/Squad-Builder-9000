@@ -7,6 +7,7 @@ import findPlayer from "./scripts/findPlayer";
 import draftTeams from "./scripts/draftTeams";
 import sortIDs from "./scripts/sortIDs";
 import playerVitals from "./scripts/playerVitals"
+
  
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -60,8 +61,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   let sortedIDs = sortIDs(sortedScores, playerIDs, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
+
+  if (sortedScores.length === playerIDs.length) {
+    document.getElementById("draft").disabled = false;
+    document.getElementById("draft").value = "Draft!";
+  } 
+
   console.log(fullDetails);
   console.log('ready!')
+
   // console.log(playerInfo);
 
   
