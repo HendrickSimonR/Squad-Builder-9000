@@ -5,28 +5,20 @@
   background: red;
 }
 
-#main {
-  color: #181892;
-}
-
 html {
-  background: url("https://www.nba.com/resources/static/team/v2/rockets/20200402-1920x1080-wallpaper-007.jpg") no-repeat center center fixed;
+  background: url("../dist/squadBackground.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
 }
 
-#title {
-  color: white;
-  font-size: 50px;
+#header {
   position: relative;
-  bottom: 40px;
-  background-color: rgba(255, 136, 0, 0.95);
-  padding: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: center;
-  text-underline-offset: #222222;
-  text-shadow: 6px 3px #a14100;
+  bottom: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
 #form {
@@ -35,11 +27,12 @@ html {
   gap: 10px;
   background-color: rgba(216, 27, 27, 0.8);
   position: relative;
-  bottom: 73px;
+  bottom: 88px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   padding: 12px;
   text-shadow: 1.5px 1px #000000;
+  width: 100%;
 }
 
 body {
@@ -47,6 +40,8 @@ body {
 }
 
 #instructions {
+  position: relative;
+  bottom: 30px;
   width: 700px;
   border: rgba(216, 27, 27, 0.8);
   border-style: solid;
@@ -86,4 +81,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   list-style-type: none;
+}
+
+footer img {
+  display: block;
+  position: relative;
+  bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
 }
