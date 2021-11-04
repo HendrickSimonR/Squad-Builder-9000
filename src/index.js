@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   let sortedIDs = sortIDs(sortedScores, playerIDs, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
- console.log('ready!')
+  console.log(fullDetails);
+  console.log('ready!')
   // console.log(playerInfo);
 
-  // console.log(fullDetails);
   
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   userInput;
