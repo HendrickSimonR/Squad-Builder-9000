@@ -1,4 +1,5 @@
 const players = {
+   62: { name: "Miles Bridges", pos: "SF", team: "Charlotte Hornets" },
    15: { name: "Giannis Antentokounmpo", pos: "PF", team: "Milwaukee Bucks" },
    246: { name: "Nikola Jokic", pos: "C", team: "Denver Nuggets" },
    378: { name: "Kristaps Porzingis", pos: "C", team: "Dallas Mavericks" },

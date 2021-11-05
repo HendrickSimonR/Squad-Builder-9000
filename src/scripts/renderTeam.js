@@ -89,7 +89,7 @@ function renderTeam(team) {
   }
 
   let total = document.createElement('h1');
-  let totalAvg = teamAvg / 5;
+  let totalAvg = teamAvg;
   total.innerHTML = `FANTASY TEAM AVG: ${totalAvg.toFixed(4)}`
   menu.appendChild(total);
 }
