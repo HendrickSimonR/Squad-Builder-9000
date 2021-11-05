@@ -78,7 +78,7 @@ function renderTeam(team) {
           teamAvg += person[info];
         } else {
           let capped = info.toUpperCase();
-          col.innerHTML = `${capped}: ${person[info]}`;
+          col.innerHTML = `${capped}: ${person[info].toUpperCase()}`;
           rowEl.appendChild(col);
         }
       }
