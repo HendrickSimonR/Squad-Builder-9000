@@ -73,7 +73,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("draft").value = "Draft!";
   } 
 
+  Object.size = function (obj) {
+    var size = 0,
+      key;
+    for (key in obj) {
+      if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+  };
+
+
   console.log(fullDetails);
+  console.log(Object.size(fullDetails));
+  console.log(Object.size(players));
+  console.log(playerIDs.length);
+  console.log(sortedScores.length);
   console.log('ready!')
 
   // console.log(playerInfo);
