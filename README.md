@@ -1,5 +1,7 @@
 # Squad-Builder-9000
 
+https://hendricksimonr.github.io/Squad-Builder-9000/
+
 # Background 
 
 Build A Squad is an algorithm that creates the starting lineup for a user's NBA fantasy draft. The application will realistically choose the best possible NBA players for their lineup, based on specific parameters:
