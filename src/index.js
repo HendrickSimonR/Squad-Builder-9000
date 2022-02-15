@@ -26,10 +26,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
       
       console.log(playerObj);
+
       if (!playerObj) {
-        alert('Please refresh the page! :)');
-        document.getElementById("draft-button").value = ":(";
-        break;
+        // alert('Please refresh the page! :)');
+        // document.getElementById("draft-button").value = ":(";
+        continue;
       }  
 
       let stats = playerObj.data[0];
@@ -67,20 +68,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
 
-  if (sortedScores.length === playerIDs.length) {
-    document.getElementById("draft-button").disabled = false;
-    document.getElementById("draft-button").value = "Draft!";
-  } 
-
+  
   Object.size = function (obj) {
     var size = 0,
-      key;
+    key;
     for (key in obj) {
       if (obj.hasOwnProperty(key)) size++;
     }
     return size;
   };
-
+  
+  if (Object.size(fullDetails) >= 50) {
+    document.getElementById("draft-button").disabled = false;
+    document.getElementById("draft-button").value = "Draft!";
+  } else {
+    alert('Please refresh the page! :)');
+    document.getElementById("draft-button").value = ":O";
+  }
 
   console.log(fullDetails);
   console.log(Object.size(fullDetails));

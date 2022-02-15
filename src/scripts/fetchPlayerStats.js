@@ -3,7 +3,8 @@ async function fetchPlayerStats(playerID) {
   let response = await fetch(url);
 
   if (response.status === 429) {
-    alert('Please refresh the page! :)');
+    console.log('broke', response)
+    // alert('Please refresh the page! :)');
   } else {
     let player = await response.json();
     return player;

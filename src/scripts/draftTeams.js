@@ -24,11 +24,14 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           if (!favePlayer) {
             favoriteFound = true;
             let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
+            
             if (!playerID) {
+              null
             } else {
               let pos = fullDetails[playerID]["pos"];
               team[pos] = fullDetails[playerID];
             }
+            
           } else {
             favoriteFound = true;
             let pos = fullDetails[favePlayer]["pos"];
@@ -36,7 +39,9 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           }
         } else {
           let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
+          
           if (!playerID) {
+            null
           } else {            
             let pos = fullDetails[playerID]["pos"];
             team[pos] = fullDetails[playerID];
@@ -44,7 +49,9 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         }
       } else {
         let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
-          if (!playerID) {
+        
+        if (!playerID) {
+          null
         } else {
           let pos = fullDetails[playerID]["pos"];
           team[pos] = fullDetails[playerID];
@@ -59,6 +66,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
 
       if (!playerID) {
+        null
       } else {
         let pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];

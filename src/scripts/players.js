@@ -1,5 +1,5 @@
 const players = {
-  //  666633: { name: "Tyler Herro", pos: "PG", team: "Miami Heat" },
+   666633: { name: "Tyler Herro", pos: "PG", team: "Miami Heat" },
    62: { name: "Miles Bridges", pos: "SF", team: "Charlotte Hornets" },
    15: { name: "Giannis Antentokounmpo", pos: "PF", team: "Milwaukee Bucks" },
    246: { name: "Nikola Jokic", pos: "C", team: "Denver Nuggets" },
@@ -62,7 +62,10 @@ const players = {
    79: { name: "Jimmy Butler", pos: "SF", team: "Miami Heat" },
    18: { name: "OG Anunoby", pos: "SF", team: "Toronto Raptors" },
    204: { name: "Gordon Hayward", pos: "SF", team: "Charlotte Hornets" },
-   31: { name: "Will Barton", pos: "SF", team: "Denver Nuggets" }
+   31: { name: "Will Barton", pos: "SF", team: "Denver Nuggets" },
+   27: { name: "Lonzo Ball", pos: "SG", team: "Chicago Bulls" },
+   3547239: { name: "Lamelo Ball", pos: "PG", team: "Charlotte Hornets" },
+   89: { name: "Alex Caruso", pos: "PG", team: "Chicago Bulls" }
 };
 
 export default players;
