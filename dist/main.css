@@ -36,6 +36,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -57,6 +58,10 @@ body {
   text-shadow: 1.5px 1px #000000;
   box-shadow: black;
   list-style-type: none;
+}
+
+#draft-button {
+  background:black;
 }
 
 #instructions > h1 {
