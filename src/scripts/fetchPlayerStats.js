@@ -10,6 +10,4 @@ async function fetchPlayerStats(playerID) {
   }
 };
 
-
-
 export default fetchPlayerStats;

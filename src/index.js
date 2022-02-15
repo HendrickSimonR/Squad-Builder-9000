@@ -10,11 +10,9 @@ import playerVitals from "./scripts/playerVitals"
 
  
 document.addEventListener("DOMContentLoaded", async () => {
-
   let fullDetails = {};
   let scores = [];
   let nameAndID = [];
-
 
     for (let i = 0; i < playerIDs.length; i++) {      
       let playerID = playerIDs[i];
@@ -26,10 +24,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       } else {
         playerObj = await fetchPlayerStats(playerID);
       }
-
+      
+      console.log(playerObj);
       if (!playerObj) {
         alert('Please refresh the page! :)');
-        document.getElementById("draft").value = ":(";
+        document.getElementById("draft-button").value = ":(";
         break;
       }  
 
@@ -69,8 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   
 
   if (sortedScores.length === playerIDs.length) {
-    document.getElementById("draft").disabled = false;
-    document.getElementById("draft").value = "Draft!";
+    document.getElementById("draft-button").disabled = false;
+    document.getElementById("draft-button").value = "Draft!";
   } 
 
   Object.size = function (obj) {

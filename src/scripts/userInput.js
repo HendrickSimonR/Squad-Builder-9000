@@ -15,19 +15,42 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
   
   userInput.addEventListener('submit', function (e) {
     e.preventDefault();
-    let favorite = e.target[0].value;
+
+    let firstName;
+    let lastName;
+    let fave = e.target[0].value;
     let participants = e.target[1].value;
     let order = e.target[2].value;
 
+    if (fave.includes(' ')) {
+      fave = fave.split(' ');
+      
+      console.log('LIT', fave)
+
+      for (let i = 0; i < fave.length; i++) {
+        let name = fave[i]; 
+        let capped = name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase();
+        console.log('capped', capped)
+
+        if (i === 0) {
+          firstName = capped;
+        } else {
+          lastName = capped;
+        }
+      }
+
+      fave = firstName + ' ' + lastName;
+    }
+
     let userValues = { 
-      fave: favorite, 
+      favorite: fave, 
       amount: participants, 
       placement: order 
     };
 
-    console.log(userValues);
+    console.log('VALUES', userValues);
     let team = draftTeams(fullDetails, userValues, sortedScores, playerInfo);
-    console.log(draftTeams(fullDetails, userValues, sortedScores, playerInfo))
+    console.log('draftTeams', draftTeams(fullDetails, userValues, sortedScores, playerInfo))
     // let display = displayPlayers(team);
     renderTeam(team);
     return userValues;

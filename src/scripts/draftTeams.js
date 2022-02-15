@@ -1,14 +1,16 @@
 function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let teams = [];
-  let favorite = userInput.fave;
+  let favorite = userInput.favorite;
   let amount = userInput.amount;
   let userPlacement = userInput.placement - 1;
   let favoriteFound = false;
   let count = 0;
 
-  console.log(sortedScores);
+  console.log('User Input', userInput);
 
-  while (teams.length < amount) { teams.push({}); }; 
+  while (teams.length < amount) { 
+    teams.push({}); 
+  }; 
 
   while (count < amount * 5) {
 
@@ -65,10 +67,13 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
 
     count++;
   }
+
   console.log(userPlacement);
-  console.log(teams);
+  console.log('teams', teams);
   resetPlayers(playerInfo, fullDetails);
   console.log(typeof teams[userPlacement]);
+
+
   return teams[userPlacement];
 }
 
@@ -79,6 +84,8 @@ function draftFavorite(team, name, fullDetails, playerInfo) {
     let playerID = player[1];
     let pos = player[2];
     let status = fullDetails[playerID]["drafted"];
+
+    console.log('draftFavorite', player, name);
 
     if (player) {
       if (player.includes(name) && team[pos] === undefined && status === false) {
