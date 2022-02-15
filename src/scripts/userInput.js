@@ -19,7 +19,12 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     let participants = e.target[1].value;
     let order = e.target[2].value;
 
-    let userValues = { fave: favorite, amount: participants, placement: order }
+    let userValues = { 
+      fave: favorite, 
+      amount: participants, 
+      placement: order 
+    };
+
     console.log(userValues);
     let team = draftTeams(fullDetails, userValues, sortedScores, playerInfo);
     console.log(draftTeams(fullDetails, userValues, sortedScores, playerInfo))
