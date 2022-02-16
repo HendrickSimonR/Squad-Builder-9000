@@ -5,6 +5,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let userPlacement = userInput.placement - 1;
   let favoriteFound = false;
   let count = 0;
+  let drafted = [];
 
   console.log('User Input', userInput);
 
@@ -13,7 +14,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   }; 
 
   while (count < amount * 5) {
-
+    console.log('cunt', count)
     for (let i = 0; i < teams.length; i++) {
       let team = teams[i];
 
@@ -23,6 +24,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
 
           if (!favePlayer) {
             favoriteFound = true;
+
             let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
             
             if (!playerID) {
@@ -30,13 +32,28 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             } else {
               let pos = fullDetails[playerID]["pos"];
               team[pos] = fullDetails[playerID];
+
+              console.log('fulldetails', fullDetails)
+              console.log('pos', pos, i)
+              console.log('teampos', team[pos], i)
+            
+              addToDraftLog('User', team[pos]);   
+              drafted.push(`${i + 1}, ${team[pos].name}, user`);           
             }
             
           } else {
             favoriteFound = true;
             let pos = fullDetails[favePlayer]["pos"];
             team[pos] = fullDetails[favePlayer];
+
+            console.log('fulldetails', fullDetails)
+            console.log('pos', pos, i)
+            console.log('teampos', team[pos], i)
+
+            addToDraftLog('User', team[pos]);
+            drafted.push(`${i + 1}, ${team[pos].name}, user`);           
           }
+
         } else {
           let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
           
@@ -45,6 +62,13 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           } else {            
             let pos = fullDetails[playerID]["pos"];
             team[pos] = fullDetails[playerID];
+
+            console.log('fulldetails', fullDetails);
+            console.log('pos', pos, i)
+            console.log('teampos', team[pos], i)
+
+            addToDraftLog('User', team[pos]);
+            drafted.push(`${i + 1}, ${team[pos].name}, user`);                     
           }
         }
       } else {
@@ -55,6 +79,13 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         } else {
           let pos = fullDetails[playerID]["pos"];
           team[pos] = fullDetails[playerID];
+
+          console.log('fulldetails', fullDetails)
+          console.log('pos', pos, i)
+          console.log('teampos', team[pos], i)
+
+          addToDraftLog('not user', team[pos]);
+          drafted.push(`${i + 1}, ${team[pos].name}`);           
         }
       }
     }
@@ -70,6 +101,18 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       } else {
         let pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];
+
+        console.log('fulldetails', fullDetails)
+        console.log('pos', pos, i)
+        console.log('teampos', team[pos], i)
+
+        if (i === userPlacement) {
+          addToDraftLog('User', team[pos]);
+          drafted.push(`${i + 1}, ${team[pos].name}, user`);                
+        } else {
+          addToDraftLog(i, team[pos]);
+          drafted.push(`${i + 1}, ${team[pos].name}`);           
+        }
       }
     }
 
@@ -80,6 +123,8 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   console.log('teams', teams);
   resetPlayers(playerInfo, fullDetails);
   console.log(typeof teams[userPlacement]);
+  console.log('drafted', drafted);
+  draftLog(drafted);
 
 
   return teams[userPlacement];
@@ -93,7 +138,7 @@ function draftFavorite(team, name, fullDetails, playerInfo) {
     let pos = player[2];
     let status = fullDetails[playerID]["drafted"];
 
-    console.log('draftFavorite', player, name);
+    // console.log('draftFavorite', player, name);
 
     if (player) {
       if (player.includes(name) && team[pos] === undefined && status === false) {
@@ -140,6 +185,34 @@ function resetPlayers(playerInfo, fullDetails) {
   return;
 }
 
+
+function addToDraftLog(position, playerDetails) {
+  console.log('hooplah')
+}
+
+function draftLog(drafted) {
+  let draftLog = document.getElementById('draft-log');
+  
+  for (let i = 0; i < drafted.length; i++) {
+    let item = document.createElement('li');
+    let player = drafted[i]
+    let info = player.split(',');
+    console.log('play', player.split(','));
+
+    if (info.length === 3) {
+      item.innerHTML = `${info[0]}: ${info[1]}`;
+      item.setAttribute('id', 'user-team');
+      draftLog.appendChild(item);
+    } else {
+      item.innerHTML = `${info[0]}: ${info[1]}`;
+      item.setAttribute('id', 'other-team');
+      draftLog.appendChild(item);
+    }
+  }
+
+  draftLog.style.display = 'block';
+  console.log('draftkids', draftLog.children)
+}
 
 
 

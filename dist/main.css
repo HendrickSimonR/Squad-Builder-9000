@@ -12,6 +12,11 @@ html {
   -o-background-size: cover;
 }
 
+#containers {
+  display: flex;
+  flex-direction: row;
+}
+
 #squad-container {
   position: relative;
   bottom: 10px;
@@ -129,7 +134,7 @@ body {
   margin: 0;
 }
 
-#instructions {
+#instructions, #draft-log {
   position: relative;
   bottom: 30px;
   width: 700px;
@@ -148,14 +153,22 @@ body {
   box-shadow: black;
   list-style-type: none;
 }
-#instructions h1 {
+#instructions h1, #draft-log h1 {
   color: rgba(216, 27, 27, 0.8);
 }
-#instructions h2 {
+#instructions h2, #draft-log h2 {
   color: rgba(255, 136, 0, 0.95);
 }
-#instructions li {
+#instructions li, #draft-log li {
   padding: 5px;
+}
+
+#draft-log {
+  display: none;
+}
+
+#user-team {
+  color: rgba(255, 136, 0, 0.95);
 }
 
 #disclaimer {

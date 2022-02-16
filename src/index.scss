@@ -13,6 +13,11 @@ html {
   -o-background-size: cover; 
 }
 
+#containers {
+  display: flex;
+  flex-direction: row;
+}
+
 #squad-container {
   position: relative;
   bottom: 10px;
@@ -173,7 +178,7 @@ body {
 
 
 
-#instructions {
+#instructions, #draft-log {
   position: relative;
   bottom: 30px;
   width: 700px;
@@ -205,9 +210,13 @@ body {
   }
 } 
 
+#draft-log {
+  display: none;
+}
 
-
-
+#user-team {
+  color: $orange;
+}
 
 #disclaimer {
   color: rgb(167, 167, 167);
