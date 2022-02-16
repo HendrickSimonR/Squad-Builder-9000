@@ -1,4 +1,6 @@
 function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
+  clearDraftLog();
+  
   let teams = [];
   let favorite = userInput.favorite;
   let amount = userInput.amount;
@@ -14,7 +16,6 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   }; 
 
   while (count < amount * 5) {
-    console.log('cunt', count)
     for (let i = 0; i < teams.length; i++) {
       let team = teams[i];
 
@@ -31,14 +32,19 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
               null
             } else {
               let pos = fullDetails[playerID]["pos"];
-              team[pos] = fullDetails[playerID];
-
+              console.log('wtf', pos)
               console.log('fulldetails', fullDetails)
               console.log('pos', pos, i)
+              team[pos] = fullDetails[playerID];
+
+              let playerName = team[pos].name;
+              let playerTeam = team[pos].team;
+              let playerAvg = team[pos].avg.toFixed(4);
+
               console.log('teampos', team[pos], i)
             
               addToDraftLog('User', team[pos]);   
-              drafted.push(`${i + 1}, ${team[pos].name}, user`);           
+              drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
             }
             
           } else {
@@ -46,12 +52,16 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             let pos = fullDetails[favePlayer]["pos"];
             team[pos] = fullDetails[favePlayer];
 
+            let playerName = team[pos].name;
+            let playerTeam = team[pos].team;
+            let playerAvg = team[pos].avg.toFixed(4);
+
             console.log('fulldetails', fullDetails)
             console.log('pos', pos, i)
             console.log('teampos', team[pos], i)
 
             addToDraftLog('User', team[pos]);
-            drafted.push(`${i + 1}, ${team[pos].name}, user`);           
+            drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
           }
 
         } else {
@@ -62,13 +72,17 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           } else {            
             let pos = fullDetails[playerID]["pos"];
             team[pos] = fullDetails[playerID];
-
+            
+            let playerName = team[pos].name;
+            let playerTeam = team[pos].team;
+            let playerAvg = team[pos].avg.toFixed(4);      
+               
             console.log('fulldetails', fullDetails);
             console.log('pos', pos, i)
             console.log('teampos', team[pos], i)
 
             addToDraftLog('User', team[pos]);
-            drafted.push(`${i + 1}, ${team[pos].name}, user`);                     
+            drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);                            
           }
         }
       } else {
@@ -80,12 +94,16 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           let pos = fullDetails[playerID]["pos"];
           team[pos] = fullDetails[playerID];
 
+          let playerName = team[pos].name;
+          let playerTeam = team[pos].team;
+          let playerAvg = team[pos].avg.toFixed(4);   
+
           console.log('fulldetails', fullDetails)
           console.log('pos', pos, i)
           console.log('teampos', team[pos], i)
 
           addToDraftLog('not user', team[pos]);
-          drafted.push(`${i + 1}, ${team[pos].name}`);           
+          drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`);                     
         }
       }
     }
@@ -102,16 +120,20 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         let pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];
 
+        let playerName = team[pos].name;
+        let playerTeam = team[pos].team;
+        let playerAvg = team[pos].avg.toFixed(4);   
+
         console.log('fulldetails', fullDetails)
         console.log('pos', pos, i)
         console.log('teampos', team[pos], i)
 
         if (i === userPlacement) {
           addToDraftLog('User', team[pos]);
-          drafted.push(`${i + 1}, ${team[pos].name}, user`);                
+          drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);                                    
         } else {
           addToDraftLog(i, team[pos]);
-          drafted.push(`${i + 1}, ${team[pos].name}`);           
+          drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`);                     
         }
       }
     }
@@ -191,30 +213,59 @@ function addToDraftLog(position, playerDetails) {
 }
 
 function draftLog(drafted) {
-  let draftLog = document.getElementById('draft-log');
-  
+  let draftLog = document.getElementById('draft-log-results');
+  let container = document.getElementById('draft-log');
+  let explained = document.getElementById('explained');
+
   for (let i = 0; i < drafted.length; i++) {
     let item = document.createElement('li');
+    let avg = document.createElement('li');
+    let gap = document.createElement('br');
     let player = drafted[i]
     let info = player.split(',');
+    let details = `${info[1]}, ${info[2]}, ${info[3]}`
+    avg.innerHTML = `Fantasy Avg: ${info[4]}`;
     console.log('play', player.split(','));
 
-    if (info.length === 3) {
-      item.innerHTML = `${info[0]}: ${info[1]}`;
+    let teamLi = document.createElement('li');
+    let team = `Team ${info[0]}`
+    teamLi.innerHTML = team;
+    
+    if (info.length > 5) {
+      item.innerHTML = details;
       item.setAttribute('id', 'user-team');
+      teamLi.setAttribute('id', 'user-team');
+      avg.setAttribute('id', 'user-team');
+
+      draftLog.appendChild(teamLi);
       draftLog.appendChild(item);
+      draftLog.appendChild(avg);
+      draftLog.appendChild(gap);
     } else {
-      item.innerHTML = `${info[0]}: ${info[1]}`;
+      item.innerHTML = details;
       item.setAttribute('id', 'other-team');
+      teamLi.setAttribute('id', 'other-team');
+      avg.setAttribute('id', 'other-team');
+
+      draftLog.appendChild(teamLi);
       draftLog.appendChild(item);
+      draftLog.appendChild(avg);
+      draftLog.appendChild(gap);
     }
   }
 
-  draftLog.style.display = 'block';
+  container.style.display = 'block';
+  explained.style.display = 'block';
   console.log('draftkids', draftLog.children)
 }
 
+function clearDraftLog() {
+  let draftLog = document.getElementById('draft-log-results');
 
+  for (let i = draftLog.children.length - 1; i >= 0; i--) {
+    draftLog.children[i].remove();
+  }
+}
 
       // for (let j = 0; j < sortedScores.length; j++) {
       //     let score = sortedScores[j];

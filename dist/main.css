@@ -15,6 +15,7 @@ html {
 #containers {
   display: flex;
   flex-direction: row;
+  white-space: nowrap;
 }
 
 #squad-container {
@@ -134,7 +135,7 @@ body {
   margin: 0;
 }
 
-#instructions, #draft-log {
+#instructions, #draft-log, #explained {
   position: relative;
   bottom: 30px;
   width: 700px;
@@ -146,24 +147,29 @@ body {
   color: white;
   background-color: rgba(14, 14, 14, 0.9);
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 auto;
+  margin: 15px;
   padding: 15px;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 1.5px 1px #000000;
   box-shadow: black;
   list-style-type: none;
 }
-#instructions h1, #draft-log h1 {
+#instructions h1, #draft-log h1, #explained h1 {
   color: rgba(216, 27, 27, 0.8);
 }
-#instructions h2, #draft-log h2 {
+#instructions h2, #draft-log h2, #explained h2 {
   color: rgba(255, 136, 0, 0.95);
 }
-#instructions li, #draft-log li {
+#instructions li, #draft-log li, #explained li {
   padding: 5px;
 }
 
-#draft-log {
+.draft-log {
+  display: none;
+  width: 300px !important;
+}
+
+.explained {
   display: none;
 }
 

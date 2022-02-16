@@ -15,7 +15,7 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
   
   userInput.addEventListener('submit', function (e) {
     e.preventDefault();
-
+    
     let firstName;
     let lastName;
     let fave = e.target[0].value;
@@ -56,6 +56,8 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     return userValues;
   });
 }
+
+
 
 export default returnInput;
 
