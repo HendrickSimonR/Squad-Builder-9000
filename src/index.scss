@@ -13,6 +13,98 @@ html {
   -o-background-size: cover; 
 }
 
+#squad-container {
+  position: relative;
+  bottom: 10px;
+  
+  h1 { 
+    color: $red;
+  }
+}
+
+#draft-button {
+  background: white;
+  color: rgba(0, 0, 0, 0.877);
+  border-radius: 4px;
+  border-style: none;
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.877);
+    color: white;
+  }
+}
+
+
+#draft-log-button {
+  background-color: $red;
+  border: none;
+  color: white;
+  padding: 10px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Arial;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  text-shadow: none;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 10;
+
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+#explain-button {
+  background: $red;
+  margin-left: 14px;
+  text-shadow: none;
+  padding: 5px 11px;
+  border-radius: 55%;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 10;
+
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+#more-info {
+  background-color: $red;
+  border: none;
+  color: white;
+  padding: 10px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Arial;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  text-shadow: none;
+  margin: 14px;
+
+  &:hover {
+    background: $orange;
+  }
+}
+
 
 // https://wallpaperaccess.com/full/1744056.jpg
 // // https://www.wallpaperup.com/uploads/wallpapers/2013/10/10/158384/028256269b11ff84514786aece1617b1.jpg
@@ -67,6 +159,10 @@ html {
   padding: 12px;
   text-shadow: 1.5px 1px #000000;
   width: 100%;
+
+  label {
+    line-height: 25px;
+  }
 }
 
 
@@ -95,21 +191,36 @@ body {
   text-shadow: 1.5px 1px #000000;
   box-shadow: black;
   list-style-type: none;
-}
+  
+  h1 {
+    color: $red;
+  }
+
+  h2 {
+    color: $orange;
+  }
+
+  li {
+    padding: 5px;
+  }
+} 
 
 
 
-#instructions > h1 {
-  color: $red;
-}
 
-#instructions h2 {
-  color: $orange;
-}
 
 #disclaimer {
   color: rgb(167, 167, 167);
   font-size: 10px;
+
+  a {
+    color: rgb(167, 167, 167);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
 #draftView {

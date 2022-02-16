@@ -4,55 +4,82 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="./dist/main.css">
   <script src="./dist/main.js"></script>
-  <!-- <script src="index.js"></script> -->
-  <title>The Squad Builder 9000</title>
-</head>
-<body>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 1px;
+        background: black;
+        overflow: overlay;
+      }
+    
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        background: rgb(60, 60, 60);
+        border-radius: 10px;
+      }
+    
+      ::-webkit-scrollbar-button {
+        height: 5px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+    </style>
+
+    <title>The Squad Builder 9000</title>
+
+  </head>
+
+  <body>
     <div id="header">
       <img src="dist/squadTest.png" alt="logo" />
     </div>
-  <h1 id="title"></h1>
+    <h1 id="title"></h1>
   <!-- <div id ="main"></div> -->
  
 
+    <div>
+      <form id="form">
+        <label for="favPlayer">First Pick: </label>
+        <input type="text" id="favPlayer" name="favPlayer" value="">
+        <label for="participants">How many participants?</label>
+        <select name="participants" id="participants">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
 
-  <div>
-    <form id="form">
-      <label for="favPlayer">First Pick: </label>
-      <input type="text" id="favPlayer" name="favPlayer" value="">
-      <label for="participants">How many participants?</label>
-      <select name="participants" id="participants">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
+          <option value="10">10</option>
+        </select>
 
-      <label for="order">Your Position in the Draft: </label>
-      <select name="order" id="order">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-    
-      <input id="draft-button" type="submit" disabled="true" value="Loading...">
-    </form>
-  </div>
+        <label for="order">Your Position in the Draft: </label>
+        <select name="order" id="order">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      
+        <input id="draft-button" type="submit" disabled="true" value="Loading...">
+      </form>
+    </div>
   
 
     <!-- CENTER -->
@@ -65,19 +92,28 @@
 
       <h2>Instructions</h2>
       <p class="instructionsList">
-        <li>Provide a favorite player if you so desire.</li>
+        <li>Provide a favorite player (optional).</li>
         <li>Pick how many participants will be part of your draft.</li>
         <li>Select your placement in the draft.</li>
         <li>Reveal your squad!</li>
       </p>
 
-      <p id='disclaimer'>* This is all objective, but... it's your call who the best is!</p>
+      <p id='disclaimer'>
+        * It's your call who the best is! This app is powered by the <a href="https://balldontlie.io" target="_blank" >BallDontLie API</a>.
+      </p>
+
+      <div class="modal-holder"></div>
     </div>
 
-    <div id="draftView"></div>
+    <div id="modal-container"> </div>
+
+
+
   
     <footer id="footer">
-      <a href="https://github.com/HendrickSimonR/Squad-Builder-9000"><img src="dist/gitpng.png"></a>
+      <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank" ><img src="dist/gitpng.png"></a>
     </footer>
-</body>
+  </body>
+
+  
 </html>

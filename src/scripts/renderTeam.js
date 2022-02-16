@@ -7,7 +7,7 @@ function renderTeam(team) {
   let breaker = document.createElement('br');
   let menu = document.getElementById('instructions');
   let nameEl = document.createElement('h1');
-  let draftViewEl = document.getElementById('draftView');
+  let draftView = document.getElementById('draftView');
   // // menu.style.visibility = 'hidden';
   // draftViewEl.style.visibility = 'visible';
   let header = document.createElement('h1');
@@ -17,13 +17,27 @@ function renderTeam(team) {
   for (let i = menu.children.length - 1; i >= 0; i--) {
     menu.children[i].remove();
   }
+
+  let draftLogButton = document.createElement('span');
+  draftLogButton.innerHTML = 'Draft Log';
+  draftLogButton.setAttribute('id', 'draft-log-button');
+  menu.appendChild(draftLogButton);
+
+  let explainButton = document.createElement('span');
+  explainButton.innerHTML = '?';
+  explainButton.setAttribute('id', 'explain-button');
+  menu.appendChild(explainButton)
+
+  let container = document.createElement('div');
+  container.setAttribute('id', 'squad-container');
+  menu.appendChild(container);
   
   if (team === undefined) {
     header.innerHTML = 'TRY AGAIN!';
-    menu.appendChild(header);
+    container.appendChild(header);
   } else {
     header.innerHTML = 'YOUR SQUAD';
-    menu.appendChild(header);
+    container.appendChild(header);
   }
 
   for (let player in team) {
@@ -75,6 +89,12 @@ function renderTeam(team) {
           // let capped = info.toUpperCase();
           col.innerHTML = `AVG FANTASY SCORE: ${person[info].toFixed(4)}`;
           rowEl.appendChild(col);
+
+          let moreInfoButton = document.createElement('button');
+          moreInfoButton.setAttribute('id', 'more-info');
+          moreInfoButton.innerHTML = 'More Info'
+          rowEl.appendChild(moreInfoButton);
+
           teamAvg += person[info];
         } else {
           let capped = info.toUpperCase();
@@ -84,14 +104,14 @@ function renderTeam(team) {
       }
     }
     
-    menu.appendChild(rowEl);
-    menu.appendChild(breaker);
+    container.appendChild(rowEl);
+    container.appendChild(breaker);
   }
 
   let total = document.createElement('h1');
   let totalAvg = teamAvg;
   total.innerHTML = `FANTASY TEAM AVG: ${totalAvg.toFixed(4)}`
-  menu.appendChild(total);
+  container.appendChild(total);
 }
 
 function nameTransformer(name) {
