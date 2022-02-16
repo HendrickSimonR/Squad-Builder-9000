@@ -37,11 +37,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       let playerName;
       let playerPos;
       let playerTeam;
+      let playerImg;
 
       if (players[playerID]) {
+        console.log('player', players[playerID]);
         playerName = players[playerID].name;
         playerPos = players[playerID].pos;
         playerTeam = players[playerID].team;
+        playerImg = players[playerID].image;
         nameAndID.push([playerName, playerID]);
       }
 
@@ -54,9 +57,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         name: playerName,
         pos: playerPos,
         team: playerTeam,
-        stats: { pts: stats.pts, ast: stats.ast, ftm: stats.ftm, reb: stats.reb, stl: stats.stl, blk: stats.blk, to: stats.turnover },
+        stats: { 
+          pts: stats.pts, 
+          ast: stats.ast, 
+          ftm: stats.ftm, 
+          reb: stats.reb, 
+          stl: stats.stl, 
+          blk: stats.blk, 
+          to: stats.turnover 
+        },
         avg: fantasyAvg,
-        drafted: false
+        drafted: false,
+        image: playerImg
       };
       
       fullDetails[playerID] = playerInfo;

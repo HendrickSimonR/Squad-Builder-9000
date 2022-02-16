@@ -82,6 +82,7 @@ function renderTeam(team) {
       } else if (person[info] === false) {
         continue;
       } else {
+        console.log('current info', info)
         if (info === 'name') {
           let newName = nameTransformer(person[info]);
           rowEl.appendChild(newName);
@@ -96,6 +97,10 @@ function renderTeam(team) {
           rowEl.appendChild(moreInfoButton);
 
           teamAvg += person[info];
+        } else if (info === 'image') {
+          let playerImg = document.createElement('img');
+          rowEl.appendChild(playerImg);
+          playerImg.src = person[info];
         } else {
           let capped = info.toUpperCase();
           col.innerHTML = `${capped}: ${person[info].toUpperCase()}`;
@@ -123,6 +128,7 @@ function nameTransformer(name) {
 
 function statline(stats) {
   let selectStats = [];
+  console.log('stats', stats)
 
   for (let stat in stats) {
     if (stat === 'pts') {
