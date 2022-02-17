@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       let fantasyAvg = (offPoints + defPoints - to);
 
       let playerInfo = {
+        image: playerImg,
         name: playerName,
         pos: playerPos,
         team: playerTeam,
@@ -67,8 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           to: stats.turnover 
         },
         avg: fantasyAvg,
-        drafted: false,
-        image: playerImg
+        drafted: false
       };
       
       fullDetails[playerID] = playerInfo;

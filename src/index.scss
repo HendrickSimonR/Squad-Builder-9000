@@ -176,7 +176,9 @@ body {
   margin: 0;
 }
 
-
+.results {
+  width: 860px !important;
+}
 
 #instructions, #draft-log, #explained {
   position: relative;
@@ -192,7 +194,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;
   padding: 15px;
-  font-family: Arial, Helvetica, sans-serif;
   text-shadow: 1.5px 1px #000000;
   box-shadow: black;
   list-style-type: none;
@@ -212,11 +213,15 @@ body {
 
 .draft-log {
   display: none;
-  width: 300px !important;
+  width: 680px !important;
+  height: 810px !important;
+  overflow: auto;
+  margin: 0px 20px !important;
 }
 
 .explained {
   display: none;
+  margin: 0px 20px !important;
 }
 
 #user-team {
@@ -248,6 +253,46 @@ body {
   list-style-type: none;
 }
 
+#player-image {
+  width: 200px;
+  height: auto;
+}
+
+.squad-row {
+	display: flex;
+  flex-direction: row;
+  margin: 24px auto;
+}   
+
+#squad-1 {
+  justify-content: space-between;
+
+}
+
+#squad-2 {
+  justify-content: center;
+}
+
+#player {
+  width: 300px;
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+
+  h2 {
+    margin: 4px;
+  }
+}
+
+@keyframes fadeInLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-23px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}   
 // footer {
 //   justify-content: center;
 //   text-align: center;
