@@ -138,7 +138,7 @@ body {
   width: 860px !important;
 }
 
-#instructions, #draft-log, #explained {
+#instructions, #draft-log, #player-details {
   position: relative;
   bottom: 30px;
   width: 700px;
@@ -156,13 +156,13 @@ body {
   box-shadow: black;
   list-style-type: none;
 }
-#instructions h1, #draft-log h1, #explained h1 {
+#instructions h1, #draft-log h1, #player-details h1 {
   color: rgba(216, 27, 27, 0.8);
 }
-#instructions h2, #draft-log h2, #explained h2 {
+#instructions h2, #draft-log h2, #player-details h2 {
   color: rgba(255, 136, 0, 0.95);
 }
-#instructions li, #draft-log li, #explained li {
+#instructions li, #draft-log li, #player-details li {
   padding: 5px;
 }
 
@@ -174,7 +174,7 @@ body {
   margin: 0px 20px !important;
 }
 
-.explained {
+.player-details {
   display: none;
   margin: 0px 20px !important;
 }

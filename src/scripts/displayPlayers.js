@@ -1,6 +1,7 @@
 import team from "./userInput";
 
 function displayPlayers(team) {
+  let playerDetails = document.getElementById('player-details');
   let players = [];
 
   for (let player in team) {
@@ -19,11 +20,7 @@ function displayPlayers(team) {
             info.push(`REB: ${stats[stat]}`);
           }
         }
-      } else if (details === "drafted") {
-        continue;
-      } else {
-        info.push(`${details}: ${player[details]}`);
-      }
+      } 
     }
 
     players.push(info);

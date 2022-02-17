@@ -215,7 +215,7 @@ function addToDraftLog(position, playerDetails) {
 function draftLog(drafted) {
   let draftLog = document.getElementById('draft-log-results');
   let container = document.getElementById('draft-log');
-  let explained = document.getElementById('explained');
+  let playerDetails = document.getElementById('player-details');
 
   for (let i = 0; i < drafted.length; i++) {
     let item = document.createElement('li');
@@ -255,7 +255,7 @@ function draftLog(drafted) {
   }
 
   container.style.display = 'block';
-  explained.style.display = 'block';
+  playerDetails.style.display = 'block';
   console.log('draftkids', draftLog.children)
 }
 

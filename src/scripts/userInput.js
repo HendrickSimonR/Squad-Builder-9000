@@ -53,6 +53,7 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     // console.log('draftTeams', draftTeams(fullDetails, userValues, sortedScores, playerInfo))
     // let display = displayPlayers(team);
     renderTeam(team);
+    console.log('team drafted', team);
     return userValues;
   });
 }
