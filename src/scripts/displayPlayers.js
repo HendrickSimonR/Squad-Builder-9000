@@ -20,12 +20,12 @@ function displayPlayers(team) {
     playerName.innerHTML = person.name;
     playerInfo.appendChild(playerName);
 
-    renderStats(person.stats, playerInfo);
+    renderStats(person.stats, playerInfo, person.avg);
     console.log('person', person)
   }
 }
 
-function renderStats(stats, playerInfo) {
+function renderStats(stats, playerInfo, avg) {
   let pts = `Points Per Game: ${stats.pts}`
   let ast = `Assists Per Game: ${stats.ast}`
   let blk = `Blocks Per Game: ${stats.blk}`
@@ -35,8 +35,12 @@ function renderStats(stats, playerInfo) {
   let games = `Games Played: ${stats.games}`
   let min = `Minutes Per Game: ${stats.min}`
   let to = `Turnovers Per Game: ${stats.to}`
+  let fantasyAvg = `Avg Fantasy Score: ${avg.toFixed(4)}`
 
-  let statArr = [ pts, ast, reb, stl, blk, ftm, to, games, min ];
+  let statArr = [ 
+    pts, ast, reb, stl, blk, 
+    ftm, to, games, min, fantasyAvg 
+  ];
 
   for (let i = 0; i < statArr.length; i++) {
     let stat = statArr[i];
