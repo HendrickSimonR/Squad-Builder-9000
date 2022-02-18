@@ -6,7 +6,8 @@ import playerIDs from "./scripts/playerIDs";
 import findPlayer from "./scripts/findPlayer";
 import draftTeams from "./scripts/draftTeams";
 import sortIDs from "./scripts/sortIDs";
-import playerVitals from "./scripts/playerVitals"
+import playerVitals from "./scripts/playerVitals";
+import { displayModal, closeModal } from "./scripts/modal";
 
  
 document.addEventListener("DOMContentLoaded", async () => {
@@ -107,12 +108,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log(sortedScores.length);
   console.log('ready!')
 
-  // console.log(playerInfo);
+  let explainButton = document.getElementById('explain-button');
+  console.log('explain', explainButton)
+  explainButton.addEventListener('click', displayModal);
+
+  let close = document.getElementById('close-modal');
+  close.addEventListener('click', closeModal);
 
   
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   userInput;
   // console.log(draftTeams(fullDetails, {favorite: "Lebron James", participants: 10, order: 6}, sortedScores, playerInfo));
 });
-
 

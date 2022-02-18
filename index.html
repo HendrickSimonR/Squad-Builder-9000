@@ -81,6 +81,41 @@
       </form>
     </div>
   
+    <div id="modal">
+      <div id="modal-info">
+        <h3 id="close-modal">x</h3>
+        <h1>How It Works</h1>
+        <div id="points">
+          <h2>Head-to-Head Points</h2>
+          <p>This app is structured around points, where a win is achieved by totaling more fantasy points against an opponent.
+             Typically, values for a statistic are evaluated by these metrics: 
+          </p>
+            <li>Points (+1)</li>
+            <li>Rebounds (+1.2)</li>
+            <li>Assists (+1.5)</li>
+            <li>Steals/Blocks (+3)</li>
+            <li>Turnovers (-1)</li>
+        </div>
+
+        <div id="snake">
+          <h2>"Snake-Ordered" Draft</h2>
+          <p>A snake-ordered draft implies that once a round of drafts ends, the next round 
+            begins at the end, starting with who went last in the previous round until it reaches who originally went first.
+            The following round will start again with who went last prior, and will continue this way until drafting is complete. 
+          </p>
+          <img id="snake-photo" src="http://www.playdailyfantasyhockey.com/images/content/snake-draft-example.jpg" />
+        </div>
+
+        <div id="tip">
+          <h2>Pro-Tip</h2>
+          <p>Try to play around with different combinations (with and without a 
+            preferred draft pick) to see how the line-ups change and the starting line-up
+            fantasy average changes!
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div id="containers">
       <div id="draft-log" class="draft-log">
         <h1>Draft Log</h1>
@@ -92,7 +127,8 @@
 
       <!-- CENTER -->
       <div id="instructions" >
-        <div class="intro">
+        <span id="explain-button">?</span>
+        <div id="intro">
           <h1 id="instructionTitle">BUILD YOUR SQUAD!</h1>
           <p>
             Or rather, let the algorithm build it for you! Using the average player stats 
@@ -112,8 +148,6 @@
             * The algorithm uses player stats to formulate an average fantasy score. 
             This app is powered by the <a href="https://balldontlie.io" target="_blank" >BallDontLie API</a>.
           </p>
-        
-          <div class="modal-holder"></div>
         </div>
       </div>
 
@@ -125,7 +159,12 @@
 
   
     <footer id="footer">
-      <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank" ><img src="dist/gitpng.png"></a>
+      <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank" >
+        <img src="dist/gitpng.png">
+      </a>
+      <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank">
+        <img src="dist/gitpng.png">
+      </a>
     </footer>
   </body>
 

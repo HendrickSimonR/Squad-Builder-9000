@@ -3,31 +3,33 @@ import displayPlayers from './displayPlayers'
 
 
 function renderTeam(team) {
+  let intro = document.getElementById('intro');
   let menu = document.getElementById('instructions');
   let nameEl = document.createElement('h1');
   let draftView = document.getElementById('draftView');
-  // // menu.style.visibility = 'hidden';
+  // // intro.style.visibility = 'hidden';
   // draftViewEl.style.visibility = 'visible';
   let header = document.createElement('h1');
   let teamAvg = 0;
 
-  for (let i = menu.children.length - 1; i >= 0; i--) {
-    menu.children[i].remove();
+  for (let i = intro.children.length - 1; i >= 0; i--) {
+    intro.children[i].remove();
   }
 
   // let draftLogButton = document.createElement('span');
   // draftLogButton.innerHTML = 'Draft Log';
   // draftLogButton.setAttribute('id', 'draft-log-button');
-  // menu.appendChild(draftLogButton);
+  // intro.appendChild(draftLogButton);
 
-  let explainButton = document.createElement('span');
-    explainButton.innerHTML = '?';
-    explainButton.setAttribute('id', 'explain-button');
-    menu.appendChild(explainButton);
+  let explainButton = document.getElementById('explain-button');
+  explainButton.style.visibility = 'visible';
+  //   explainButton.innerHTML = '?';
+  //   explainButton.setAttribute('id', 'explain-button');
+  //   intro.appendChild(explainButton);
 
   let container = document.createElement('div');
     container.setAttribute('id', 'squad-container');
-    menu.appendChild(container);
+    intro.appendChild(container);
     container.appendChild(header);
   
     
