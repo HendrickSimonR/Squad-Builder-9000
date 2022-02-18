@@ -174,9 +174,9 @@ body {
   margin: 0px 20px !important;
 }
 
-#draft-log-results {
+.intro {
   animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
 
 @keyframes fadeIn {
@@ -190,6 +190,10 @@ body {
 .player-details {
   display: none;
   margin: 0px 20px !important;
+}
+
+.player-info li {
+  border: 0.1px solid #3b3b3b;
 }
 
 #user-team {
@@ -257,7 +261,7 @@ body {
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-23px);
+    transform: translateX(-33px);
   }
   100% {
     opacity: 1;

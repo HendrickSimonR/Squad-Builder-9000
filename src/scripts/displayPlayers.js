@@ -23,6 +23,7 @@ function displayPlayers(team) {
     renderStats(person.stats, playerInfo);
     console.log('person', person)
   }
+}
 
 function renderStats(stats, playerInfo) {
   let pts = `Points Per Game: ${stats.pts}`
@@ -78,6 +79,6 @@ function clearStats() {
   // }
 
   // return players;
-}
+
 
 export default displayPlayers;
