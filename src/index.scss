@@ -219,6 +219,20 @@ body {
   margin: 0px 20px !important;
 }
 
+#draft-log-results {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}   
+
 .player-details {
   display: none;
   margin: 0px 20px !important;
@@ -240,6 +254,13 @@ body {
       color: $red;
     }
   }
+}
+
+.player-details {
+  width: 1000px !important;
+  height: 810px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 #draftView {

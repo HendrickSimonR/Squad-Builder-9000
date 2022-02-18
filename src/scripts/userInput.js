@@ -52,6 +52,7 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     let team = draftTeams(fullDetails, userValues, sortedScores, playerInfo);
     // console.log('draftTeams', draftTeams(fullDetails, userValues, sortedScores, playerInfo))
     // let display = displayPlayers(team);
+    displayPlayers(team);
     renderTeam(team);
     console.log('team drafted', team);
     return userValues;
