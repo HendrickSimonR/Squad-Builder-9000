@@ -236,6 +236,7 @@ function draftLog(drafted) {
     
     if (info.length > 5) {
       item.innerHTML = details;
+      container.setAttribute('id', 'user-team-container');
       item.setAttribute('id', 'user-team');
       teamLi.setAttribute('id', 'user-team');
       avg.setAttribute('id', 'user-team');
@@ -247,6 +248,7 @@ function draftLog(drafted) {
       draftLog.appendChild(gap);
     } else {
       item.innerHTML = details;
+      container.setAttribute('id', 'other-team-container');
       item.setAttribute('id', 'other-team');
       teamLi.setAttribute('id', 'other-team');
       avg.setAttribute('id', 'other-team');

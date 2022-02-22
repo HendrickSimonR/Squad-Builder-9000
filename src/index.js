@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return size;
   };
   
-  if (Object.size(fullDetails) >= 10) {
+  if (Object.size(fullDetails) >= 50) {
     document.getElementById("draft-button").disabled = false;
     document.getElementById("draft-button").value = "Draft!";
   } else {

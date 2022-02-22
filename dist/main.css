@@ -366,6 +366,14 @@ footer img:hover {
   margin: 10px;
 }
 
+#user-team-container {
+  border-color: rgba(216, 27, 27, 0.8);
+}
+
+#other-team-container {
+  border-color: grey !important;
+}
+
 #form-error {
   color: orange;
   display: none;
@@ -375,4 +383,37 @@ footer img:hover {
   background-color: rgba(0, 0, 0, 0.699);
   padding: 3px 8px;
   border-radius: 4px;
+}
+
+#algorithm {
+  border: solid 1px rgba(90, 90, 90, 0.733);
+  border-radius: 5px;
+  width: 600px;
+  padding: 8px;
+  margin: 17px auto;
+}
+
+#algo-header {
+  color: rgba(216, 27, 27, 0.8) !important;
+  font-weight: 600;
+}
+
+#questions {
+  margin-bottom: 20px;
+}
+#questions img {
+  height: 40px;
+  padding: 15px;
+  width: auto;
+  transition: all 0.3s ease 0s;
+}
+#questions img:hover {
+  transform: scale(1.4);
+}
+#questions a {
+  color: rgba(24, 24, 146, 0);
+}
+
+#email-question {
+  filter: invert(1);
 }
