@@ -188,7 +188,7 @@ body {
 }
 
 .results {
-  width: 860px !important;
+  width: 800px !important;
 }
 
 #instructions, #draft-log, #player-details {
@@ -283,7 +283,7 @@ body {
 }
 
 .player-details {
-  width: 1000px !important;
+  // width: 1000px !important;
   height: 810px;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -356,16 +356,35 @@ footer {
   flex-direction: row;
   justify-content: center;
   position: relative;
-  bottom: 28px;
+  // bottom: 28px;
 }
 
 footer img{
   display: block;
   position: relative;
   bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50px;
+  margin: 8px;
+  height: 50px;
+  padding: 2px;
+  // opacity: 0.7;
+  transition: all 0.3s ease 0s;
+  filter: invert(0);
+  
+  &:hover {
+    filter: invert(1);
+    opacity: 1;
+    background: black;
+    border-radius: 7px;
+  }
+}
+
+#email {
+  filter: invert(1);
+
+  &:hover {
+    filter: invert(0);
+    background: white;
+  }
 }
 
 #modal {

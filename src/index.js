@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         nameAndID.push([playerName, playerID]);
       }
 
-      let offPoints = stats.pts + (stats.ast * 1.5) + stats.ftm;
+      let offPoints = stats.pts + (stats.ast * 1.5);
       let defPoints = (stats.reb * 1.2) + (stats.stl * 3) + (stats.blk * 3);
       let to = stats.turnover;
       let fantasyAvg = (offPoints + defPoints - to);

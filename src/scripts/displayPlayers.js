@@ -29,7 +29,7 @@ function renderStats(stats, playerInfo, avg) {
   let pts = `Points Per Game: ${stats.pts}`
   let ast = `Assists Per Game: ${stats.ast}`
   let blk = `Blocks Per Game: ${stats.blk}`
-  let ftm = `Free Throws Made: ${stats.ftm}`
+  // let ftm = `Free Throws Made: ${stats.ftm}`
   let stl = `Steals Per Game: ${stats.stl}`
   let reb = `Rebounds Per Game: ${stats.reb}`
   let games = `Games Played: ${stats.games}`
@@ -38,8 +38,7 @@ function renderStats(stats, playerInfo, avg) {
   let fantasyAvg = `Avg Fantasy Score: ${avg.toFixed(4)}`
 
   let statArr = [ 
-    pts, ast, reb, stl, blk, 
-    ftm, to, games, min, fantasyAvg 
+    pts, ast, reb, stl, blk, to, games, min, fantasyAvg 
   ];
 
   for (let i = 0; i < statArr.length; i++) {
