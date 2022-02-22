@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       let offPoints = stats.pts + (stats.ast * 1.5) + stats.ftm;
-      let defPoints = (stats.reb * 1.2) + (stats.stl * 2) + (stats.blk * 2);
+      let defPoints = (stats.reb * 1.2) + (stats.stl * 3) + (stats.blk * 3);
       let to = stats.turnover;
       let fantasyAvg = (offPoints + defPoints - to);
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return size;
   };
   
-  if (Object.size(fullDetails) >= 60) {
+  if (Object.size(fullDetails) >= 10) {
     document.getElementById("draft-button").disabled = false;
     document.getElementById("draft-button").value = "Draft!";
   } else {

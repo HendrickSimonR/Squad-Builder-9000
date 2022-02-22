@@ -1,4 +1,5 @@
 const players = {
+   334: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1627749.png", name: "Dejounte Murray", pos: "PG", team: "Washington Wizards" },
    666633: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629639.png", name: "Tyler Herro", pos: "PG", team: "Miami Heat" },
    62: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628969.png", name: "Miles Bridges", pos: "SF", team: "Charlotte Hornets" },
    15: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203507.png", name: "Giannis Antentokounmpo", pos: "PF", team: "Milwaukee Bucks" },

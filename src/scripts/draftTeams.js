@@ -1,5 +1,7 @@
 function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   clearDraftLog();
+  let error = document.getElementById('form-error');
+  error.style.display = 'none';
   
   let teams = [];
   let favorite = userInput.favorite;
@@ -225,7 +227,7 @@ function draftLog(drafted) {
     let info = player.split(',');
     let details = `${info[1]}, ${info[2]}, ${info[3]}`
     avg.innerHTML = `Fantasy Avg: ${info[4]}`;
-    console.log('play', player.split(','));
+    // console.log('play', player.split(','));
 
     let teamLi = document.createElement('li');
     let team = `Team ${info[0]}`

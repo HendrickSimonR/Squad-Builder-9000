@@ -16,11 +16,19 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
   userInput.addEventListener('submit', function (e) {
     e.preventDefault();
     
+    console.log('FUNCTION RUN')
+
     let firstName;
     let lastName;
     let fave = e.target[0].value;
     let participants = e.target[1].value;
     let order = e.target[2].value;
+
+    if (order > participants) {
+      let error = document.getElementById('form-error');
+      error.style.display = 'block';
+      return;
+    }
 
     if (fave.includes(' ')) {
       fave = fave.split(' ');
@@ -48,10 +56,10 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
       placement: order 
     };
 
+
+    
     console.log('VALUES', userValues);
     let team = draftTeams(fullDetails, userValues, sortedScores, playerInfo);
-    // console.log('draftTeams', draftTeams(fullDetails, userValues, sortedScores, playerInfo))
-    // let display = displayPlayers(team);
     displayPlayers(team);
     renderTeam(team);
     console.log('team drafted', team);

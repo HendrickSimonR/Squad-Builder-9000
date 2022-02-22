@@ -48,24 +48,23 @@
       <form id="form">
         <label for="favPlayer">First Pick: </label>
         <input type="text" id="favPlayer" name="favPlayer" value="">
-        <label for="participants">How many participants?</label>
+        <label for="participants">How Many Participants?</label>
         <select name="participants" id="participants">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-
-          <option value="10">10</option>
+          <option name="AMOUNT" value="1">1</option>
+          <option name="AMOUNT" value="2">2</option>
+          <option name="AMOUNT" value="3">3</option>
+          <option name="AMOUNT" value="4">4</option>
+          <option name="AMOUNT" value="5">5</option>
+          <option name="AMOUNT" value="6">6</option>
+          <option name="AMOUNT" value="7">7</option>
+          <option name="AMOUNT" value="8">8</option>
+          <option name="AMOUNT" value="9">9</option>
+          <option name="AMOUNT" value="10">10</option>
         </select>
 
         <label for="order">Your Position in the Draft: </label>
         <select name="order" id="order">
-          <option value="1">1</option>
+          <option data-show-if="AMOUNT >= 1" value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -74,13 +73,17 @@
           <option value="7">7</option>
           <option value="8">8</option>
           <option value="9">9</option>
-          <option value="10">10</option>
+          <option data-show-if="AMOUNT:10" value="10">10</option>
         </select>
       
         <input id="draft-button" type="submit" disabled="true" value="Loading...">
+        <p id="form-error">WARNING: Participants must be greater than or equal to Position!</p>
       </form>
     </div>
-  
+
+    <div>
+    </div>
+      
     <div id="modal">
       <div id="modal-info">
         <h3 id="close-modal">x</h3>
@@ -162,9 +165,9 @@
       <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank" >
         <img src="dist/gitpng.png">
       </a>
-      <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank">
+      <!-- <a href="https://github.com/HendrickSimonR/Squad-Builder-9000" target="_blank">
         <img src="dist/gitpng.png">
-      </a>
+      </a> -->
     </footer>
   </body>
 

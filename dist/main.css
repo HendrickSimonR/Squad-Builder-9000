@@ -84,7 +84,7 @@ html {
 }
 
 #more-info {
-  background-color: rgba(216, 27, 27, 0.8);
+  background-color: rgba(0, 0, 0, 0.911);
   border: none;
   color: white;
   padding: 10px 17px;
@@ -101,7 +101,8 @@ html {
   margin: 14px;
 }
 #more-info:hover {
-  background: rgba(255, 136, 0, 0.95);
+  background: white;
+  color: black;
 }
 
 #header {
@@ -274,6 +275,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  bottom: 28px;
 }
 
 footer img {
@@ -341,4 +344,15 @@ footer img {
 #snake-photo {
   width: 333px;
   margin: 10px;
+}
+
+#form-error {
+  color: orange;
+  display: none;
+  margin: 0 auto;
+  position: absolute;
+  top: 67px;
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 3px 8px;
+  border-radius: 4px;
 }
