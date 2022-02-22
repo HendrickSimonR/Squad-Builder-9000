@@ -37,7 +37,7 @@ function renderTeam(team) {
     let squad = document.createElement('div');
     squad.setAttribute('id', `squad-${i + 1}`);
     squad.setAttribute('class', 'squad-row');
-    console.log('squad', squad)
+    // console.log('squad', squad)
     container.appendChild(squad);
   }
 
@@ -54,15 +54,15 @@ function renderTeam(team) {
   for (let i = 0; i < fullTeam.length; i++) {
     let player = fullTeam[i];
 
-    console.log('player', player)
+    // console.log('player', player)
     if (i < 3) {
       let row = document.getElementById('squad-1');
       teamAvg += addDetails(row, player);
-      console.log('team avg', teamAvg)
+      // console.log('team avg', teamAvg)
     } else {
       let row = document.getElementById('squad-2');
       teamAvg += addDetails(row, player);
-      console.log('team avg', teamAvg);
+      // console.log('team avg', teamAvg);
     }
   }
 
@@ -85,7 +85,7 @@ function nameTransformer(name) {
 
 function statline(stats) {
   let selectStats = [];
-  console.log('stats', stats)
+  // console.log('stats', stats)
 
   for (let stat in stats) {
     if (stat === 'pts') {
@@ -101,7 +101,7 @@ function statline(stats) {
 }
 
 function addDetails(row, person) {
-  console.log('details', row, person)
+  // console.log('details', row, person)
   let avg = 0;
   let player = document.createElement('div');
   player.setAttribute('id', 'player');
@@ -124,7 +124,7 @@ function addDetails(row, person) {
     } else if (person[info] === false) {
       continue;
     } else {
-      console.log('current info', info)
+      // console.log('current info', info)
       if (info === 'image') {
         let playerImg = document.createElement('img');
         playerImg.src = person[info];
@@ -140,9 +140,9 @@ function addDetails(row, person) {
         // moreInfoButton.setAttribute('id', 'more-info');
         // moreInfoButton.innerHTML = 'More Info'
         // player.appendChild(moreInfoButton);
-        console.log('player avg before', avg)
+        // console.log('player avg before', avg)
         avg += person[info];
-        console.log('player avg after', avg)
+        // console.log('player avg after', avg)
       } else {
         let capped = info.toUpperCase();
         col.innerHTML = `${person[info].toUpperCase()}`;

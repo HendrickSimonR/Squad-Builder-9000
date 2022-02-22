@@ -3,7 +3,7 @@ function displayModal(event) {
   modal.style.display = 'block';
   document.body.style.height = '100%';
   document.body.style.overflow = 'hidden';
-  console.log('open')
+  // console.log('open')
 }
 
 function closeModal(event) {
@@ -12,7 +12,7 @@ function closeModal(event) {
   document.body.style.height = '100%';
   document.body.style.overflowX = 'hidden';
   document.body.style.overflowY = 'scroll';
-  console.log('close')
+  // console.log('close')
 }
 
 export { displayModal, closeModal };

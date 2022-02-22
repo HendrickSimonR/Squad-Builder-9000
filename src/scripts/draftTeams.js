@@ -11,7 +11,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let count = 0;
   let drafted = [];
 
-  console.log('User Input', userInput);
+  // console.log('User Input', userInput);
 
   while (teams.length < amount) { 
     teams.push({}); 
@@ -34,16 +34,16 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
               null
             } else {
               let pos = fullDetails[playerID]["pos"];
-              console.log('wtf', pos)
-              console.log('fulldetails', fullDetails)
-              console.log('pos', pos, i)
+              // console.log('wtf', pos)
+              // console.log('fulldetails', fullDetails)
+              // console.log('pos', pos, i)
               team[pos] = fullDetails[playerID];
 
               let playerName = team[pos].name;
               let playerTeam = team[pos].team;
               let playerAvg = team[pos].avg.toFixed(4);
 
-              console.log('teampos', team[pos], i)
+              // console.log('teampos', team[pos], i)
             
               addToDraftLog('User', team[pos]);   
               drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
@@ -58,9 +58,9 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             let playerTeam = team[pos].team;
             let playerAvg = team[pos].avg.toFixed(4);
 
-            console.log('fulldetails', fullDetails)
-            console.log('pos', pos, i)
-            console.log('teampos', team[pos], i)
+            // console.log('fulldetails', fullDetails)
+            // console.log('pos', pos, i)
+            // console.log('teampos', team[pos], i)
 
             addToDraftLog('User', team[pos]);
             drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
@@ -79,9 +79,9 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             let playerTeam = team[pos].team;
             let playerAvg = team[pos].avg.toFixed(4);      
                
-            console.log('fulldetails', fullDetails);
-            console.log('pos', pos, i)
-            console.log('teampos', team[pos], i)
+            // console.log('fulldetails', fullDetails);
+            // console.log('pos', pos, i)
+            // console.log('teampos', team[pos], i)
 
             addToDraftLog('User', team[pos]);
             drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);                            
@@ -100,9 +100,9 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           let playerTeam = team[pos].team;
           let playerAvg = team[pos].avg.toFixed(4);   
 
-          console.log('fulldetails', fullDetails)
-          console.log('pos', pos, i)
-          console.log('teampos', team[pos], i)
+          // console.log('fulldetails', fullDetails)
+          // console.log('pos', pos, i)
+          // console.log('teampos', team[pos], i)
 
           addToDraftLog('not user', team[pos]);
           drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`);                     
@@ -126,9 +126,9 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         let playerTeam = team[pos].team;
         let playerAvg = team[pos].avg.toFixed(4);   
 
-        console.log('fulldetails', fullDetails)
-        console.log('pos', pos, i)
-        console.log('teampos', team[pos], i)
+        // console.log('fulldetails', fullDetails)
+        // console.log('pos', pos, i)
+        // console.log('teampos', team[pos], i)
 
         if (i === userPlacement) {
           addToDraftLog('User', team[pos]);
@@ -143,11 +143,11 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
     count++;
   }
 
-  console.log(userPlacement);
-  console.log('teams', teams);
+  // console.log(userPlacement);
+  // console.log('teams', teams);
   resetPlayers(playerInfo, fullDetails);
-  console.log(typeof teams[userPlacement]);
-  console.log('drafted', drafted);
+  // console.log(typeof teams[userPlacement]);
+  // console.log('drafted', drafted);
   draftLog(drafted);
 
 
@@ -211,7 +211,7 @@ function resetPlayers(playerInfo, fullDetails) {
 
 
 function addToDraftLog(position, playerDetails) {
-  console.log('hooplah')
+  // console.log('hooplah')
 }
 
 function draftLog(drafted) {

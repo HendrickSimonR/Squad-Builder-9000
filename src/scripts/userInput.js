@@ -16,7 +16,7 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
   userInput.addEventListener('submit', function (e) {
     e.preventDefault();
     
-    console.log('FUNCTION RUN')
+    // console.log('FUNCTION RUN')
 
     let firstName;
     let lastName;
@@ -25,8 +25,8 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     let order = e.target[2].value;
 
     if (parseInt(order) > parseInt(participants)) {
-      console.log('order', typeof order, order);
-      console.log('participants', typeof participants, participants);
+      // console.log('order', typeof order, order);
+      // console.log('participants', typeof participants, participants);
       let error = document.getElementById('form-error');
       error.style.display = 'block';
       return;
@@ -35,12 +35,12 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     if (fave.includes(' ')) {
       fave = fave.split(' ');
       
-      console.log('LIT', fave)
+      // console.log('LIT', fave)
 
       for (let i = 0; i < fave.length; i++) {
         let name = fave[i]; 
         let capped = name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase();
-        console.log('capped', capped)
+        // console.log('capped', capped)
 
         if (i === 0) {
           firstName = capped;
@@ -60,11 +60,11 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
 
 
     
-    console.log('VALUES', userValues);
+    // console.log('VALUES', userValues);
     let team = draftTeams(fullDetails, userValues, sortedScores, playerInfo);
     displayPlayers(team);
     renderTeam(team);
-    console.log('team drafted', team);
+    // console.log('team drafted', team);
     return userValues;
   });
 }

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         playerObj = await fetchPlayerStats(playerID);
       }
       
-      console.log('playerObj', playerObj);
+      // console.log('playerObj', playerObj);
 
       if (!playerObj) {
         // alert('Please refresh the page! :)');
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       let playerImg;
 
       if (players[playerID]) {
-        console.log('player', players[playerID]);
+        // console.log('player', players[playerID]);
         playerName = players[playerID].name;
         playerPos = players[playerID].pos;
         playerTeam = players[playerID].team;
@@ -101,15 +101,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("draft-button").value = ":O";
   }
 
-  console.log(fullDetails);
-  console.log(Object.size(fullDetails));
-  console.log(Object.size(players));
-  console.log(playerIDs.length);
-  console.log(sortedScores.length);
-  console.log('ready!')
+  // console.log(fullDetails);
+  // console.log(Object.size(fullDetails));
+  // console.log(Object.size(players));
+  // console.log(playerIDs.length);
+  // console.log(sortedScores.length);
+  // console.log('ready!')
 
   let explainButton = document.getElementById('explain-button');
-  console.log('explain', explainButton)
+  // console.log('explain', explainButton)
   explainButton.addEventListener('click', displayModal);
 
   let close = document.getElementById('close-modal');

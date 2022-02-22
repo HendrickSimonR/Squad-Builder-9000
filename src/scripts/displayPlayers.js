@@ -4,7 +4,7 @@ function displayPlayers(team) {
 
   let teamInfo = Object.values(team);
 
-  console.log('teaminfo', teamInfo);
+  // console.log('teaminfo', teamInfo);
 
   for (let i = 0; i < teamInfo.length; i++) {
     let person = teamInfo[i];
@@ -21,7 +21,7 @@ function displayPlayers(team) {
     playerInfo.appendChild(playerName);
 
     renderStats(person.stats, playerInfo, person.avg);
-    console.log('person', person)
+    // console.log('person', person)
   }
 }
 
@@ -54,7 +54,7 @@ function clearStats() {
 
   if (stats.length !== undefined) {
     for (let i = stats.length - 1; i >= 0; i--) {
-      console.log('stattttt', stats[i])
+      // console.log('stattttt', stats[i])
       stats[i].remove();
     }
   }
