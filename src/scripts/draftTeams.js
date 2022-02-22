@@ -263,7 +263,7 @@ function draftLog(drafted) {
 
   container.style.display = 'block';
   playerDetails.style.display = 'block';
-  console.log('draftkids', draftLog.children)
+  // console.log('draftkids', draftLog.children)
 }
 
 function clearDraftLog() {
