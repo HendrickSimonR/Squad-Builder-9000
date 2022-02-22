@@ -220,6 +220,7 @@ function draftLog(drafted) {
   let playerDetails = document.getElementById('player-details');
 
   for (let i = 0; i < drafted.length; i++) {
+    let container = document.createElement('div');
     let item = document.createElement('li');
     let avg = document.createElement('li');
     let gap = document.createElement('br');
@@ -239,9 +240,10 @@ function draftLog(drafted) {
       teamLi.setAttribute('id', 'user-team');
       avg.setAttribute('id', 'user-team');
 
-      draftLog.appendChild(teamLi);
-      draftLog.appendChild(item);
-      draftLog.appendChild(avg);
+      container.appendChild(teamLi);
+      container.appendChild(item);
+      container.appendChild(avg);
+      draftLog.appendChild(container);
       draftLog.appendChild(gap);
     } else {
       item.innerHTML = details;
@@ -249,9 +251,10 @@ function draftLog(drafted) {
       teamLi.setAttribute('id', 'other-team');
       avg.setAttribute('id', 'other-team');
 
-      draftLog.appendChild(teamLi);
-      draftLog.appendChild(item);
-      draftLog.appendChild(avg);
+      container.appendChild(teamLi);
+      container.appendChild(item);
+      container.appendChild(avg);
+      draftLog.appendChild(container);
       draftLog.appendChild(gap);
     }
   }

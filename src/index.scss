@@ -261,7 +261,15 @@ body {
 }
 
 .player-info li {
-  border: 0.1px solid rgb(59, 59, 59);
+  border: 0.1px solid rgba(83, 83, 83, 0.445);
+}
+
+#draft-log-results {
+  div {
+    border: solid 1px $red;
+    padding: 10px 0px 10px 0px;
+    border-radius: 6px;
+  }
 }
 
 #user-team {
