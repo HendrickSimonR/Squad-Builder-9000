@@ -24,7 +24,9 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
     let participants = e.target[1].value;
     let order = e.target[2].value;
 
-    if (order > participants) {
+    if (parseInt(order) > parseInt(participants)) {
+      console.log('order', typeof order, order);
+      console.log('participants', typeof participants, participants);
       let error = document.getElementById('form-error');
       error.style.display = 'block';
       return;
