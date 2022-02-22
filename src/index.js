@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         playerObj = await fetchPlayerStats(playerID);
       }
       
-      // console.log('playerObj', playerObj);
+      // console.log('playerObj', playerObj)
 
       if (!playerObj) {
         // alert('Please refresh the page! :)');
