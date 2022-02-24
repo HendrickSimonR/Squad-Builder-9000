@@ -8,7 +8,7 @@ function renderTeam(team) {
   }
 
   let explainButton = document.getElementById('explain-button');
-  explainButton.style.visibility = 'visible';
+    explainButton.style.visibility = 'visible';
 
   let container = document.createElement('div');
     container.setAttribute('id', 'squad-container');
@@ -18,17 +18,17 @@ function renderTeam(team) {
     
   for (let i = 0; i < 2; i++) {
     let squad = document.createElement('div');
-    squad.setAttribute('id', `squad-${i + 1}`);
-    squad.setAttribute('class', 'squad-row');
-    container.appendChild(squad);
+      squad.setAttribute('id', `squad-${i + 1}`);
+      squad.setAttribute('class', 'squad-row');
+      container.appendChild(squad);
   }
 
   if (team === undefined) {
     header.innerHTML = 'TRY AGAIN!';
   } else {
-    header.innerHTML = 'YOUR SQUAD';
     let instructions = document.getElementById('instructions');
     instructions.setAttribute('class', 'results');
+    header.innerHTML = 'YOUR SQUAD';
   }
 
   let fullTeam = Object.values(team);
@@ -47,6 +47,7 @@ function renderTeam(team) {
 
   let total = document.createElement('h1');
   let totalAvg = teamAvg;
+
   total.innerHTML = `FANTASY TEAM AVG: ${totalAvg.toFixed(4)}`
   container.appendChild(total);
 }
@@ -57,9 +58,9 @@ function nameTransformer(name) {
   let newName = document.createElement('h2');
   let capped = name.toUpperCase();
   newName.innerHTML = capped;
+
   return newName;
 }
-
 
 
 function statline(stats) {
@@ -103,8 +104,9 @@ function addDetails(row, person) {
     } else {
       if (info === 'image') {
         let playerImg = document.createElement('img');
-        playerImg.src = person[info];
-        playerImg.setAttribute('id', 'player-image');
+          playerImg.src = person[info];
+          playerImg.setAttribute('id', 'player-image');
+        
         player.appendChild(playerImg);
       } else if (info === 'name') {
         let newName = nameTransformer(person[info]);
