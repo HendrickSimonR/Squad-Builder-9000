@@ -69,8 +69,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   let sortedIDs = sortIDs(sortedScores, playerIDs, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
-
-  
   Object.size = function (obj) {
     var size = 0,
     key;
