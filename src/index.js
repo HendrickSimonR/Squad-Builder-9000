@@ -1,4 +1,3 @@
-import Example from "./scripts/example";
 import fetchPlayerStats from "./scripts/fetchPlayerStats";
 import players from "./scripts/players";
 import returnInput from "./scripts/userInput";
