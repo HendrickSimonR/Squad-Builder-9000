@@ -2,12 +2,9 @@ import fetchPlayerStats from "./scripts/fetchPlayerStats";
 import players from "./scripts/players";
 import returnInput from "./scripts/userInput";
 import playerIDs from "./scripts/playerIDs";
-import findPlayer from "./scripts/findPlayer";
-import draftTeams from "./scripts/draftTeams";
 import sortIDs from "./scripts/sortIDs";
 import playerVitals from "./scripts/playerVitals";
 import { displayModal, closeModal } from "./scripts/modal";
-
  
 document.addEventListener("DOMContentLoaded", async () => {
   let fullDetails = {};
@@ -25,11 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         playerObj = await fetchPlayerStats(playerID);
       }
       
-      // console.log('playerObj', playerObj)
-
       if (!playerObj) {
-        // alert('Please refresh the page! :)');
-        // document.getElementById("draft-button").value = ":(";
         continue;
       }  
 
@@ -40,7 +33,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       let playerImg;
 
       if (players[playerID]) {
-        // console.log('player', players[playerID]);
         playerName = players[playerID].name;
         playerPos = players[playerID].pos;
         playerTeam = players[playerID].team;
@@ -100,23 +92,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("draft-button").value = ":O";
   }
 
-  // console.log(fullDetails);
-  // console.log(Object.size(fullDetails));
-  // console.log(Object.size(players));
-  // console.log(playerIDs.length);
-  // console.log(sortedScores.length);
-  // console.log('ready!')
-
   let explainButton = document.getElementById('explain-button');
-  // console.log('explain', explainButton)
-  explainButton.addEventListener('click', displayModal);
+    explainButton.addEventListener('click', displayModal);
 
   let close = document.getElementById('close-modal');
-  close.addEventListener('click', closeModal);
+    close.addEventListener('click', closeModal);
 
   
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   userInput;
-  // console.log(draftTeams(fullDetails, {favorite: "Lebron James", participants: 10, order: 6}, sortedScores, playerInfo));
 });
 
