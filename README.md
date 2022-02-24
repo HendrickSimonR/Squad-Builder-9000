@@ -1,7 +1,7 @@
-# The Squad-Builder-9000
-
-### Live Link
-### https://hendricksimonr.github.io/Squad-Builder-9000/
+![alt text](https://github.com/HendrickSimonR/Squad-Builder-9000/blob/main/dist/squadTest.png?raw=true)
+<h1 align="center">
+    https://hendricksimonr.github.io/Squad-Builder-9000/
+</h1>
 
 # Background 
 
