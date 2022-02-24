@@ -86,21 +86,3 @@ const players = {
 };
 
 export default players;
-
-// let best_players = [
-//   237, 115, 140, 15, 278, 367, 132, 192,
-//   57, 172, 378, 246, 666786, 472, 214, 490,
-//   145, 434, 79, 322, 401, 303, 227, 70,
-//   37, 4, 176, 447, 22, 220, 17, 268,
-//   185, 460, 286, 125, 375, 306, 61, 112,
-//   315
-// ];
-
-// let player_names = [
-//   'Lebron James', 'Steph Curry', 'Kevin Durant', 'Giannis Antentokounmpo', 'Damian Lillard', 'Chris Paul', 'Luka Doncic', 'James Harden',
-//   'Devin Booker', 'Paul George', 'Kristaps Porzingis', 'Nikola Jokic', 'Ja Morant', 'Russell Westbrook', 'Jrue Holiday', 'Trae Young',
-//   'Joel Embiid', 'Jayson Tatum', 'Jimmy Butler', 'Donovan Mitchell', 'Derrick Rose', 'CJ McCollum', 'Brandon Ingram', 'Jaylen Brown',
-//   'Bradley Beal', 'Bam Adebayo', 'Rudy Gobert', 'Karl-Anthony Towns', 'Deandre Ayton', 'Dwight Howard', 'Carmelo Anthony', 'Zach Lavine',
-//   'Draymond Green', 'Nikola Vucevic', 'Kyle Lowry', 'DeMar DeRozan', 'Michael Porter Jr.', 'JaVale McGee', 'Mikal Bridges', 'Jae Crowder',
-//   'Khris Middleton'
-// ];
