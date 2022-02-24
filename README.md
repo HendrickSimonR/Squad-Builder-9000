@@ -3,6 +3,8 @@
     https://hendricksimonr.github.io/Squad-Builder-9000/
 </h1>
 
+![alt text](https://github.com/HendrickSimonR/Squad-Builder-9000/blob/main/dist/screenshot.png?raw=true)
+
 # Background 
 
 The Squad Builder 9000 is an app that implements an algorithm that creates the optimal starting lineup for a user's NBA Fantasy Draft. The application will realistically choose the best possible NBA players for their lineup, based on specific parameters:
