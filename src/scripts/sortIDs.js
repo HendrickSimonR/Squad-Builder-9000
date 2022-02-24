@@ -1,5 +1,5 @@
 function sortIDs(sortedScores, playerIDs, fullDetails) {
-  let highestFirst = [];
+  let rankings = [];
 
   for (let i = 0; i < sortedScores.length; i++) {
     let score = sortedScores[i];
@@ -9,13 +9,13 @@ function sortIDs(sortedScores, playerIDs, fullDetails) {
 
       if (player) {
         if (player.avg === score) {
-          highestFirst.push(playerIDs[j]);
+          rankings.push(playerIDs[j]);
         }
       }
     }
   }
 
-  return highestFirst;
+  return rankings;
 }
 
 export default sortIDs;
