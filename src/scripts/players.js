@@ -1,6 +1,11 @@
-// image: "", name: "", pos: "", team: "" 
-
 const players = {
+  15: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203507.png", name: "Giannis Antentokounmpo", pos: "PF", team: "Milwaukee Bucks" },
+  246: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png", name: "Nikola Jokic", pos: "C", team: "Denver Nuggets"},
+  237: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png", name: "Lebron James", pos: "SF", team: "Los Angeles Lakers" },
+  140: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png", name: "Kevin Durant", pos: "SF", team: "Brooklyn Nets" },
+  79: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202710.png", name: "Jimmy Butler", pos: "SF", team: "Miami Heat" },
+  18: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628384.png", name: "OG Anunoby", pos: "SF", team: "Toronto Raptors" },
+  666786: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629630.png", name: "Ja Morant", pos: "SG", team: "Memphis Grizzlies" },
   265: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628398.png", name: "Kyle Kuzma", pos: "SF", team: "Washington Wizards" }, 
   9: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628386.png", name: "Jarrett Allen", pos: "C", team: "Cleveland Cavaliers" }, 
   476: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629057.png", name: "Robert Williams III", pos: "PF", team: "Boston Celtics" }, 
@@ -18,8 +23,6 @@ const players = {
   334: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1627749.png", name: "Dejounte Murray", pos: "PG", team: "Washington Wizards" },
   // 666633: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629639.png", name: "Tyler Herro", pos: "PG", team: "Miami Heat" },
   62: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628969.png", name: "Miles Bridges", pos: "SF", team: "Charlotte Hornets" },
-  15: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203507.png", name: "Giannis Antentokounmpo", pos: "PF", team: "Milwaukee Bucks" },
-  246: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png", name: "Nikola Jokic", pos: "C", team: "Denver Nuggets"},
   // 378: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/204001.png", name: "Kristaps Porzingis", pos: "C", team: "Dallas Mavericks" },
   145: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203954.png", name: "Joel Embiid", pos: "C", team: "Philadelphia 76ers" },
   176: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203497.png", name: "Rudy Gobert", pos: "C", team: "Utah Jazz" },
@@ -49,7 +52,6 @@ const players = {
   57: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1626164.png", name: "Devin Booker", pos: "SG", team: "Phoenix Suns" },
   268: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203897.png", name: "Zach Lavine", pos: "SG", team: "Chicago Bulls" },
   37: {  image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203078.png", name: "Bradley Beal", pos: "SG", team: "Washington Wizards" },
-  666786: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629630.png", name: "Ja Morant", pos: "SG", team: "Memphis Grizzlies" },
   57: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1626164.png", name: "Devin Booker", pos: "SG", team: "Phoenix Suns" },
   397: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629130.png", name: "Duncan Robinson", pos: "SG", team: "Miami Heat"},
   191: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203501.png", name: "Tim Hardaway Jr.", pos: "SG", team: "Dallas Mavericks" },
@@ -72,10 +74,6 @@ const players = {
   // { 17: { name: "Carmelo Anthony", pos: "PF", team: "Los Angeles Lakers" } },
   315: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203114.png", name: "Khris Middleton", pos: "SF", team: "Milwaukee Bucks" },
   125: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201942.png", name: "DeMar DeRozan", pos: "SF", team: "Chicago Bulls" },
-  237: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png", name: "Lebron James", pos: "SF", team: "Los Angeles Lakers" },
-  140: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png", name: "Kevin Durant", pos: "SF", team: "Brooklyn Nets" },
-  79: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202710.png", name: "Jimmy Butler", pos: "SF", team: "Miami Heat" },
-  18: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628384.png", name: "OG Anunoby", pos: "SF", team: "Toronto Raptors" },
   // 172: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202331.png", name: "Paul George", pos: "SF", team: "Los Angeles Clippers" },
   // 219: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201143.png", name: "Al Horford", pos: "SF", team: "Boston Celtics" },
   // 204: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202330.png", name: "Gordon Hayward", pos: "SF", team: "Charlotte Hornets"},
@@ -86,3 +84,5 @@ const players = {
 };
 
 export default players;
+
+// image: "", name: "", pos: "", team: "" 
