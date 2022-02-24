@@ -1,27 +1,28 @@
-# Squad-Builder-9000
-
-https://hendricksimonr.github.io/Squad-Builder-9000/
+![alt text](https://github.com/HendrickSimonR/Squad-Builder-9000/blob/main/dist/squadTest.png?raw=true)
+<h1 align="center">
+    https://hendricksimonr.github.io/Squad-Builder-9000/
+</h1>
 
 # Background 
 
-Build A Squad is an algorithm that creates the starting lineup for a user's NBA fantasy draft. The application will realistically choose the best possible NBA players for their lineup, based on specific parameters:
+The Squad Builder 9000 is an app that implements an algorithm that creates the optimal starting lineup for a user's NBA Fantasy Draft. The application will realistically choose the best possible NBA players for their lineup, based on specific parameters:
 
 1) How many will be participating in this draft? 
 
 2) Which order are you in the draft? (if you're not sure what the order will be, you can test out different scenarios). 
 
-3) Who are the current NBA players, and what are their current stats? 
+3) Who are the current NBA players, and what are their current stats for the season? 
 
-With these parameters established, the application will choose who the best player is on their turn, based on the their average stats converted to fantasy points.  
+With these parameters established, the algorithm will draft who the best player is during a team's turn (the best being the player with the highest average stats converted to fantasy points).  
 
 
 # Functionality & MVPs
 
 User's will be able to: 
 
-- Input a favorite player that the application will attempt to retrieve, if the player is available on their turn.
+- Input a favorite player that the algorithm will draft immediately, if the player is available on their turn.
 
-- Choose how many participants are part of the draft, which will simulate the optimal Basketball players the user and the other participants will choose on their turn. These players are ranked by the average Fantasy points the player can expect to accumulate per game.
+- Choose how many participants are part of the draft, which will simulate the optimal Basketball players the user and the other participants will choose on their turn. 
 
 - Receive an optimal lineup of players for them to draft in the future, based on the NBA player's current stats at the time the draft is generated.
 
@@ -31,23 +32,22 @@ User's will be able to:
 
 In addition, this project will include:
 
-- An About modal describing the background and parameters of the application
+- A help modal describing the parameters of the application, and an explanation for how the draft concept is implemented.
 
 - A production README
-
 
 
 # Wireframes 
 
 ![BUILD A SQUAD 9000](https://user-images.githubusercontent.com/81173099/139365871-ea6715fa-e359-4b98-bf63-f407bddca8b4.png)
 
-- Nav links include links to the project's Github repo, LinkedIn, and the About modal
+- Nav links include links to the project's Github repo, LinkedIn, Angel List, personal website, and email.
 
-- Parameters will take user input, which will determine how many participants will be generated. 
+- The Parameters toolbar will take user input, which will determine how the hypothetical draft is executed. 
 
 - The center of the page will display the chosen players for the user's team, along with their name and average fantasy score.
 
-- The left will display a list of how the players were chosen (when and by which participant).
+- The left will display a list of how the players were chosen (which team and at what point in the draft).
 
 - The right will display the average stats of the user's chosen players, as well as the total average fantasy points the team expects to receive per week. 
 
@@ -55,13 +55,13 @@ In addition, this project will include:
 # Technologies, Libraries, APIs
 
 This project will be implemented with the following technologies: 
-- DataFire for the stats of NBA players 
-- Canvas API to display the players and their respective information 
+- BallDontLie.io - API for current NBA players' stats
 
 # Implementation Timeline
 
 Friday afternoon & weekend
-- Research how to utilize the DataFire API, how to extract the data, how to manipulate the values to generate the average fantasy score for each player. Setup project. 
+- Research how to utilize the chosen API, how to extract the data, and how to manipulate the values to generate the average fantasy score for each player. 
+- Setup project. 
 
 Monday
 - Setup webpacks. Retrieve data and develop functions to find average values for each player. 
@@ -70,7 +70,7 @@ Tuesday
 - Create classes and functions for other possible participants.
 
 Wednesday
-- Develop appearance.
+- Develop styling.
 
 Thursday
 - Finalize pushes to Github.
