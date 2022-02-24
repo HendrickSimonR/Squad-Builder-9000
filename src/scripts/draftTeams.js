@@ -5,16 +5,14 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   error.style.display = 'none';
   
   let teams = [];
+  let drafted = [];
   let favorite = userInput.favorite;
   let amount = userInput.amount;
   let userPlacement = userInput.placement - 1;
   let favoriteFound = false;
   let count = 0;
-  let drafted = [];
 
-  while (teams.length < amount) { 
-    teams.push({}); 
-  }; 
+  while (teams.length < amount) teams.push({});  
 
   while (count < amount * 5) {
     for (let i = 0; i < teams.length; i++) {
@@ -41,7 +39,6 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             
               drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
             }
-            
           } else {
             favoriteFound = true;
             let pos = fullDetails[favePlayer]["pos"];
@@ -53,7 +50,6 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
 
             drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
           }
-
         } else {
           let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
           
