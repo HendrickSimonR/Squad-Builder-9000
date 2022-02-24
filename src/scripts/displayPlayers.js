@@ -4,8 +4,6 @@ function displayPlayers(team) {
 
   let teamInfo = Object.values(team);
 
-  // console.log('teaminfo', teamInfo);
-
   for (let i = 0; i < teamInfo.length; i++) {
     let person = teamInfo[i];
 
@@ -21,7 +19,6 @@ function displayPlayers(team) {
     playerInfo.appendChild(playerName);
 
     renderStats(person.stats, playerInfo, person.avg);
-    // console.log('person', person)
   }
 }
 
@@ -29,7 +26,6 @@ function renderStats(stats, playerInfo, avg) {
   let pts = `Points Per Game: ${stats.pts}`
   let ast = `Assists Per Game: ${stats.ast}`
   let blk = `Blocks Per Game: ${stats.blk}`
-  // let ftm = `Free Throws Made: ${stats.ftm}`
   let stl = `Steals Per Game: ${stats.stl}`
   let reb = `Rebounds Per Game: ${stats.reb}`
   let games = `Games Played: ${stats.games}`
@@ -54,34 +50,9 @@ function clearStats() {
 
   if (stats.length !== undefined) {
     for (let i = stats.length - 1; i >= 0; i--) {
-      // console.log('stattttt', stats[i])
       stats[i].remove();
     }
   }
 }
-  // for (let player in team) {
-  //   let info = [];
-
-  //   for (let details in player) {
-  //     if (typeof player[details] === 'object') {
-  //       let stats = player[details];
-
-  //       for (let stat in stats) {
-  //         if (stat === 'pts') {
-  //           info.push(`PTS: ${stats[stat]}`);
-  //         } else if (stat === 'ast') {
-  //           info.push(`AST: ${stats[stat]}`);
-  //         } else if (stat === "reb") {
-  //           info.push(`REB: ${stats[stat]}`);
-  //         }
-  //       }
-  //     } 
-  //   }
-
-  //   // players.push(info);
-  // }
-
-  // return players;
-
 
 export default displayPlayers;
