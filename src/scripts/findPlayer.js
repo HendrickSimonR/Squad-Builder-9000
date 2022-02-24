@@ -15,11 +15,5 @@ function findPlayer(playerName, fullDetails, playerIDs) {
     }
   }
 }
-  // console.log(fullDetails[0][15]);
-  // console.log(fullDetails[0][15].name)
-  // console.log(fullDetails);
-  // console.log(playerName);
-  // console.log(playerIDs);
-
 
 export default findPlayer;
