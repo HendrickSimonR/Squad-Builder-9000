@@ -25,15 +25,12 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       if (i === userPlacement) {
         if (favoriteFound === false) {
           let favePlayer = draftFavorite(team, favorite, fullDetails, playerInfo);
+          favoriteFound = true;
 
           if (!favePlayer) {
-            favoriteFound = true;
-
             playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
             
-            if (!playerID) {
-              null
-            } else {
+            if (playerID) {
               pos = fullDetails[playerID]["pos"];
               team[pos] = fullDetails[playerID];
 
@@ -41,7 +38,6 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
               drafted.push(`${details}, user`);           
             }
           } else {
-            favoriteFound = true;
             pos = fullDetails[favePlayer]["pos"];
             team[pos] = fullDetails[favePlayer];
 
@@ -51,9 +47,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         } else {
           playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
           
-          if (!playerID) {
-            null
-          } else {            
+          if (playerID) {           
             pos = fullDetails[playerID]["pos"];
             team[pos] = fullDetails[playerID];
             
@@ -64,9 +58,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       } else {
         playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
         
-        if (!playerID) {
-          null
-        } else {
+        if (playerID) {
           pos = fullDetails[playerID]["pos"];
           team[pos] = fullDetails[playerID];
 
@@ -82,9 +74,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       team = teams[i];
       playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
 
-      if (!playerID) {
-        null
-      } else {
+      if (playerID) {
         pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];
         details = extractInfo(i, team[pos], pos);
