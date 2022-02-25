@@ -202,7 +202,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       stats: { 
         pts: stats.pts, 
         ast: stats.ast, 
-        ftm: stats.ftm, 
         reb: stats.reb, 
         stl: stats.stl, 
         blk: stats.blk, 
