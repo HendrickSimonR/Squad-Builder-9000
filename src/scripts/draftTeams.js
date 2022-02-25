@@ -4,6 +4,10 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
+  let pos;
+  let team;
+  let details;
+  let playerID;
   let teams = [];
   let drafted = [];
   let favorite = userInput.favorite;
@@ -16,7 +20,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
 
   while (count < amount * 5) {
     for (let i = 0; i < teams.length; i++) {
-      let team = teams[i];
+      team = teams[i];
 
       if (i === userPlacement) {
         if (favoriteFound === false) {
@@ -25,61 +29,49 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           if (!favePlayer) {
             favoriteFound = true;
 
-            let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
+            playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
             
             if (!playerID) {
               null
             } else {
-              let pos = fullDetails[playerID]["pos"];
+              pos = fullDetails[playerID]["pos"];
               team[pos] = fullDetails[playerID];
 
-              let playerName = team[pos].name;
-              let playerTeam = team[pos].team;
-              let playerAvg = team[pos].avg.toFixed(4);
-            
-              drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
+              details = extractInfo(i, team[pos], pos);
+              drafted.push(`${details}, user`);           
             }
           } else {
             favoriteFound = true;
-            let pos = fullDetails[favePlayer]["pos"];
+            pos = fullDetails[favePlayer]["pos"];
             team[pos] = fullDetails[favePlayer];
 
-            let playerName = team[pos].name;
-            let playerTeam = team[pos].team;
-            let playerAvg = team[pos].avg.toFixed(4);
-
-            drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);           
+            details = extractInfo(i, team[pos], pos);
+            drafted.push(`${details}, user`);               
           }
         } else {
-          let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
+          playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
           
           if (!playerID) {
             null
           } else {            
-            let pos = fullDetails[playerID]["pos"];
+            pos = fullDetails[playerID]["pos"];
             team[pos] = fullDetails[playerID];
             
-            let playerName = team[pos].name;
-            let playerTeam = team[pos].team;
-            let playerAvg = team[pos].avg.toFixed(4);      
-               
-            drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);                            
+            details = extractInfo(i, team[pos], pos);
+            drafted.push(`${details}, user`);                             
           }
         }
       } else {
-        let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
+        playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
         
         if (!playerID) {
           null
         } else {
-          let pos = fullDetails[playerID]["pos"];
+          pos = fullDetails[playerID]["pos"];
           team[pos] = fullDetails[playerID];
 
-          let playerName = team[pos].name;
-          let playerTeam = team[pos].team;
-          let playerAvg = team[pos].avg.toFixed(4);   
-
-          drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`);                     
+          details = extractInfo(i, team[pos], pos);
+          drafted.push(`${details}`);                      
         }
       }
     }
@@ -87,23 +79,20 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
     count++;
 
     for (let i = teams.length - 1; i >= 0; i--) {
-      let team = teams[i];
-      let playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
+      team = teams[i];
+      playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
 
       if (!playerID) {
         null
       } else {
-        let pos = fullDetails[playerID]["pos"];
+        pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];
-
-        let playerName = team[pos].name;
-        let playerTeam = team[pos].team;
-        let playerAvg = team[pos].avg.toFixed(4);   
+        details = extractInfo(i, team[pos], pos);
 
         if (i === userPlacement) {
-          drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}, user`);                                    
+          drafted.push(`${details}, user`);                                     
         } else {
-          drafted.push(`${i + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`);                     
+          drafted.push(`${details}`);                     
         }
       }
     }
@@ -170,6 +159,13 @@ function resetPlayers(playerInfo, fullDetails) {
   return;
 }
 
+function extractInfo(placement, player, pos) {
+  let playerName = player.name;
+  let playerTeam = player.team;
+  let playerAvg = player.avg.toFixed(4);
+
+  return `${placement + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`
+}
 
 function draftLog(drafted) {
   let draftLog = document.getElementById('draft-log-results');

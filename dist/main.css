@@ -1,7 +1,6 @@
-#main > h1 {
-  background: red;
-}
-
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 html {
   background: url("../dist/squadBackground.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
