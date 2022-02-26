@@ -133,9 +133,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       team = teams[i];
       playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
 
-      if (!playerID) {
-        null
-      } else {
+      if (playerID) {
         pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];
         details = extractInfo(i, team[pos], pos);
