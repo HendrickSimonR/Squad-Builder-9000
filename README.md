@@ -5,9 +5,8 @@
 
 ![alt text](https://github.com/HendrickSimonR/Squad-Builder-9000/blob/main/dist/screenshot.png?raw=true)
 
-# Background 
 
-The Squad Builder 9000 is an app that implements an algorithm that creates the optimal starting lineup for a user's NBA Fantasy Draft. The application will realistically choose the best possible NBA players for their lineup, based on specific parameters:
+## The Squad Builder 9000 is an app that implements an algorithm that creates the optimal starting lineup for a user's NBA Fantasy Draft. The application will realistically choose the best possible NBA players for their lineup, based on specific parameters:
 
 1) How many will be participating in this draft? 
 
@@ -17,22 +16,24 @@ The Squad Builder 9000 is an app that implements an algorithm that creates the o
 
 With these parameters established, the algorithm will draft who the best player is during a team's turn (the best being the player with the highest average stats converted to fantasy points).  
 
+* This app is optimized for NBA, Head-to-Head, Snake-Ordered Fantasy Draft Leagues
 
-# Functionality & MVPs
 
-User's will be able to: 
+# Features
 
-- Input a favorite player that the algorithm will draft immediately, if the player is available on their turn.
+Users are able to: 
 
-- Choose how many participants are part of the draft, which will simulate the optimal Basketball players the user and the other participants will choose on their turn. 
+1) Input a preferred first pick that the algorithm will draft immediately, if the player is available on their turn.
 
-- Receive an optimal lineup of players for them to draft in the future, based on the NBA player's current stats at the time the draft is generated.
+2) Choose how many participants are part of the draft, which will simulate the best player a user or other participants will choose on their turn. 
 
-- Receive the lineups chosen by the application for the other participants, which can provide them with ideas on how to approach their future draft if these other players become available. 
+3) Receive an optimal lineup of players for them to draft in the future, based on the stats for the current NBA season at the time the draft is generated.
 
-- Receive an average amount of fantasy points they can expect from their chosen team per game, based on their current stats at the time of generation. 
+4) Receive the optimal lineup of the other participants, which can provide them with ideas on how to approach their future draft. 
 
-In addition, this project will include:
+5) Receive an average amount of fantasy points they can expect from their chosen team, based on their current stats at the time of generation. 
+
+In addition, this project includes:
 
 - A help modal describing the parameters of the application, and an explanation for how the draft concept is implemented.
 
@@ -43,20 +44,25 @@ In addition, this project will include:
 
 ![BUILD A SQUAD 9000](https://user-images.githubusercontent.com/81173099/139365871-ea6715fa-e359-4b98-bf63-f407bddca8b4.png)
 
-- Nav links include links to the project's Github repo, LinkedIn, Angel List, personal website, and email.
+- Nav links include links to my Github repo, LinkedIn, Angel List, personal website, and email.
 
-- The Parameters toolbar will take user input, which will determine how the hypothetical draft is executed. 
+- The Parameters toolbar takes a user's input, which will determine how the hypothetical draft is executed. 
 
-- The center of the page will display the chosen players for the user's team, along with their name and average fantasy score.
+- The center of the page displays the chosen players for the user's team, displaying their image, name, team, and average fantasy score.
 
-- The left will display a list of how the players were chosen (which team and at what point in the draft).
+- The left column displays a log of how the players were chosen (which team and at what point in the draft).
 
-- The right will display the average stats of the user's chosen players, as well as the total average fantasy points the team expects to receive per week. 
+- The right column displays the average stats of the user's chosen players for the current NBA season.
 
 
 # Technologies, Libraries, APIs
 
 This project will be implemented with the following technologies: 
+- Vanilla JS
+- SCSS
+- HTML 5
+- GitHub
+- Webpack
 - BallDontLie.io - API for current NBA players' stats
 
 # Code
@@ -127,9 +133,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       team = teams[i];
       playerID = draftPlayer(team, fullDetails, playerInfo, sortedScores);
 
-      if (!playerID) {
-        null
-      } else {
+      if (playerID) {
         pos = fullDetails[playerID]["pos"];
         team[pos] = fullDetails[playerID];
         details = extractInfo(i, team[pos], pos);
@@ -196,7 +200,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       stats: { 
         pts: stats.pts, 
         ast: stats.ast, 
-        ftm: stats.ftm, 
         reb: stats.reb, 
         stl: stats.stl, 
         blk: stats.blk, 
