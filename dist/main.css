@@ -261,6 +261,11 @@ body h2 {
   color: rgba(216, 27, 27, 0.8);
 }
 
+.draft-log-notice {
+  color: rgb(255, 136, 0, .95) !important;
+  font-size: 14px !important;
+}
+
 .player-details {
   height: 810px;
   overflow-x: hidden;
