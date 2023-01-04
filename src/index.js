@@ -1,3 +1,4 @@
+import initiateDraft from "./scripts/initiateDraft";
 import fetchPlayerStats from "./scripts/fetchPlayerStats";
 import connectPlayerInfo from "./scripts/connectPlayerInfo";
 import players2021 from "./scripts/players2021"; // for loop needs this 
@@ -24,25 +25,34 @@ document.addEventListener("DOMContentLoaded", async () => {
   let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
   let seasonSelected = document.getElementById('selectedSeason');
 
-  season21.addEventListener('click', async () => { // initiate draft on season21 button click
-    selectSeason();
-    seasonSelected.innerHTML = '2021 - 2022';
-    /*
-     - run function that fetches players and sorts 
-    */
-    await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021);
-    let sortedScores = scores.sort().reverse();
-    let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
-    let playerInfo = playerVitals(sortedIDs, fullDetails);
-    const userInput = returnInput(fullDetails, sortedScores, playerInfo);
-    userInput;
+  season21.addEventListener('click', () => {
+    initiateDraft(2021, seasonSelected);
   });
+
+  // season21.addEventListener('click', async () => { // initiate draft on season21 button click
+  //   selectSeason(); // above async function should run a single callback that initiates the rest, with input being season
+  //   seasonSelected.innerHTML = '2021 - 2022';
+  //   /*
+  //    - run function that fetches players and sorts 
+  //   */
+  //   await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021);
+  //   let sortedScores = scores.sort().reverse();
+  //   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
+  //   let playerInfo = playerVitals(sortedIDs, fullDetails);
+  //   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
+  //   userInput;
+  //   console.log('index', sortedScores, sortedIDs, playerInfo, userInput)    
+  // });
 
   season22.addEventListener('click', () => {
     selectSeason();
     seasonSelected.innerHTML = '2022 - 2023';
   });
   console.log(fullDetails, scores, nameAndID);
+
+
+  // season21.addEventListener('click', async initiateDraft(2021)); // initiate draft on season21 button click
+
   // function should also initiate spinner graphic, counter, and select different season (other functions)
 
   // for (let i = 0; i < playerIDs2021.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
