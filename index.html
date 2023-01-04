@@ -48,6 +48,9 @@
 
     <div>
       <form id="form">
+        <p id="select-season-prompt">
+          Please select NBA season for Draft
+        </p>
         <div class="form-questions">
           <label for="favPlayer">First Pick: </label>
           <input type="text" id="favPlayer" name="favPlayer" value="">
@@ -64,7 +67,7 @@
             <option name="AMOUNT" value="9">9</option>
             <option name="AMOUNT" value="10">10</option>
           </select>
-        
+
           <label for="order">Your Position in the Draft: </label>
           <select name="order" id="order">
             <option data-show-if="AMOUNT >= 1" value="1">1</option>

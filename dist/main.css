@@ -126,6 +126,11 @@ html {
   height: 4.1vh;
 }
 
+#select-season-prompt {
+  position: relative;
+  bottom: 10px;
+}
+
 #form label {
   line-height: 25px;
 }
