@@ -123,9 +123,15 @@ html {
   padding: 12px;
   text-shadow: 1.5px 1px #000000;
   width: 100%;
+  height: 4.1vh;
 }
+
 #form label {
   line-height: 25px;
+}
+
+.form-questions {
+  display:none;
 }
 
 body {
@@ -164,6 +170,10 @@ body h2 {
 }
 #instructions li, #draft-log li, #player-details li {
   padding: 5px;
+}
+
+.instructions {
+  display: none;
 }
 
 .draft-log {

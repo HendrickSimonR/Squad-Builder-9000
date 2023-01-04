@@ -121,8 +121,7 @@ html {
 }
 
 #form {
-  visibility: hidden;
-  display: flex;
+  display: flex; // none => flex
   justify-content: center;
   gap: 10px;
   background-color: $red;
