@@ -1,10 +1,7 @@
-const selectSeason = season => {
-  let seasonArr = season.split(' - ');
+const selectSeason = () => {
+  e.preventDefault();
   let seasonSelected = document.getElementById('select-season');
-
-  seasonSelected.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    
-  });
+  console.log(e);
 }
+
+export default selectSeason;

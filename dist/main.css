@@ -128,7 +128,29 @@ html {
 
 #select-season-prompt {
   position: relative;
-  top: 5px;
+  bottom: 10px;
+}
+
+#season {
+  position: relative;
+  bottom: 16px;
+}
+
+h3>span {
+  background-color: rgba(14, 14, 14, 0.9);
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  border-radius: 6px;
+}
+
+h3 > span:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  text-shadow: none;
 }
 
 #form label {

@@ -5,7 +5,8 @@ import playerIDs2021 from "./scripts/playerIDs2021";
 import sortIDs from "./scripts/sortIDs";
 import playerVitals from "./scripts/playerVitals";
 import { displayModal, closeModal } from "./scripts/modal";
- 
+import selectSeason from "./scripts/selectSeason.js"; 
+
 document.addEventListener("DOMContentLoaded", async () => {
   let fullDetails = {}, scores = [], nameAndID = [];
 
@@ -86,6 +87,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   close.addEventListener('click', closeModal);
   
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
+  let seasonSelect = document.getElementById('select-season');
+  seasonSelect.addEventListener('submit', selectSeason)
+
+  season;
   userInput;
 });
 
