@@ -121,6 +121,7 @@ html {
 }
 
 #form {
+  visibility: hidden;
   display: flex;
   justify-content: center;
   gap: 10px;
