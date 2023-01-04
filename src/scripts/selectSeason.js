@@ -1,7 +1,6 @@
-const selectSeason = () => {
-  e.preventDefault();
-  let seasonSelected = document.getElementById('select-season');
-  console.log(e);
+function selectSeason() {
+  let button = document.getElementById('select-season-prompt');
+  button.style.display = 'none';
 }
 
 export default selectSeason;
