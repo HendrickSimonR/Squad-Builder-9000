@@ -66,11 +66,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
   Object.size = function (obj) {
-    var size = 0,
-    key;
-    for (key in obj) {
-      if (obj.hasOwnProperty(key)) size++;
-    }
+    var size = 0, key;
+    for (key in obj) if (obj.hasOwnProperty(key)) size++;
     return size;
   };
   
@@ -83,10 +80,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let explainButton = document.getElementById('explain-button');
-    explainButton.addEventListener('click', displayModal);
+  explainButton.addEventListener('click', displayModal);
 
   let close = document.getElementById('close-modal');
-    close.addEventListener('click', closeModal);
+  close.addEventListener('click', closeModal);
   
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   userInput;
