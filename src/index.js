@@ -10,26 +10,33 @@ import { displayModal, closeModal } from "./scripts/modal";
 import selectSeason from "./scripts/selectSeason"; 
 
 document.addEventListener("DOMContentLoaded", async () => { 
-  let fullDetails = {}, scores = [], nameAndID = []; // create separate function that includes this line until line 89
 
-    document.getElementById("draft-button").disabled = false;
-    document.getElementById("draft-button").value = "Draft!";
+  document.getElementById("draft-button").disabled = false;
+  document.getElementById("draft-button").value = "Draft!";
 
-    let explainButton = document.getElementById('explain-button');
-  explainButton.addEventListener('click', displayModal);
-
+  let explainButton = document.getElementById('explain-button');
   let close = document.getElementById('close-modal');
+  
+  explainButton.addEventListener('click', displayModal);
   close.addEventListener('click', closeModal);
 
 
   let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
   let seasonSelected = document.getElementById('selectedSeason');
 
-  season21.addEventListener('click', () => {
-    initiateDraft(2021, seasonSelected);
-  });
+  season21.addEventListener('click', () => initiateDraft(2021, seasonSelected));
 
-  // season21.addEventListener('click', async () => { // initiate draft on season21 button click
+  
+
+  season22.addEventListener('click', () => initiateDraft(2022, seasonSelected));
+
+
+});
+
+// JUNKYARD LOL
+
+  // let fullDetails = {}, scores = [], nameAndID = []; // create separate function that includes this line until line 89
+// season21.addEventListener('click', async () => { // initiate draft on season21 button click
   //   selectSeason(); // above async function should run a single callback that initiates the rest, with input being season
   //   seasonSelected.innerHTML = '2021 - 2022';
   //   /*
@@ -44,11 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   //   console.log('index', sortedScores, sortedIDs, playerInfo, userInput)    
   // });
 
-  season22.addEventListener('click', () => {
-    selectSeason();
-    seasonSelected.innerHTML = '2022 - 2023';
-  });
-  console.log(fullDetails, scores, nameAndID);
+    // console.log(fullDetails, scores, nameAndID);
 
 
   // season21.addEventListener('click', async initiateDraft(2021)); // initiate draft on season21 button click
@@ -135,5 +138,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   // userInput;
-});
-
