@@ -1,4 +1,4 @@
-const players = {
+const players2021 = {
   15: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203507.png", name: "Giannis Antentokounmpo", pos: "PF", team: "Milwaukee Bucks" },
   246: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png", name: "Nikola Jokic", pos: "C", team: "Denver Nuggets"},
   237: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png", name: "Lebron James", pos: "SF", team: "Los Angeles Lakers" },
@@ -83,6 +83,6 @@ const players = {
   // 89: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1627936.png", name: "Alex Caruso", pos: "PG", team: "Chicago Bulls" }
 };
 
-export default players;
+export default players2021;
 
 // image: "", name: "", pos: "", team: "" 

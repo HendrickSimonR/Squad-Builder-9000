@@ -1,7 +1,7 @@
 import fetchPlayerStats from "./scripts/fetchPlayerStats";
-import players from "./scripts/players";
+import players2021 from "./scripts/players2021";
 import returnInput from "./scripts/userInput";
-import playerIDs from "./scripts/playerIDs";
+import playerIDs2021 from "./scripts/playerIDs2021";
 import sortIDs from "./scripts/sortIDs";
 import playerVitals from "./scripts/playerVitals";
 import { displayModal, closeModal } from "./scripts/modal";
@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   let scores = [];
   let nameAndID = [];
 
-  for (let i = 0; i < playerIDs.length; i++) {      
-    let playerID = playerIDs[i];
+  for (let i = 0; i < playerIDs2021.length; i++) {      
+    let playerID = playerIDs2021[i];
     let playerObj;
     if (i % 1 === 0) {
       setTimeout(() => {}, 1000000000000);
@@ -22,17 +22,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     
     if (!playerObj) continue;  
-
+ 
     let stats = playerObj.data[0];
     let playerName;
     let playerPos;
     let playerTeam;
     let playerImg;
-    if (players[playerID]) {
-      playerName = players[playerID].name;
-      playerPos = players[playerID].pos;
-      playerTeam = players[playerID].team;
-      playerImg = players[playerID].image;
+    if (players2021[playerID]) {
+      playerName = players2021[playerID].name;
+      playerPos = players2021[playerID].pos;
+      playerTeam = players2021[playerID].team;
+      playerImg = players2021[playerID].image;
       nameAndID.push([playerName, playerID]);
     }
 
