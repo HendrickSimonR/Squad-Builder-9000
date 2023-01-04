@@ -10,7 +10,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     // } else {
     //   playerObj = await fetchPlayerStats(playerID);
     // }
-    
+    console.log(playerObj)
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
@@ -52,6 +52,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     fullDetails[playerID] = playerInfo;
     scores.push(fantasyAvg);
   }
+  console.log('done', fullDetails)
 }
 
 export default connectPlayerInfo;
