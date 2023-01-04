@@ -4,7 +4,6 @@ import displayPlayers from "./displayPlayers";
 
 function returnInput(fullDetails, sortedScores, playerInfo) {
   let userInput = document.getElementById('form');
-  console.log("DRAFTTTTT")
   
   userInput.addEventListener('submit', function (e) {
     e.preventDefault();

@@ -111,8 +111,15 @@ html {
   justify-content: center;
 }
 
-#form, #select-season {
+#form {
+  display: none;
+}
+
+#select-season {
   display: flex;
+}
+
+#form, #select-season {
   justify-content: center;
   gap: 10px;
   background-color: rgba(216, 27, 27, 0.8);
@@ -155,10 +162,6 @@ h3 > span:hover {
 
 #form label {
   line-height: 25px;
-}
-
-.form-questions {
-  display:none !important;
 }
 
 body {

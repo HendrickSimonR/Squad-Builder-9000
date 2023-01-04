@@ -7,7 +7,12 @@ import playerVitals from "./scripts/playerVitals";
 import { displayModal, closeModal } from "./scripts/modal";
 import selectSeason from "./scripts/selectSeason"; 
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async () => { 
+  let season21 = document.getElementById('season21');
+  let season22 = document.getElementById('season22');
+  season22.addEventListener('click', selectSeason);
+  season21.addEventListener('click', selectSeason);
+  
   let fullDetails = {}, scores = [], nameAndID = [];
 
   for (let i = 0; i < playerIDs2021.length; i++) {      
@@ -63,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let sortedScores = scores.sort().reverse();
-  let sortedIDs = sortIDs(sortedScores, playerIDs, fullDetails);
+  let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
   Object.size = function (obj) {
@@ -85,11 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let close = document.getElementById('close-modal');
   close.addEventListener('click', closeModal);
-  
-  let season21 = document.getElementById('season21');
-  let season22 = document.getElementById('season22');
-  // season22.addEventListener('click', selectSeason());
-  season21.addEventListener('click', selectSeason);
+
 
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   userInput;
