@@ -1,6 +1,6 @@
 function selectSeason() {
   let button = document.getElementById('select-season');
-  let mainForm = document.getElementsByClassName('form');
+  let mainForm = document.getElementById('form');
   button.style.display = 'none';
   mainForm.style.display = 'flex';
 }
