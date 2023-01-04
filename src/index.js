@@ -1,5 +1,6 @@
 import fetchPlayerStats from "./scripts/fetchPlayerStats";
-import players2021 from "./scripts/players2021";
+import connectPlayerInfo from "./scripts/connectPlayerInfo";
+import players2021 from "./scripts/players2021"; // for loop needs this 
 import returnInput from "./scripts/userInput";
 import playerIDs2021 from "./scripts/playerIDs2021";
 import sortIDs from "./scripts/sortIDs";
@@ -30,61 +31,63 @@ document.addEventListener("DOMContentLoaded", async () => {
     selectSeason();
     seasonSelected.innerHTML = '2022 - 2023';
   });
-  
   let fullDetails = {}, scores = [], nameAndID = []; // create separate function that includes this line until line 89
+  await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021);
+  console.log(fullDetails, scores, nameAndID);
   // function should also initiate spinner graphic, counter, and select different season (other functions)
 
-  for (let i = 0; i < playerIDs2021.length; i++) {      
-    let playerID = playerIDs2021[i];
-    let playerObj;
-    if (i % 1 === 0) {
-      setTimeout(() => {}, 1000000000000);
-      playerObj = await fetchPlayerStats(playerID);
-    } else {
-      playerObj = await fetchPlayerStats(playerID);
-    }
+  // for (let i = 0; i < playerIDs2021.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
+  //   let playerID = playerIDs2021[i];
+  //   let playerObj = await fetchPlayerStats(playerID);
+
+  //   // if (i % 1 === 0) {
+  //   //   setTimeout(() => {}, 1000000000000);
+  //   //   playerObj = await fetchPlayerStats(playerID);
+  //   // } else {
+  //   //   playerObj = await fetchPlayerStats(playerID);
+  //   // }
     
-    if (!playerObj) continue;  
+  //   if (!playerObj) continue;  
  
-    let stats = playerObj.data[0];
-    let playerName, playerPos, playerTeam, playerImg;
+  //   let stats = playerObj.data[0];
+  //   let playerName, playerPos, playerTeam, playerImg;
 
-    if (players2021[playerID]) {
-      playerName = players2021[playerID].name;
-      playerPos = players2021[playerID].pos;
-      playerTeam = players2021[playerID].team;
-      playerImg = players2021[playerID].image;
-      nameAndID.push([playerName, playerID]);
-    }
+  //   if (players2021[playerID]) {
+  //     playerName = players2021[playerID].name;
+  //     playerPos = players2021[playerID].pos;
+  //     playerTeam = players2021[playerID].team;
+  //     playerImg = players2021[playerID].image;
+  //     nameAndID.push([playerName, playerID]);
+  //   }
 
-    let offPoints = stats.pts + (stats.ast * 1.5);
-    let defPoints = (stats.reb * 1.2) + (stats.stl * 3) + (stats.blk * 3);
-    let to = stats.turnover;
-    let fantasyAvg = (offPoints + defPoints - to);
-    let playerInfo = {
-      image: playerImg,
-      name: playerName,
-      pos: playerPos,
-      team: playerTeam,
-      stats: { 
-        pts: stats.pts, 
-        ast: stats.ast, 
-        ftm: stats.ftm, 
-        reb: stats.reb, 
-        stl: stats.stl, 
-        blk: stats.blk, 
-        to: stats.turnover, 
-        min: stats.min,
-        games: stats.games_played
-      },
+  //   let offPoints = stats.pts + (stats.ast * 1.5);
+  //   let defPoints = (stats.reb * 1.2) + (stats.stl * 3) + (stats.blk * 3);
+  //   let to = stats.turnover;
+  //   let fantasyAvg = (offPoints + defPoints - to);
+  //   let playerInfo = {
+  //     image: playerImg,
+  //     name: playerName,
+  //     pos: playerPos,
+  //     team: playerTeam,
+  //     stats: { 
+  //       pts: stats.pts, 
+  //       ast: stats.ast, 
+  //       ftm: stats.ftm, 
+  //       reb: stats.reb, 
+  //       stl: stats.stl, 
+  //       blk: stats.blk, 
+  //       to: stats.turnover, 
+  //       min: stats.min,
+  //       games: stats.games_played
+  //     },
 
-      avg: fantasyAvg,
-      drafted: false
-    };
+  //     avg: fantasyAvg,
+  //     drafted: false
+  //   };
     
-    fullDetails[playerID] = playerInfo;
-    scores.push(fantasyAvg);
-  }
+  //   fullDetails[playerID] = playerInfo;
+  //   scores.push(fantasyAvg);
+  // }
 
   let sortedScores = scores.sort().reverse();
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
