@@ -10,8 +10,12 @@ import selectSeason from "./scripts/selectSeason";
 document.addEventListener("DOMContentLoaded", async () => { 
   let season21 = document.getElementById('season21');
   let season22 = document.getElementById('season22');
+  season21.addEventListener('click', () => {
+    selectSeason();
+    let season = document.getElementById('selectedSeason');
+    season.innerHTML = '2021 - 2022';
+  });
   season22.addEventListener('click', selectSeason);
-  season21.addEventListener('click', selectSeason);
   
   let fullDetails = {}, scores = [], nameAndID = [];
 
