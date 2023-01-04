@@ -7,9 +7,7 @@ import playerVitals from "./scripts/playerVitals";
 import { displayModal, closeModal } from "./scripts/modal";
  
 document.addEventListener("DOMContentLoaded", async () => {
-  let fullDetails = {};
-  let scores = [];
-  let nameAndID = [];
+  let fullDetails = {}, scores = [], nameAndID = [];
 
   for (let i = 0; i < playerIDs2021.length; i++) {      
     let playerID = playerIDs2021[i];
@@ -24,10 +22,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
-    let playerName;
-    let playerPos;
-    let playerTeam;
-    let playerImg;
+    let playerName, playerPos, playerTeam, playerImg;
+
     if (players2021[playerID]) {
       playerName = players2021[playerID].name;
       playerPos = players2021[playerID].pos;
@@ -91,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let close = document.getElementById('close-modal');
     close.addEventListener('click', closeModal);
-
   
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   userInput;
