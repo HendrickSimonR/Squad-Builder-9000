@@ -111,7 +111,7 @@ html {
   justify-content: center;
 }
 
-#form {
+#form, #select-season {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -128,7 +128,7 @@ html {
 
 #select-season-prompt {
   position: relative;
-  bottom: 10px;
+  top: 5px;
 }
 
 #form label {
@@ -136,7 +136,7 @@ html {
 }
 
 .form-questions {
-  display:none;
+  display:none !important;
 }
 
 body {
@@ -175,10 +175,6 @@ body h2 {
 }
 #instructions li, #draft-log li, #player-details li {
   padding: 5px;
-}
-
-.instructions {
-  display: none;
 }
 
 .draft-log {

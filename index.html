@@ -47,44 +47,49 @@
     <h1 id="title"></h1> 
 
     <div>
-      <form id="form">
-        <p id="select-season-prompt">
-          Please select NBA season for Draft
-        </p>
-        <div class="form-questions">
-          <label for="favPlayer">First Pick: </label>
-          <input type="text" id="favPlayer" name="favPlayer" value="">
-          <label for="participants">How Many Participants?</label>
-          <select name="participants" id="participants">
-            <option name="AMOUNT" value="1">1</option>
-            <option name="AMOUNT" value="2">2</option>
-            <option name="AMOUNT" value="3">3</option>
-            <option name="AMOUNT" value="4">4</option>
-            <option name="AMOUNT" value="5">5</option>
-            <option name="AMOUNT" value="6">6</option>
-            <option name="AMOUNT" value="7">7</option>
-            <option name="AMOUNT" value="8">8</option>
-            <option name="AMOUNT" value="9">9</option>
-            <option name="AMOUNT" value="10">10</option>
-          </select>
-
-          <label for="order">Your Position in the Draft: </label>
-          <select name="order" id="order">
-            <option data-show-if="AMOUNT >= 1" value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option data-show-if="AMOUNT:10" value="10">10</option>
-          </select>
-        
-          <input id="draft-button" type="submit" disabled="true" value="Loading...">
-          <p id="form-error">WARNING: Participants must be greater than or equal to Position!</p>
-        </div>
+      <form id="select-season">
+        <label id="select-season-prompt">
+          Please select NBA season for Draft:
+        </label>
+        <select name="order" id="order">
+          <option value="1">2021 - 2022</option>
+          <option value="2">2022 - 2023</option>
+        </select>
+        <input id="draft-button" type="submit" disabled="true" value="Loading...">
+      </form>
+      
+      <form id="form" class="form-questions">
+        <label for="favPlayer">First Pick: </label>
+        <input type="text" id="favPlayer" name="favPlayer" value="">
+        <label for="participants">How Many Participants?</label>
+        <select name="participants" id="participants">
+          <option name="AMOUNT" value="1">1</option>
+          <option name="AMOUNT" value="2">2</option>
+          <option name="AMOUNT" value="3">3</option>
+          <option name="AMOUNT" value="4">4</option>
+          <option name="AMOUNT" value="5">5</option>
+          <option name="AMOUNT" value="6">6</option>
+          <option name="AMOUNT" value="7">7</option>
+          <option name="AMOUNT" value="8">8</option>
+          <option name="AMOUNT" value="9">9</option>
+          <option name="AMOUNT" value="10">10</option>
+        </select>
+        <label for="order">Your Position in the Draft: </label>
+        <select name="order" id="order">
+          <option data-show-if="AMOUNT >= 1" value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option data-show-if="AMOUNT:10" value="10">10</option>
+        </select>
+      
+        <input id="draft-button" type="submit" disabled="true" value="Loading...">
+        <p id="form-error">WARNING: Participants must be greater than or equal to Position!</p>
       </form>
     </div>
 
