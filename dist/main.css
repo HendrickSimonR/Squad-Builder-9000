@@ -147,7 +147,7 @@ html {
   position: relative;
   bottom: 1px;
   right: 4px;
-  padding-top: 2px !important;
+  padding-top: 1px !important;
 }
 
 #selectedSeason, h3 > span {

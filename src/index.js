@@ -15,7 +15,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     let season = document.getElementById('selectedSeason');
     season.innerHTML = '2021 - 2022';
   });
-  season22.addEventListener('click', selectSeason);
+
+  season22.addEventListener('click', () => {
+    selectSeason();
+    let season = document.getElementById('selectedSeason');
+    season.innerHTML = '2022 - 2023';
+  });
   
   let fullDetails = {}, scores = [], nameAndID = [];
 
