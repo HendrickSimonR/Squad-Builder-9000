@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let explainButton = document.getElementById('explain-button');
-  explainButton.addEventListener('click', selectSeason);
+  explainButton.addEventListener('click', displayModal);
 
   let close = document.getElementById('close-modal');
   close.addEventListener('click', closeModal);
