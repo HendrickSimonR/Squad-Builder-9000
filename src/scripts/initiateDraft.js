@@ -25,6 +25,22 @@ async function initiateDraft(season, seasonSelected) {
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
+
+  Object.size = function (obj) {
+    var size = 0, key;
+    for (key in obj) if (obj.hasOwnProperty(key)) size++;
+    console.log('SIZE', size);
+    return size;
+  };
+  
+  if (Object.size(fullDetails) >= 50) {
+    document.getElementById("draft-button").disabled = false;
+    document.getElementById("draft-button").value = "Draft!";
+  } else {
+    alert('Please refresh the page! :)');
+    document.getElementById("draft-button").value = ":O";
+  }
+
   return userInput;
 }
 

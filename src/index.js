@@ -10,27 +10,17 @@ import { displayModal, closeModal } from "./scripts/modal";
 import selectSeason from "./scripts/selectSeason"; 
 
 document.addEventListener("DOMContentLoaded", async () => { 
-
-  document.getElementById("draft-button").disabled = false;
-  document.getElementById("draft-button").value = "Draft!";
-
-  let explainButton = document.getElementById('explain-button');
-  let close = document.getElementById('close-modal');
+  // document.getElementById("draft-button").disabled = false;
+  // document.getElementById("draft-button").value = "Draft!";
+  let explainButton = document.getElementById('explain-button'), close = document.getElementById('close-modal');
+  let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
+  let seasonSelected = document.getElementById('selectedSeason');
   
   explainButton.addEventListener('click', displayModal);
   close.addEventListener('click', closeModal);
 
-
-  let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
-  let seasonSelected = document.getElementById('selectedSeason');
-
   season21.addEventListener('click', () => initiateDraft(2021, seasonSelected));
-
-  
-
   season22.addEventListener('click', () => initiateDraft(2022, seasonSelected));
-
-
 });
 
 // JUNKYARD LOL
