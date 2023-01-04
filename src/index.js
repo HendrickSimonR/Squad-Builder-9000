@@ -8,13 +8,22 @@ import { displayModal, closeModal } from "./scripts/modal";
 import selectSeason from "./scripts/selectSeason"; 
 
 document.addEventListener("DOMContentLoaded", async () => { 
-  let season21 = document.getElementById('season21');
-  let season22 = document.getElementById('season22');
+    let explainButton = document.getElementById('explain-button');
+  explainButton.addEventListener('click', displayModal);
+
+  let close = document.getElementById('close-modal');
+  close.addEventListener('click', closeModal);
+
+
+  let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
   let seasonSelected = document.getElementById('selectedSeason');
 
-  season21.addEventListener('click', () => {
+  season21.addEventListener('click', () => { // initiate draft on season21 button click
     selectSeason();
     seasonSelected.innerHTML = '2021 - 2022';
+    /*
+     - run function that fetches players and sorts 
+    */
   });
 
   season22.addEventListener('click', () => {
@@ -22,7 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     seasonSelected.innerHTML = '2022 - 2023';
   });
   
-  let fullDetails = {}, scores = [], nameAndID = [];
+  let fullDetails = {}, scores = [], nameAndID = []; // create separate function that includes this line until line 89
+  // function should also initiate spinner graphic, counter, and select different season (other functions)
 
   for (let i = 0; i < playerIDs2021.length; i++) {      
     let playerID = playerIDs2021[i];
@@ -80,6 +90,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
   
+ // line 87 - 99: separate function that activates draft button and removes spinner
+
   Object.size = function (obj) {
     var size = 0, key;
     for (key in obj) if (obj.hasOwnProperty(key)) size++;
@@ -94,11 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("draft-button").value = ":O";
   }
 
-  let explainButton = document.getElementById('explain-button');
-  explainButton.addEventListener('click', displayModal);
-
-  let close = document.getElementById('close-modal');
-  close.addEventListener('click', closeModal);
+  // line 104 to end should be initiated in the beginning
 
 
   const userInput = returnInput(fullDetails, sortedScores, playerInfo);
