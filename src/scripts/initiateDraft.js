@@ -1,5 +1,5 @@
 import selectSeason from "./selectSeason"; 
-import playerIDs2021 from "./playerIDs";
+import { playerIDs2021, playerIDs2022 } from "./playerIDs";
 import { players2021, players2022 } from "./players";
 import sortIDs from "./sortIDs";
 import playerVitals from "./playerVitals";
