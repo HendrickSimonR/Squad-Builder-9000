@@ -5,7 +5,7 @@ function displayPlayers(team) {
   if (stats.length > 0) clearStats();
   console.log('displayPLayersteam', team)
   let teamInfo = getTeam(team);  
-
+  teamInfo.sort((a, b) => b.avg - a.avg);
   console.log('teamInfo', teamInfo);
 
   for (let i = 0; i < teamInfo.length; i++) {
