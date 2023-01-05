@@ -35,6 +35,10 @@ function renderTeam(team) {
 
   let fullTeam = getTeam(team);
   console.log('fullTeam', fullTeam)
+  let center = fullTeam[0], forward = fullTeam[1];
+  fullTeam[1] = center;
+  fullTeam[0] = forward;
+  // [fullTeam[0], fullTeam[1]] = [fullTeam[1], fullTeam[0]]; 
 
   for (let i = 0; i < fullTeam.length; i++) {
     let player = fullTeam[i];
