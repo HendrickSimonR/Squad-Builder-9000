@@ -136,7 +136,7 @@ const players2022 = {
   405: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1626156.png", name: "D'Angelo Russell", pos: "PG", team: "Minnesota Timberwolves" },
   61: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1628969.png", name: "Mikal Bridges", pos: "SG", team: "Phoenix Suns" },
   268: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203897.png", name: "Zach Lavine", pos: "SG", team: "Chicago Bulls" },
-  799: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629014.png", name: "Anfernee Simons", pos: "SG", team: "Portland Trailblazers" },
+  419: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629014.png", name: "Anfernee Simons", pos: "SG", team: "Portland Trailblazers" },
   666786: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629630.png", name: "Ja Morant", pos: "PG", team: "Memphis Grizzlies" },
   367: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png", name: "Chris Paul", pos: "PG", team: "Phoenix Suns" },
   210: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1627741.png", name: "Buddy Hield", pos: "SF", team: "Indiana Pacers" }, 

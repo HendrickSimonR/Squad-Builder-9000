@@ -13,9 +13,9 @@ async function initiateDraft(season, seasonSelected) {
   selectSeason();
   
   if (season === 2021) {
-    await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021);
+    await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021, 2021);
   } else {
-    await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022);
+    await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
   }
 
   let sortedScores = scores.sort().reverse();

@@ -1,13 +1,13 @@
 import fetchPlayerStats from "./fetchPlayerStats";
 
-async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, playerVitals) {
+async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, playerVitals, season) {
   for (let i = 0; i < playerIDs.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
-    let playerID = playerIDs[i];
-    let playerObj = await fetchPlayerStats(playerID); // async here before
+    let playerID = playerIDs[i], playerObj = await fetchPlayerStats(playerID, season); // async here before
 
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
+    console.log(stats.pts, playerID)
     let playerName, playerPos, playerTeam, playerImg;
 
     if (playerVitals[playerID]) {

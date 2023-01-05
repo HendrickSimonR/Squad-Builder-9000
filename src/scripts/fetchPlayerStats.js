@@ -1,5 +1,5 @@
-async function fetchPlayerStats(playerID) {
-  let url = `https://www.balldontlie.io/api/v1/season_averages?season=2021&player_ids[]=${playerID}`;
+async function fetchPlayerStats(playerID, season) {
+  let url = `https://www.balldontlie.io/api/v1/season_averages?season=${season}&player_ids[]=${playerID}`;
   let response = await fetch(url);
 
   if (response.status === 429) {
