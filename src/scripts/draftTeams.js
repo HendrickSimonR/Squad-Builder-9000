@@ -10,7 +10,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let userPlacement = userInput.placement - 1;
   let favoriteFound = false, count = 0;
 
-  while (teams.length < amount) teams.push({});  
+  while (teams.length < amount) teams.push({C: undefined, F: [], G: []});  
 
   while (count < amount * 5) {
     for (let i = 0; i < teams.length; i++) {
@@ -82,6 +82,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
     }
 
     count++;
+    console.log(teams);
   }
 
   resetPlayers(playerInfo, fullDetails);
@@ -90,6 +91,12 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   return teams[userPlacement];
 }
 
+const checkAvailability = (team, pos) => {
+  let centerAvailable = pos === 'C' && team[pos] === undefined;
+  let otherAvailable = pos !== 'C' && team[pos].length < 2;
+  if (centerAvailable || otherAvailable) return true;
+  return false;
+}
 
 function draftFavorite(team, name, fullDetails, playerInfo) {
   for (let i = 0; i < playerInfo.length; i++) {
@@ -99,7 +106,7 @@ function draftFavorite(team, name, fullDetails, playerInfo) {
     let status = fullDetails[playerID]["drafted"];
 
     if (player) {
-      if (player.includes(name) && team[pos] === undefined && status === false) {
+      if (player.includes(name) && available && status === false) {
         fullDetails[playerID]["drafted"] = true;
         return playerID;
       }
@@ -119,9 +126,10 @@ function draftPlayer(team, fullDetails, playerInfo, sortedScores) {
       let playerID = player[1];
       let pos = player[2];
       let status = fullDetails[playerID]["drafted"];
+      let available = checkAvailability(team, pos);
 
       if (player) {
-        if (player.includes(score) && team[pos] === undefined && status === false) {
+        if (player.includes(score) && available && status === false) {
           fullDetails[playerID]["drafted"] = true;
           return playerID;
         } 
