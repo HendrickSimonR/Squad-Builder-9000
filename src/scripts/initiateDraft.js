@@ -37,6 +37,10 @@ async function initiateDraft(season, seasonSelected) {
     alert('Please refresh the page! :)');
     document.getElementById("draft-button").value = ":O";
   }
+
+  let loader = document.getElementById("loader");
+  loader.style.display = "none";
+
   console.log('fullDetails', fullDetails)
   console.log('total players', Object.size(fullDetails));
   console.log('sortedScores', sortedScores)
