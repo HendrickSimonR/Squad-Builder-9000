@@ -15,11 +15,7 @@ async function initiateDraft(season, seasonSelected) {
   if (season === 2021) {
     await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021);
   } else {
-    let arr = [];
-    for (let key in players2022) arr.push(Number(key));
-    console.log(arr);
-    // console.log(players2022[4])
-    // await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021);
+    await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022);
   }
 
   let sortedScores = scores.sort().reverse();
