@@ -92,6 +92,7 @@ function addDetails(row, person, idx) {
   player.setAttribute('id', 'player');
   if (idx === 0 || idx === 2) player.setAttribute('class', 'not-center-top');
   if (idx === 3 || idx === 4) player.setAttribute('class', 'not-center-bottom');
+  if (idx === 1) player.setAttribute('class', 'center');
  
   for (let info in person) {
     let col = document.createElement('li');
