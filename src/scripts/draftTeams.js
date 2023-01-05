@@ -4,17 +4,11 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
-  let pos;
-  let team;
-  let details;
-  let playerID;
-  let teams = [];
-  let drafted = [];
-  let favorite = userInput.favorite;
-  let amount = userInput.amount;
+  let pos, team, details, playerID;
+  let teams = [], drafted = [];
+  let favorite = userInput.favorite, amount = userInput.amount;
   let userPlacement = userInput.placement - 1;
-  let favoriteFound = false;
-  let count = 0;
+  let favoriteFound = false, count = 0;
 
   while (teams.length < amount) teams.push({});  
 
