@@ -312,6 +312,16 @@ body h2 {
   margin: 4px;
 }
 
+.not-center-top {
+  position: relative;
+  top: 40px;
+}
+
+.not-center-bottom {
+  position: relative;
+  top: 5px;
+}
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;

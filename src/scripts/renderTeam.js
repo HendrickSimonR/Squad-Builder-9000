@@ -45,10 +45,10 @@ function renderTeam(team) {
 
     if (i < 3) {
       let row = document.getElementById('squad-1');
-      teamAvg += addDetails(row, player);
+      teamAvg += addDetails(row, player, i);
     } else {
       let row = document.getElementById('squad-2');
-      teamAvg += addDetails(row, player);
+      teamAvg += addDetails(row, player, i);
     }
   }
 
@@ -86,11 +86,13 @@ function statline(stats) {
   return selectStats.join(' ');
 }
 
-function addDetails(row, person) {
+function addDetails(row, person, idx) {
   let avg = 0;
   let player = document.createElement('div');
   player.setAttribute('id', 'player');
-
+  if (idx === 0 || idx === 2) player.setAttribute('class', 'not-center-top');
+  if (idx === 3 || idx === 4) player.setAttribute('class', 'not-center-bottom');
+ 
   for (let info in person) {
     let col = document.createElement('li');
     let keys = [];
