@@ -1,17 +1,7 @@
 import initiateDraft from "./scripts/initiateDraft";
-import fetchPlayerStats from "./scripts/fetchPlayerStats";
-import connectPlayerInfo from "./scripts/connectPlayerInfo";
-import players2021 from "./scripts/players2021"; // for loop needs this 
-import returnInput from "./scripts/userInput";
-import playerIDs2021 from "./scripts/playerIDs2021";
-import sortIDs from "./scripts/sortIDs";
-import playerVitals from "./scripts/playerVitals";
 import { displayModal, closeModal } from "./scripts/modal";
-import selectSeason from "./scripts/selectSeason"; 
 
 document.addEventListener("DOMContentLoaded", async () => { 
-  // document.getElementById("draft-button").disabled = false;
-  // document.getElementById("draft-button").value = "Draft!";
   let explainButton = document.getElementById('explain-button'), close = document.getElementById('close-modal');
   let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
   let seasonSelected = document.getElementById('selectedSeason');
@@ -24,6 +14,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // JUNKYARD LOL
+
+// import fetchPlayerStats from "./scripts/fetchPlayerStats";
+// import connectPlayerInfo from "./scripts/connectPlayerInfo";
+// import players2021 from "./scripts/players2021"; // for loop needs this 
+// import returnInput from "./scripts/userInput";
+// import playerIDs2021 from "./scripts/playerIDs2021";
+// import sortIDs from "./scripts/sortIDs";
+// import playerVitals from "./scripts/playerVitals";
+// import selectSeason from "./scripts/selectSeason"; 
 
   // let fullDetails = {}, scores = [], nameAndID = []; // create separate function that includes this line until line 89
 // season21.addEventListener('click', async () => { // initiate draft on season21 button click
@@ -128,3 +127,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // const userInput = returnInput(fullDetails, sortedScores, playerInfo);
   // userInput;
+
+
+  // console.log('done', fullDetails)
+
+      // if (i % 1 === 0) {
+    //   setTimeout(() => {}, 1000000000000);
+    //   playerObj = await fetchPlayerStats(playerID);
+    // } else {
+    //   playerObj = await fetchPlayerStats(playerID);
+    // }

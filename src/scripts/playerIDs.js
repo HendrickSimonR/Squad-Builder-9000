@@ -6,4 +6,8 @@ const playerIDs2021 = [
   315, 125, /* 172, 219, 204, 31, */ 27, 3547239, /* 89 */
 ];
 
+const playerIDs2022 = [
+
+];
+
 export default playerIDs2021;

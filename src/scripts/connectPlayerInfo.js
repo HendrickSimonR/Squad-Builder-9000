@@ -4,13 +4,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
   for (let i = 0; i < playerIDs.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
     let playerID = playerIDs[i];
     let playerObj = await fetchPlayerStats(playerID); // async here before
-    // if (i % 1 === 0) {
-    //   setTimeout(() => {}, 1000000000000);
-    //   playerObj = await fetchPlayerStats(playerID);
-    // } else {
-    //   playerObj = await fetchPlayerStats(playerID);
-    // }
-    console.log(playerObj)
+
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
@@ -52,7 +46,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     fullDetails[playerID] = playerInfo;
     scores.push(fantasyAvg);
   }
-  // console.log('done', fullDetails)
+  console.log(fullDetails);
 }
 
 export default connectPlayerInfo;
