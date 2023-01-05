@@ -7,9 +7,8 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
-    console.log(stats.pts, playerID)
     let playerName, playerPos, playerTeam, playerImg;
-
+    
     if (playerVitals[playerID]) {
       playerName = playerVitals[playerID].name;
       playerPos = playerVitals[playerID].pos;
@@ -17,6 +16,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
       playerImg = playerVitals[playerID].image;
       nameAndID.push([playerName, playerID]);
     }
+
 
     let offPoints = stats.pts + (stats.ast * 1.5);
     let defPoints = (stats.reb * 1.2) + (stats.stl * 3) + (stats.blk * 3);
@@ -27,6 +27,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
       name: playerName,
       pos: playerPos,
       team: playerTeam,
+      id: playerID,
       stats: { 
         pts: stats.pts, 
         ast: stats.ast, 
@@ -42,11 +43,11 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
       avg: fantasyAvg,
       drafted: false
     };
-    
+    console.log(fantasyAvg, playerID, playerName, playerPos)
     fullDetails[playerID] = playerInfo;
     scores.push(fantasyAvg);
   }
-  console.log(fullDetails);
+  // console.log(fullDetails);
 }
 
 export default connectPlayerInfo;

@@ -3,7 +3,7 @@ import getTeam from "./getTeam";
 function displayPlayers(team) {
   let stats = document.getElementsByClassName('player-info');
   if (stats.length > 0) clearStats();
-
+  console.log('displayPLayersteam', team)
   let teamInfo = getTeam(team);  
 
   console.log('teamInfo', teamInfo);

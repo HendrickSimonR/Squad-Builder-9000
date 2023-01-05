@@ -5,9 +5,10 @@ import sortIDs from "./sortIDs";
 import playerVitals from "./playerVitals";
 import returnInput from "./userInput";
 import connectPlayerInfo from "./connectPlayerInfo";
+import fullDetails from "./fullDetails";
 
 async function initiateDraft(season, seasonSelected) {
-  let fullDetails = {}, scores = [], nameAndID = [];
+  let scores = [], nameAndID = [];
   seasonSelected.innerHTML = `${season} - ${season + 1}`;
   
   selectSeason();
@@ -37,6 +38,8 @@ async function initiateDraft(season, seasonSelected) {
     document.getElementById("draft-button").value = ":O";
   }
   console.log('fullDetails', fullDetails)
+  console.log('total players', Object.size(fullDetails));
+  console.log('sortedScores', sortedScores)
   return userInput;
 }
 

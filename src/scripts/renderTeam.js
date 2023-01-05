@@ -105,6 +105,7 @@ function addDetails(row, person) {
     } else if (person[info] === false) {
       continue;
     } else {
+      console.log(info)
       if (info === 'image') {
         let playerImg = document.createElement('img');
           playerImg.src = person[info];
@@ -118,7 +119,8 @@ function addDetails(row, person) {
         col.innerHTML = `AVG FANTASY SCORE: ${person[info].toFixed(4)}`;
         player.appendChild(col);
         avg += person[info];
-      } else {
+      } else if (info !== 'id') {
+        console.log('error spot', person[info])
         col.innerHTML = `${person[info].toUpperCase()}`;
         player.appendChild(col);
       }
