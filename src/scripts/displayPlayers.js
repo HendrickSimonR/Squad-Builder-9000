@@ -10,7 +10,7 @@ function displayPlayers(team) {
 
   for (let i = 0; i < teamInfo.length; i++) {
     let person = teamInfo[i];
-    console.log(person)
+     console.log(person)
 
     let playerDetails = document.getElementById('player-details');
     let playerInfo = document.createElement('div');

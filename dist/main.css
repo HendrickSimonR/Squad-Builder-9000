@@ -9,6 +9,30 @@ html {
   background-size: cover;
 }
 
+#main-logo {
+  position: relative;
+  left: 18px;
+}
+
+#loader {
+  animation: rotation 1.4s infinite linear;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  bottom: 11px;
+  right: 5px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 #containers {
   display: flex;
   flex-direction: row;
@@ -319,14 +343,14 @@ body h2 {
 
 .not-center-top {
   position: relative;
-  top: 50px;
+  top: 72px;
   padding-bottom: 10px;
 }
 
 .not-center-bottom {
   /* position: relative; */
   /* top: 20px; */
-  padding-top: 30px;
+  padding-top: 40px;
   padding-left: 5px;
   padding-right: 5px;
 }
