@@ -36,7 +36,7 @@ async function initiateDraft(season, seasonSelected) {
     alert('Please refresh the page! :)');
     document.getElementById("draft-button").value = ":O";
   }
-
+  console.log('fullDetails', fullDetails)
   return userInput;
 }
 

@@ -1,3 +1,5 @@
+import getTeam from "./getTeam";
+
 function renderTeam(team) {
   let intro = document.getElementById('intro');
   let header = document.createElement('h1');
@@ -31,7 +33,8 @@ function renderTeam(team) {
     header.innerHTML = 'YOUR SQUAD';
   }
 
-  let fullTeam = Object.values(team);
+  let fullTeam = getTeam(team);
+  console.log('fullTeam', fullTeam)
 
   for (let i = 0; i < fullTeam.length; i++) {
     let player = fullTeam[i];

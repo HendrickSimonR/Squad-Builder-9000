@@ -1,8 +1,12 @@
+import getTeam from "./getTeam";
+
 function displayPlayers(team) {
   let stats = document.getElementsByClassName('player-info');
   if (stats.length > 0) clearStats();
 
-  let teamInfo = Object.values(team);
+  let teamInfo = getTeam(team);  
+
+  console.log('teamInfo', teamInfo);
 
   for (let i = 0; i < teamInfo.length; i++) {
     let person = teamInfo[i];
@@ -23,6 +27,7 @@ function displayPlayers(team) {
 }
 
 function renderStats(stats, playerInfo, avg) {
+  console.log('stats', stats)
   let pts = `Points Per Game: ${stats.pts}`
   let ast = `Assists Per Game: ${stats.ast}`
   let blk = `Blocks Per Game: ${stats.blk}`
