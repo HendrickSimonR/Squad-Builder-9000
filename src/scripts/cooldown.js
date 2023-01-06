@@ -9,7 +9,7 @@ function startCountdown() {
     let countdownResult = document.getElementsByClassName("countdownResult")[0];
     console.log('coutndown', countdownResult)
     countdown.style.display = 'block';
-    countdown.innerHTML = `:${counter}`;
+    countdown.innerHTML = counter >= 10 ? `:${counter}` : `:0${counter}`;
 
     if (counter === 0 ) {
       clearInterval(interval);

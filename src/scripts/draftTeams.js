@@ -51,11 +51,11 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
               drafted.push(`${details}, user`);           
             }
           } else {
-            pos = fullDetails[favePlayer]["pos"];
-            team[pos].push(fullDetails[favePlayer]);
+            pos = fullDetails[favePlayer[0]]["pos"];
+            team[pos].push(fullDetails[favePlayer[0]]);
           // fullDetails[favePlayer]['drafted'] = true;
-            allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-            details = extractInfo(i, fullDetails[playerID[0]], pos);
+            allPlayers = allPlayers.slice(0, favePlayer[1]).concat(allPlayers.slice(favePlayer[1] + 1));
+            details = extractInfo(i, fullDetails[favePlayer[0]], pos);
             drafted.push(`${details}, user`);               
           }
         } else {
@@ -196,7 +196,7 @@ function draftFavorite(team, name, allPlayers, playerInfo) {
     if (player[name]) playerIdx = i;
   }
 
-  if (playerIdx) return false;
+  // if (playerIdx) return false;
 
   for (let i = 0; i < playerInfo.length; i++) {
     let player = playerInfo[i];
@@ -208,7 +208,7 @@ function draftFavorite(team, name, allPlayers, playerInfo) {
       if (player.includes(name) && available) {
         // fullDetails[playerID]["drafted"] = true;
         allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
-        return playerID;
+        return [playerID, i];
       }
     }
   }
