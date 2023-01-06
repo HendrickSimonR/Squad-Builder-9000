@@ -23,7 +23,11 @@ html {
   right: 5px;
 }
 
-#countdown {
+.countdownResult {
+  display: none;
+}
+
+#countdown, .countdownResult {
   /* font-size: 222px; */
   font-family: 'Orbitron', sans-serif;
   background-color:rgba(0, 0, 0, 0.877);
@@ -35,7 +39,7 @@ html {
   transition: all 0.3s ease 0s;
 }
 
-.countdown:hover {
+.countdownResult:hover {
   cursor: pointer;
   background-color:rgba(255, 136, 0, 0.95) !important;
   transition: all 0.3s ease 0s;

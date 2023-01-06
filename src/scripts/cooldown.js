@@ -6,33 +6,38 @@ function startCountdown() {
     counter--;
     
     let countdown = document.getElementById("countdown");
+    let countdownResult = document.getElementsByClassName("countdownResult")[0];
+    console.log('coutndown', countdownResult)
+    countdown.style.display = 'block';
     countdown.innerHTML = `:${counter}`;
 
     if (counter === 0 ) {
       clearInterval(interval);
       let draftButton = document.getElementById("draft-button");
       let countdownPrompt = document.getElementById('countdownPrompt');
-      countdown.setAttribute('class', 'countdown');
+      countdown.style.display = 'none';
       countdownPrompt.style.display = 'none';
+      countdownResult.style.display = 'block';
 
       if (draftButton.disabled === false) {
-        // countdown.innerHTML = 'Change Season';
-        countdown.addEventListener('click', () => switchForm('season', countdown));
+        countdownResult.innerHTML = 'Change Season';
+        countdownResult.addEventListener('click', () => switchForm('season', countdown, countdownResult));
       } else {
-        // countdown.innerHTML = 'Refresh Page';
-        countdown.addEventListener('click', () => switchForm('refresh'));
+        countdownResult.innerHTML = 'Refresh Page';
+        countdownResult.addEventListener('click', () => switchForm('refresh'));
       }
     }
   }, 1000);
 }
 
-const switchForm = (prompt, countdown = null) => {
+const switchForm = (prompt, countdown = null, result = null) => {
   if (prompt === 'season') {
     let selectSeason = document.getElementById('select-season');
     let mainForm = document.getElementById('form');
     let countdownPrompt = document.getElementById('countdownPrompt');
     countdown.innerHTML = ':45';
     countdownPrompt.style.display = 'block';
+    result.style.display = 'none';
     mainForm.style.display = 'none';
     selectSeason.style.display = 'flex';
   } else {
@@ -41,4 +46,4 @@ const switchForm = (prompt, countdown = null) => {
 }
 
 
-export default startCountdown;
+export { startCountdown, switchForm };

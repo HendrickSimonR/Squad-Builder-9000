@@ -6,7 +6,7 @@ import playerVitals from "./playerVitals";
 import returnInput from "./userInput";
 import connectPlayerInfo from "./connectPlayerInfo";
 import fullDetails from "./fullDetails";
-import startCountdown from "./cooldown";
+import { startCountdown, switchForm } from "./cooldown";
 
 
 async function initiateDraft(season, seasonSelected) {
@@ -15,7 +15,9 @@ async function initiateDraft(season, seasonSelected) {
   document.getElementById("draft-button").disabled = true;
   document.getElementById("draft-button").value = "Loading...";
   let loader = document.getElementById("loader");
+  let countdown = document.getElementById('countdown');
   loader.style.visibility = 'visible';
+  countdown.style.display = 'block';
 
   selectSeason();
   
