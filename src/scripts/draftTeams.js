@@ -135,18 +135,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
     console.log('currentTeams', teams)
     // console.log('draftProgress', fullDetails)
     count++;
-    // console.log(teams);
-    // for (let i = 0; i < teams.length; i++) {
-    //   let draftedTeam = teams[i];
-      
-    //   if (!checkTeam(draftedTeam)) {
-    //     break;
-    //   } else if (i === teams.length - 1 && checkTeam(draftedTeam)) {
-    //     resetPlayers(playerInfo, fullDetails);
-    //     draftLog(drafted);
-    //     return teams[userPlacement];
-    //   }
-    // }
+
   }
   console.log('final count', count)
   console.log(teams)
@@ -219,44 +208,6 @@ function draftFavorite(team, name, allPlayers, playerInfo) {
 // if all positions filled, need to draft player that can fill role
 
 function draftPlayer(team, allPlayers, playerInfo, sortedScores) {
-//   let playerNeeded = null;
-//   if (team['F'].length === 2 || team['G'].length === 2) playerNeeded = fillRole(team);
-
-//   for (let i = 0; i < sortedScores.length; i++) {
-//     let score = sortedScores[i];
-
-//     for (let j = 0; j < playerInfo.length; j++) {
-//       let player = playerInfo[j];
-//       let playerID = player[1];
-//       let pos = player[2];
-//       let status = fullDetails[playerID]["drafted"];
-//       let available = checkAvailability(team, pos);
-//       // console.log('status', status)
-//       // if (playerNeeded !== pos) continue;
-
-//       if (player) {
-//         if (player.includes(score) && available && status === false) {
-//             // fullDetails[playerID]["drafted"] = true;
-//           fullDetails = playerDrafted(fullDetails, playerID);
-//           console.log('player', player)
-//           console.log('status after found', fullDetails[playerID]['drafted']);
-//           console.log('check', fullDetails)
-//           return playerID;
-//         } 
-//       }
-//     }
-//   }
-
-//   return false; 
-// }  let playerIdx = null;
-  
-  // for (let i = 0; i < allPlayers.length; i++) {
-  //   let player = allPlayers[i];
-  //   if (player[name]) playerIdx = i;
-  // }
-
-  // if (playerIdx) return false;
-
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
     let playerID = player.id, pos = player.pos;
@@ -377,3 +328,58 @@ function clearDraftLog() {
 export default draftTeams;
 
 
+
+// junkyard lol
+
+/* 
+    // console.log(teams);
+    // for (let i = 0; i < teams.length; i++) {
+    //   let draftedTeam = teams[i];
+      
+    //   if (!checkTeam(draftedTeam)) {
+    //     break;
+    //   } else if (i === teams.length - 1 && checkTeam(draftedTeam)) {
+    //     resetPlayers(playerInfo, fullDetails);
+    //     draftLog(drafted);
+    //     return teams[userPlacement];
+    //   }
+    // }
+    //   let playerNeeded = null;
+//   if (team['F'].length === 2 || team['G'].length === 2) playerNeeded = fillRole(team);
+
+//   for (let i = 0; i < sortedScores.length; i++) {
+//     let score = sortedScores[i];
+
+//     for (let j = 0; j < playerInfo.length; j++) {
+//       let player = playerInfo[j];
+//       let playerID = player[1];
+//       let pos = player[2];
+//       let status = fullDetails[playerID]["drafted"];
+//       let available = checkAvailability(team, pos);
+//       // console.log('status', status)
+//       // if (playerNeeded !== pos) continue;
+
+//       if (player) {
+//         if (player.includes(score) && available && status === false) {
+//             // fullDetails[playerID]["drafted"] = true;
+//           fullDetails = playerDrafted(fullDetails, playerID);
+//           console.log('player', player)
+//           console.log('status after found', fullDetails[playerID]['drafted']);
+//           console.log('check', fullDetails)
+//           return playerID;
+//         } 
+//       }
+//     }
+//   }
+
+//   return false; 
+// }  let playerIdx = null;
+  
+  // for (let i = 0; i < allPlayers.length; i++) {
+  //   let player = allPlayers[i];
+  //   if (player[name]) playerIdx = i;
+  // }
+
+  // if (playerIdx) return false;
+
+*/
