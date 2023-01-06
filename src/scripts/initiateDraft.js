@@ -12,7 +12,11 @@ import startCountdown from "./cooldown";
 async function initiateDraft(season, seasonSelected) {
   let scores = [], nameAndID = [];
   seasonSelected.innerHTML = `${season} - ${season + 1}`;
-  
+  document.getElementById("draft-button").disabled = true;
+  document.getElementById("draft-button").value = "Loading...";
+  let loader = document.getElementById("loader");
+  loader.style.visibility = 'visible';
+
   selectSeason();
   
   if (season === 2021) {
@@ -39,13 +43,12 @@ async function initiateDraft(season, seasonSelected) {
     document.getElementById("draft-button").value = "Draft!";
   } else {
     alert('Please refresh the page! :)');
-    document.getElementById("draft-button").value = ":O";
+    document.getElementById("draft-button").value = "Dx";
     let prompt = document.getElementById('countdownPrompt');
     prompt.innerHTML = 'Refresh page in'
   }
 
-  let loader = document.getElementById("loader");
-  loader.style.display = "none";
+  loader.style.visibility = "hidden";
 
   console.log('fullDetails', fullDetails)
   console.log('total players', Object.size(fullDetails));

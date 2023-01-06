@@ -1,8 +1,7 @@
 function startCountdown() {
-  let counter = 40;
+  let counter = 45;
   
   const interval = setInterval(() => {
-    console.log(typeof counter)
     console.log(counter);
     counter--;
     
@@ -14,24 +13,26 @@ function startCountdown() {
       let draftButton = document.getElementById("draft-button");
       let countdownPrompt = document.getElementById('countdownPrompt');
       countdown.setAttribute('class', 'countdown');
-      
+      countdownPrompt.style.display = 'none';
+
       if (draftButton.disabled === false) {
-        countdown.innerHTML = 'Change Season';
-        countdown.addEventListener('click', () => switchForm('season'));
+        // countdown.innerHTML = 'Change Season';
+        countdown.addEventListener('click', () => switchForm('season', countdown));
       } else {
-        countdown.innerHTML = 'Refresh Page';
+        // countdown.innerHTML = 'Refresh Page';
         countdown.addEventListener('click', () => switchForm('refresh'));
       }
-
-      countdownPrompt.style.display = 'none';
     }
   }, 1000);
 }
 
-const switchForm = (prompt) => {
+const switchForm = (prompt, countdown = null) => {
   if (prompt === 'season') {
     let selectSeason = document.getElementById('select-season');
     let mainForm = document.getElementById('form');
+    let countdownPrompt = document.getElementById('countdownPrompt');
+    countdown.innerHTML = ':45';
+    countdownPrompt.style.display = 'block';
     mainForm.style.display = 'none';
     selectSeason.style.display = 'flex';
   } else {
