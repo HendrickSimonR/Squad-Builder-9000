@@ -46,8 +46,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     console.log(fantasyAvg, playerID, playerName, playerPos)
     fullDetails[playerID] = playerInfo;
     scores.push(fantasyAvg);
-  }
-  // console.log(fullDetails);
+  } 
 }
 
 export default connectPlayerInfo;

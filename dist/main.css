@@ -23,6 +23,26 @@ html {
   right: 5px;
 }
 
+#countdown {
+  /* font-size: 222px; */
+  font-family: 'Orbitron', sans-serif;
+  background-color:rgba(0, 0, 0, 0.877);
+  border-radius: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: red;
+  text-shadow: none;
+  transition: all 0.3s ease 0s;
+}
+
+.countdown:hover {
+  cursor: pointer;
+  background-color:rgba(255, 136, 0, 0.95) !important;
+  transition: all 0.3s ease 0s;
+  color: black !important;
+  font-weight:bolder;
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -183,6 +203,10 @@ html {
   border-radius: 6px;
 }
 
+#selectedSeason:hover {
+  content: 'Change season';
+}
+
 h3 > span:hover {
   color: black;
   background-color: white;
@@ -202,9 +226,12 @@ body {
 }
 body h1 {
   color: rgba(216, 27, 27, 0.8);
+  font-family: 'Orbitron', sans-serif;
 }
 body h2 {
   color: rgba(255, 136, 0, 0.95);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
 }
 
 .results {
@@ -263,6 +290,10 @@ body h2 {
   border: 0.1px solid rgba(83, 83, 83, 0.445);
 }
 
+#player-name {
+  font-size: 20px;
+}
+
 #draft-log-results div {
   border: solid 1px rgba(216, 27, 27, 0.8);
   padding: 10px 0px 10px 0px;
@@ -299,6 +330,10 @@ body h2 {
 #draftView {
   color: white;
   list-style-type: none;
+}
+
+#instructions-header {
+  font-size: 30px;
 }
 
 .instructionsList {

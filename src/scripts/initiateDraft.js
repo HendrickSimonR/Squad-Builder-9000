@@ -6,6 +6,8 @@ import playerVitals from "./playerVitals";
 import returnInput from "./userInput";
 import connectPlayerInfo from "./connectPlayerInfo";
 import fullDetails from "./fullDetails";
+import startCountdown from "./cooldown";
+
 
 async function initiateDraft(season, seasonSelected) {
   let scores = [], nameAndID = [];
@@ -15,10 +17,11 @@ async function initiateDraft(season, seasonSelected) {
   
   if (season === 2021) {
     await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021, 2021);
+    startCountdown();
   } else {
     await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
+    startCountdown();
   }
-
 
   let sortedScores = scores.sort().reverse();
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
@@ -37,6 +40,8 @@ async function initiateDraft(season, seasonSelected) {
   } else {
     alert('Please refresh the page! :)');
     document.getElementById("draft-button").value = ":O";
+    let prompt = document.getElementById('countdownPrompt');
+    prompt.innerHTML = 'Refresh page in'
   }
 
   let loader = document.getElementById("loader");

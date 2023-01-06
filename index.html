@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="dist/favicon.png">
   <link rel="stylesheet" href="./dist/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
   <script src="./dist/main.js"></script>
 
     <style>
@@ -56,6 +57,8 @@
       </form>
 
       <form id="form" class="form-questions">
+        <label for="countdownPrompt" id="countdownPrompt">Change Season in</label>
+        <label for="countdown" id="countdown">:40</label>
         <label for="currentSeason">Season: </label>
         <label for="selectedSeason" id="selectedSeason"></label>
         <label for="favPlayer">First Pick: </label>
@@ -187,7 +190,7 @@
             Data is updated after games, so come back and see how your lineup changes!
           </p>
         
-          <h2>Instructions</h2>
+          <h2 id="instructions-header">Instructions</h2>
           <p class="instructionsList">
             <li>Provide a favorite player (optional).</li>
             <li>Pick how many participants will be part of your draft.</li>
