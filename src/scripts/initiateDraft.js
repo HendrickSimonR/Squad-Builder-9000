@@ -19,6 +19,7 @@ async function initiateDraft(season, seasonSelected) {
     await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
   }
 
+
   let sortedScores = scores.sort().reverse();
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
   let playerInfo = playerVitals(sortedIDs, fullDetails);
