@@ -44,7 +44,7 @@ async function initiateDraft(season, seasonSelected) {
     document.getElementById("draft-button").disabled = false;
     document.getElementById("draft-button").value = "Draft!";
   } else {
-    alert('Please refresh the page! :)');
+    alert('Due to the nature of the API, please refresh the page at the end of the countdown :)');
     document.getElementById("draft-button").value = "Dx";
     let prompt = document.getElementById('countdownPrompt');
     prompt.innerHTML = 'Refresh page in'
