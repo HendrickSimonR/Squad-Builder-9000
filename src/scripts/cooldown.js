@@ -9,7 +9,7 @@ function startCountdown() {
     let countdownResult = document.getElementsByClassName("countdownResult")[0];
     console.log('coutndown', countdownResult)
     countdown.style.display = 'block';
-    countdown.innerHTML = counter >= 10 ? `:${counter}` : `:0${counter}`;
+    countdown.innerHTML = counter >= 10 ? `0:${counter}` : `0:0${counter}`;
 
     if (counter === 0 ) {
       clearInterval(interval);
@@ -35,7 +35,7 @@ const switchForm = (prompt, countdown = null, result = null) => {
     let selectSeason = document.getElementById('select-season');
     let mainForm = document.getElementById('form');
     let countdownPrompt = document.getElementById('countdownPrompt');
-    countdown.innerHTML = ':45';
+    countdown.innerHTML = '0:45';
     countdownPrompt.style.display = 'block';
     result.style.display = 'none';
     mainForm.style.display = 'none';
