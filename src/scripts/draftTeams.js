@@ -14,6 +14,8 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let userPlacement = userInput.placement - 1;
   let favoriteFound = false, count = 0;
 
+  console.log('favorite', favorite);
+
   for (let player in fullDetails) allPlayers.push(fullDetails[player]);
   allPlayers.sort((a, b) => a['avg'] - b['avg']);
 
@@ -179,31 +181,37 @@ const checkAvailability = (team, pos) => {
 
 function draftFavorite(team, name, allPlayers, playerInfo) {
   let playerIdx = null;
-  
+  let caseSensitiveName = name.toLowerCase();
+
+  console.log('draftfavoriteallplayers', allPlayers)
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
-    if (player[name]) playerIdx = i;
+    if (player.name.toLowerCase() === name.toLowerCase()) playerIdx = i;
+    console.log('playerIdx', playerIdx)
   }
 
   // if (playerIdx) return false;
+  if (playerIdx) {
+    let player = allPlayers[playerIdx];
+    return [player.id, playerIdx]; 
+    // for (let i = 0; i < playerInfo.length; i++) {
+    //   let player = playerInfo[i];
+    //   let playerID = player[1], pos = player[2];
+    //   // let status = fullDetails[playerID]["drafted"];
+    //   let available = checkAvailability(team, pos);
 
-  for (let i = 0; i < playerInfo.length; i++) {
-    let player = playerInfo[i];
-    let playerID = player[1], pos = player[2];
-    // let status = fullDetails[playerID]["drafted"];
-    let available = checkAvailability(team, pos);
-
-    if (player) {
-      if (player.includes(name) && available) {
-        // fullDetails[playerID]["drafted"] = true;
-        allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
-        return [playerID, i];
-      }
-    }
+    //   if (player) {
+    //     if (player.includes(name) && available) {
+    //       // fullDetails[playerID]["drafted"] = true;
+    //       allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
+    //       return [playerID, i];
+    //     }
+    //   }
+  } else {
+    return false;
   }
-
-  return false;
 }
+
 
 // if all positions filled, need to draft player that can fill role
 
