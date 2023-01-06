@@ -3,40 +3,28 @@ import getTeam from "./getTeam";
 function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   clearDraftLog();
 
-  console.log('playerinfo', playerInfo)
-
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
   let pos, team, details, playerID;
-  let teams = [], drafted = [], allPlayers = [];
+  let teams = [], drafted = [],  allPlayers = Object.values(fullDetails);
   let favorite = userInput.favorite, amount = userInput.amount;
-  let userPlacement = userInput.placement - 1;
-  let favoriteFound = false, count = 0;
+  let userPlacement = userInput.placement - 1, favoriteFound = false, count = 0;
 
-  console.log('favorite', favorite);
+  console.log('object.values(fullDetails)', Object.values(fullDetails))
 
-  for (let player in fullDetails) allPlayers.push(fullDetails[player]);
+  // for (let player in fullDetails) allPlayers.push(fullDetails[player]);
   allPlayers.sort((a, b) => a['avg'] - b['avg']);
-
-  console.log('allPlayers', allPlayers);
-
-  /*
-    - draft from end of allPlayers. if draft successful, pop
-    - if draft not successful, traverse until player found. then remove 
-      player from that index. 
-  */
 
   while (teams.length < amount) teams.push({C: [], F: [], G: []});  
   
-  console.log(fullDetails);
+  // console.log(fullDetails);
 
   while (count < amount * 5) {
     for (let i = 0; i < teams.length; i++) {
       team = teams[i];
 
       if (i === userPlacement) {
-        // console.log('currentTeam', team, i);
         if (favoriteFound === false) {
           let favePlayer = draftFavorite(team, favorite, allPlayers, playerInfo);
           favoriteFound = true;
@@ -47,7 +35,6 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             if (playerID) {
               pos = fullDetails[playerID[0]]["pos"];
               team[pos].push(fullDetails[playerID[0]]);
-          // fullDetails[playerID]['drafted'] = true;
               allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
               details = extractInfo(i, fullDetails[playerID[0]], pos);
               drafted.push(`${details}, user`);           
@@ -187,7 +174,7 @@ function draftFavorite(team, name, allPlayers, playerInfo) {
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
     if (player.name.toLowerCase() === name.toLowerCase()) playerIdx = i;
-    console.log('playerIdx', playerIdx)
+    // console.log('playerIdx', playerIdx)
   }
 
   // if (playerIdx) return false;
@@ -390,4 +377,11 @@ export default draftTeams;
 
   // if (playerIdx) return false;
 
-*/
+      - draft from end of allPlayers. if draft successful, pop
+    - if draft not successful, traverse until player found. then remove 
+      player from that index. 
+  
+          // fullDetails[playerID]['drafted'] = true;
+  
+  */
+
