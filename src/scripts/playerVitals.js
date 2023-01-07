@@ -6,9 +6,7 @@ function playerVitals(sortIDs, fullDetails) {
     let player = fullDetails[playerID];
 
     if (player) {
-      let pos = player.pos;
-      let score = player.avg;
-      let name = player.name;
+      let pos = player.pos, score = player.avg, name = player.name;
       playerVitals.push([name, playerID, pos, score]);
     }
   } 

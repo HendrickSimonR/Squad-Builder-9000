@@ -52,9 +52,6 @@ async function initiateDraft(season, seasonSelected) {
 
   loader.style.visibility = "hidden";
 
-  console.log('fullDetails', fullDetails)
-  console.log('total players', Object.size(fullDetails));
-  console.log('sortedScores', sortedScores)
   return userInput;
 }
 
