@@ -3,7 +3,8 @@ import fetchPlayerStats from "./fetchPlayerStats";
 async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, playerVitals, season) {
   for (let i = 0; i < playerIDs.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
     let playerID = playerIDs[i], playerObj = await fetchPlayerStats(playerID, season); // async here before
-
+    // for legends = season is an array that has same indices as playerIDs.
+    // callfetchPlayerStats(playerID, season[i]);
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
