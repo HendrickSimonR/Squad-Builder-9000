@@ -25,17 +25,17 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
 
       if (i === userPlacement) {
         if (favoriteFound === false) {
-          let favePlayer = draftFavorite(team, favorite, allPlayers, playerInfo);
+          let favePlayer = draftFavorite(team, favorite, allPlayers);
           favoriteFound = true;
 
           if (!favePlayer) {
-            playerID = draftPlayer(team, allPlayers, playerInfo, sortedScores);
+            playerID = draftPlayer(team, allPlayers, sortedScores);
             
             if (playerID) {
               let [ id, idx ] = playerID;
               let player = allPlayers[idx];
-              console.log('id, idx', id, idx)
-              console.log('allPlayersIdx', allPlayers[idx], fullDetails[playerID[0]]["pos"]);
+              // console.log('id, idx', id, idx)
+              // console.log('allPlayersIdx', allPlayers[idx], fullDetails[playerID[0]]["pos"]);
               pos = player["pos"];
               team[pos].push(player);
               allPlayers = allPlayers.slice(0, idx).concat(allPlayers.slice(idx + 1));
@@ -51,7 +51,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             drafted.push(`${details}, user`);               
           }
         } else {
-          playerID = draftPlayer(team, allPlayers, playerInfo, sortedScores);
+          playerID = draftPlayer(team, allPlayers, sortedScores);
           console.log('playerID', playerID)
           if (playerID === false) console.log('false result', i, team)
           
@@ -72,7 +72,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           }
         }
       } else {
-        playerID = draftPlayer(team, allPlayers, playerInfo, sortedScores);
+        playerID = draftPlayer(team, allPlayers, sortedScores);
         //   console.log('playerID', playerID)
         // if (playerID === false) console.log('false result', i, team)
 
@@ -100,7 +100,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
       team = teams[i];
       // if (i === userPlacement) console.log('currentTeam', team, i);
 
-      playerID = draftPlayer(team, allPlayers, playerInfo, sortedScores);
+      playerID = draftPlayer(team, allPlayers, sortedScores);
       console.log('playerID', playerID)
       if (playerID === false) console.log('false result', i, team)
       
@@ -169,7 +169,7 @@ const checkAvailability = (team, pos) => {
   }
 }
 
-function draftFavorite(team, name, allPlayers, playerInfo) {
+function draftFavorite(team, name, allPlayers) {
   let playerIdx = null;
   let caseSensitiveName = name.toLowerCase();
 
@@ -205,7 +205,7 @@ function draftFavorite(team, name, allPlayers, playerInfo) {
 
 // if all positions filled, need to draft player that can fill role
 
-function draftPlayer(team, allPlayers, playerInfo, sortedScores) {
+function draftPlayer(team, allPlayers, sortedScores) {
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
     let playerID = player.id, pos = player.pos;
