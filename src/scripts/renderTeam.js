@@ -5,24 +5,22 @@ function renderTeam(team) {
   let header = document.createElement('h1');
   let teamAvg = 0;
 
-  for (let i = intro.children.length - 1; i >= 0; i--) {
-    intro.children[i].remove();
-  }
+  for (let i = intro.children.length - 1; i >= 0; i--) intro.children[i].remove();
 
   let explainButton = document.getElementById('explain-button');
-    explainButton.style.visibility = 'visible';
+  explainButton.style.visibility = 'visible';
 
   let container = document.createElement('div');
-    container.setAttribute('id', 'squad-container');
-    intro.appendChild(container);
-    container.appendChild(header);
+  container.setAttribute('id', 'squad-container');
+  intro.appendChild(container);
+  container.appendChild(header);
   
     
   for (let i = 0; i < 2; i++) {
     let squad = document.createElement('div');
-      squad.setAttribute('id', `squad-${i + 1}`);
-      squad.setAttribute('class', 'squad-row');
-      container.appendChild(squad);
+    squad.setAttribute('id', `squad-${i + 1}`);
+    squad.setAttribute('class', 'squad-row');
+    container.appendChild(squad);
   }
 
   if (team === undefined) {
@@ -34,11 +32,9 @@ function renderTeam(team) {
   }
 
   let fullTeam = getTeam(team);
-  console.log('fullTeam', fullTeam)
   let center = fullTeam[0], forward = fullTeam[1];
   fullTeam[1] = center;
   fullTeam[0] = forward;
-  // [fullTeam[0], fullTeam[1]] = [fullTeam[1], fullTeam[0]]; 
 
   for (let i = 0; i < fullTeam.length; i++) {
     let player = fullTeam[i];
@@ -62,10 +58,8 @@ function renderTeam(team) {
 
 
 function nameTransformer(name) {
-  let newName = document.createElement('h2');
-  let capped = name.toUpperCase();
+  let newName = document.createElement('h2'), capped = name.toUpperCase();
   newName.innerHTML = capped;
-
   return newName;
 }
 
@@ -87,8 +81,7 @@ function statline(stats) {
 }
 
 function addDetails(row, person, idx) {
-  let avg = 0;
-  let player = document.createElement('div');
+  let avg = 0, player = document.createElement('div');
   player.setAttribute('id', 'player');
   if (idx === 0 || idx === 2) player.setAttribute('class', 'not-center-top');
   if (idx === 3 || idx === 4) player.setAttribute('class', 'not-center-bottom');
@@ -96,8 +89,7 @@ function addDetails(row, person, idx) {
  
   for (let info in person) {
     let col = document.createElement('li');
-    let keys = [];
-    let values = [];
+    let keys = [], values = [];
 
     for (const [key, value] of Object.entries(person)) {
       keys.push(key);
@@ -112,12 +104,10 @@ function addDetails(row, person, idx) {
     } else if (person[info] === false) {
       continue;
     } else {
-      console.log(info)
       if (info === 'image') {
         let playerImg = document.createElement('img');
-          playerImg.src = person[info];
-          playerImg.setAttribute('id', 'player-image');
-        
+        playerImg.src = person[info];
+        playerImg.setAttribute('id', 'player-image');
         player.appendChild(playerImg);
       } else if (info === 'name') {
         let newName = nameTransformer(person[info]);
@@ -127,7 +117,6 @@ function addDetails(row, person, idx) {
         player.appendChild(col);
         avg += person[info];
       } else if (info !== 'id') {
-        console.log('error spot', person[info])
         col.innerHTML = `${person[info].toUpperCase()}`;
         player.appendChild(col);
       }
