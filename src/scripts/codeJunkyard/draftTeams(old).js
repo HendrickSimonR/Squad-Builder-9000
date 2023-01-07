@@ -681,3 +681,13 @@ function draftRoleplayer(playerInfo, playerNeeded) {
 
 //   return;
 // }
+
+
+      // let player = allPlayers[playerIdx], pos = player["pos"];
+      // team[pos].push(player);
+      // allPlayers[playerIdx] = `${player.name} drafted!`;
+      // details = extractInfo(i, player, pos);
+
+      // // 
+
+      // currentUser ? drafted.push(`${details}, user`) : drafted.push(`${details}`);                     

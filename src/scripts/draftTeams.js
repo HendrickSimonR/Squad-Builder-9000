@@ -6,10 +6,10 @@ function draftTeams(fullDetails, userInput) {
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
-  let team, details, playerIdx;
-  let teams = [], drafted = [],  allPlayers = Object.values(fullDetails);
+  let team, playerIdx, count = 0;
+  let userPlacement = userInput.placement - 1;
   let favorite = userInput.favorite, amount = userInput.amount;
-  let userPlacement = userInput.placement - 1, favoriteFound = false, count = 0;
+  let teams = [], drafted = [],  allPlayers = Object.values(fullDetails);
   
   while (teams.length < amount) teams.push({C: [], F: [], G: []});  
   allPlayers.sort((a, b) => a['avg'] - b['avg']);
@@ -29,13 +29,7 @@ function draftTeams(fullDetails, userInput) {
       } else {
         playerIdx = draftPlayer(team, allPlayers);
       }
-
-      let player = allPlayers[playerIdx], pos = player["pos"];
-      team[pos].push(player);
-      allPlayers[playerIdx] = `${player.name} drafted!`;
-      details = extractInfo(i, player, pos);
-
-      currentUser ? drafted.push(`${details}, user`) : drafted.push(`${details}`);                     
+      addPlayer(playerIdx, allPlayers, team, drafted, currentUser, i);        
     }
 
     count++;
@@ -43,18 +37,13 @@ function draftTeams(fullDetails, userInput) {
     if (count + 1 !== 6) drafted.push(`Round ${count + 1}`);
 
     for (let i = teams.length - 1; i >= 0; i--) {
+      let currentUser = i === userPlacement;
       team = teams[i];
 
       if (teamComplete(team)) continue;
 
       playerIdx = draftPlayer(team, allPlayers);
-
-      let player = allPlayers[playerIdx], pos = player["pos"];
-      team[pos].push(player);
-      allPlayers[playerIdx] = `${player.name} drafted!`;
-      details = extractInfo(i, player, pos);
-
-      i === userPlacement ? drafted.push(`${details}, user`) : drafted.push(`${details}`);                     
+      addPlayer(playerIdx, allPlayers, team, drafted, currentUser, i);
     }
 
     count++;
@@ -66,6 +55,15 @@ function draftTeams(fullDetails, userInput) {
   draftLog(drafted);
 
   return teams[userPlacement];
+}
+
+const addPlayer = (playerIdx, allPlayers, team, drafted, currentUser, i) => {
+  let player = allPlayers[playerIdx], pos = player["pos"];
+  let details = extractInfo(i, player, pos);
+  allPlayers[playerIdx] = `${player.name} drafted!`;
+  currentUser ? drafted.push(`${details}, user`) : drafted.push(`${details}`);
+  team[pos].push(player);
+  return;
 }
 
 const teamComplete = team => {
