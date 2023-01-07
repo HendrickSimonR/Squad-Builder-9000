@@ -130,16 +130,12 @@ function draftLog(drafted) {
       round.innerHTML = player;
       draftLog.appendChild(round);
     } else {
-      let container = document.createElement('div');
-      let item = document.createElement('li');
-      let avg = document.createElement('li');
-      let gap = document.createElement('br');
-      let info = player.split(',');
-      let details = `${info[1]}, ${info[2]}, ${info[3]}`
+      let container = document.createElement('div'), item = document.createElement('li');
+      let avg = document.createElement('li'), gap = document.createElement('br');
+      let info = player.split(','), details = `${info[1]}, ${info[2]}, ${info[3]}`
       avg.innerHTML = `Fantasy Avg: ${info[4]}`;
 
-      let teamLi = document.createElement('li');
-      let team = `Team ${info[0]}`
+      let teamLi = document.createElement('li'), team = `Team ${info[0]}`;
       teamLi.innerHTML = team;
       
       let teamAttribute = info.length > 5 ? 'user-team' : 'other-team'; 
