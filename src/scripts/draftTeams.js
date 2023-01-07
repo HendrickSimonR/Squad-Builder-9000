@@ -55,7 +55,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             drafted.push(`${details}, user`);               
           }
         } else {
-          playerIdx = draftPlayer(team, allPlayers, sortedScores);
+          playerIdx = draftPlayer(team, allPlayers);
           // console.log('playerID', playerID)
           // if (playerID === false) console.log('false result', i, team)
           
@@ -79,7 +79,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           } 
         }
       } else {
-        playerIdx = draftPlayer(team, allPlayers, sortedScores);
+        playerIdx = draftPlayer(team, allPlayers);
         //   console.log('playerID', playerID)
         // if (playerID === false) console.log('false result', i, team)
 
@@ -228,15 +228,13 @@ function draftFavorite(name, allPlayers) {
 
 // if all positions filled, need to draft player that can fill role
 
-function draftPlayer(team, allPlayers, sortedScores) {
+function draftPlayer(team, allPlayers) {
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
-    let playerID = player.id, pos = player.pos;
     // let status = fullDetails[playerID]["drafted"];
-    let available = checkAvailability(team, pos);
+    let available = checkAvailability(team, player["pos"]);
 
-    if (player) {
-      if (available) {
+    if (player && available) {
         
         // if (i === allPlayers.length - 1) {
         //   console.log('before first if', allPlayers, allPlayers[allPlayers.length - 1].name)
@@ -250,7 +248,6 @@ function draftPlayer(team, allPlayers, sortedScores) {
 
         // fullDetails[playerID]["drafted"] = true;
         return i;
-      }
     }
   }
 
