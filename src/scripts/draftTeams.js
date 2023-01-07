@@ -6,7 +6,7 @@ function draftTeams(fullDetails, userInput) {
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
-  let pos, team, details, playerIdx;
+  let team, details, playerIdx;
   let teams = [], drafted = [],  allPlayers = Object.values(fullDetails);
   let favorite = userInput.favorite, amount = userInput.amount;
   let userPlacement = userInput.placement - 1, favoriteFound = false, count = 0;
@@ -30,8 +30,7 @@ function draftTeams(fullDetails, userInput) {
         playerIdx = draftPlayer(team, allPlayers);
       }
 
-      let player = allPlayers[playerIdx];
-      pos = player["pos"];
+      let player = allPlayers[playerIdx], pos = player["pos"];
       team[pos].push(player);
       allPlayers[playerIdx] = `${player.name} drafted!`;
       details = extractInfo(i, player, pos);
@@ -50,8 +49,7 @@ function draftTeams(fullDetails, userInput) {
 
       playerIdx = draftPlayer(team, allPlayers);
 
-      let player = allPlayers[playerIdx];  
-      pos = player["pos"];
+      let player = allPlayers[playerIdx], pos = player["pos"];
       team[pos].push(player);
       allPlayers[playerIdx] = `${player.name} drafted!`;
       details = extractInfo(i, player, pos);
@@ -117,10 +115,7 @@ function draftPlayer(team, allPlayers, favorite = null) {
 }
 
 function extractInfo(placement, player, pos) {
-  let playerName = player.name;
-  let playerTeam = player.team;
-  let playerAvg = player.avg.toFixed(4);
-
+  let playerName = player.name, playerTeam = player.team, playerAvg = player.avg.toFixed(4);
   return `${placement + 1}, ${playerName}, ${playerTeam}, ${pos}, ${playerAvg}`
 }
 
