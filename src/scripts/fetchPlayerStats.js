@@ -3,7 +3,7 @@ async function fetchPlayerStats(playerID, season) {
   let response = await fetch(url);
 
   if (response.status === 429) {
-    null
+    null;
   } else {
     let player = await response.json();
     return player;

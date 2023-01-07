@@ -2,12 +2,10 @@ function startCountdown() {
   let counter = 45;
   
   const interval = setInterval(() => {
-    console.log(counter);
     counter--;
     
     let countdown = document.getElementById("countdown");
     let countdownResult = document.getElementsByClassName("countdownResult")[0];
-    console.log('coutndown', countdownResult)
     countdown.style.display = 'block';
     countdown.innerHTML = counter >= 10 ? `0:${counter}` : `0:0${counter}`;
 

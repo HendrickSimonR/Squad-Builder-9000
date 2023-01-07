@@ -8,9 +8,7 @@ function sortIDs(sortedScores, playerIDs, fullDetails) {
       let player = fullDetails[playerIDs[j]];
 
       if (player) {
-        if (player.avg === score) {
-          rankings.push(playerIDs[j]);
-        }
+        if (player.avg === score) rankings.push(playerIDs[j]);
       }
     }
   }

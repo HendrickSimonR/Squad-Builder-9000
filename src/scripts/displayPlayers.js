@@ -53,12 +53,7 @@ function renderStats(stats, playerInfo, avg) {
 
 function clearStats() {
   let stats = document.getElementsByClassName('player-info');
-
-  if (stats.length !== undefined) {
-    for (let i = stats.length - 1; i >= 0; i--) {
-      stats[i].remove();
-    }
-  }
+  if (stats.length) for (let i = stats.length - 1; i >= 0; i--) stats[i].remove();
 }
 
 export default displayPlayers;
