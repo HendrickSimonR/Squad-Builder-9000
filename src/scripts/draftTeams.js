@@ -15,7 +15,7 @@ function draftTeams(fullDetails, userInput) {
   allPlayers.sort((a, b) => a['avg'] - b['avg']);
 
   while (count < 5) {
-    if (count + 1 !== 6) drafted.push(`Round ${count + 1}`);
+    if (amount > 1) drafted.push(`Round ${count + 1}`);
 
     for (let i = 0; i < teams.length; i++) {
       let currentUser = i === userPlacement;
@@ -34,7 +34,7 @@ function draftTeams(fullDetails, userInput) {
 
     count++;
 
-    if (count + 1 !== 6) drafted.push(`Round ${count + 1}`);
+    if (count + 1 !== 6 && amount > 1) drafted.push(`Round ${count + 1}`);
 
     for (let i = teams.length - 1; i >= 0; i--) {
       let currentUser = i === userPlacement;
