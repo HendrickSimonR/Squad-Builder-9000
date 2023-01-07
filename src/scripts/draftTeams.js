@@ -11,9 +11,8 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let favorite = userInput.favorite, amount = userInput.amount;
   let userPlacement = userInput.placement - 1, favoriteFound = false, count = 0;
 
-  console.log('object.values(fullDetails)', Object.values(fullDetails))
+  // console.log('object.values(fullDetails)', Object.values(fullDetails))
 
-  // for (let player in fullDetails) allPlayers.push(fullDetails[player]);
   allPlayers.sort((a, b) => a['avg'] - b['avg']);
 
   while (teams.length < amount) teams.push({C: [], F: [], G: []});  
@@ -33,10 +32,14 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
             playerID = draftPlayer(team, allPlayers, playerInfo, sortedScores);
             
             if (playerID) {
-              pos = fullDetails[playerID[0]]["pos"];
-              team[pos].push(fullDetails[playerID[0]]);
-              allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-              details = extractInfo(i, fullDetails[playerID[0]], pos);
+              let [ id, idx ] = playerID;
+              let player = allPlayers[idx];
+              console.log('id, idx', id, idx)
+              console.log('allPlayersIdx', allPlayers[idx], fullDetails[playerID[0]]["pos"]);
+              pos = player["pos"];
+              team[pos].push(player);
+              allPlayers = allPlayers.slice(0, idx).concat(allPlayers.slice(idx + 1));
+              details = extractInfo(i, player, pos);
               drafted.push(`${details}, user`);           
             }
           } else {
@@ -70,8 +73,8 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         }
       } else {
         playerID = draftPlayer(team, allPlayers, playerInfo, sortedScores);
-          console.log('playerID', playerID)
-        if (playerID === false) console.log('false result', i, team)
+        //   console.log('playerID', playerID)
+        // if (playerID === false) console.log('false result', i, team)
 
         if (playerID === false) {
           let playerNeeded = fillRole(team);
@@ -214,11 +217,11 @@ function draftPlayer(team, allPlayers, playerInfo, sortedScores) {
         
         if (i === allPlayers.length - 1) {
           console.log('before first if', allPlayers, allPlayers[allPlayers.length - 1].name)
-          allPlayers.pop();
+          // allPlayers.pop();
           console.log('after first if', allPlayers, allPlayers[allPlayers.length - 1].name)
         } else {
           console.log('before second if', allPlayers, allPlayers[i].name)
-          allPlayers = allPlayers.slice(0, i).concat(allPlayers.slice(i + 1));
+          // allPlayers = allPlayers.slice(0, i).concat(allPlayers.slice(i + 1));
           console.log('after second if', allPlayers, allPlayers[i].name)
         }
 
@@ -382,6 +385,18 @@ export default draftTeams;
       player from that index. 
   
           // fullDetails[playerID]['drafted'] = true;
+  // for (let player in fullDetails) allPlayers.push(fullDetails[player]);
   
+              let [ id, idx ] = playerID;
+              let player = allPlayers[idx];
+              console.log('id, idx', id, idx)
+              console.log('allPlayersIdx', allPlayers[idx], fullDetails[playerID[0]]["pos"]);
+              pos = player["pos"];// fullDetails[playerID[0]]["pos"];
+              team[pos].push(player); //team[pos].push(fullDetails[playerID[0]]);
+              allPlayers = allPlayers.slice(0, idx).concat(allPlayers.slice(idx + 1));
+              // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
+              details = extractInfo(i, player, pos);
+              drafted.push(`${details}, user`);    
+
   */
 
