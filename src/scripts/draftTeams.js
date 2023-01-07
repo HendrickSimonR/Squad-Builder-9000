@@ -85,7 +85,7 @@ function draftFavorite(name, allPlayers) {
 
     if (typeof player === 'string') {
       continue;
-    } else if (player.name.toLowerCase() === name.toLowerCase()) {
+    } else if (player.name.toLowerCase() === name) {
       return i;
     }
   }
