@@ -1,6 +1,6 @@
 import getTeam from "./getTeam";
 
-function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
+function draftTeams(fullDetails, userInput, playerInfo) {
   clearDraftLog();
 
   let error = document.getElementById('form-error');
@@ -10,39 +10,32 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
   let teams = [], drafted = [],  allPlayers = Object.values(fullDetails);
   let favorite = userInput.favorite, amount = userInput.amount;
   let userPlacement = userInput.placement - 1, favoriteFound = false, count = 0;
-
-  // console.log('object.values(fullDetails)', Object.values(fullDetails))
-
-  allPlayers.sort((a, b) => a['avg'] - b['avg']);
-
-  while (teams.length < amount) teams.push({C: [], F: [], G: []});  
   
-  // console.log(fullDetails);
+  while (teams.length < amount) teams.push({C: [], F: [], G: []});  
+  allPlayers.sort((a, b) => a['avg'] - b['avg']);
 
   while (count < amount * 5) {
     for (let i = 0; i < teams.length; i++) {
       team = teams[i];
+      if (checkTeam(team)) continue;
 
       if (i === userPlacement) {
         if (favoriteFound === false) {
-          let favePlayer = draftFavorite(favorite, allPlayers); // idx
+          let favePlayer = draftFavorite(favorite, allPlayers);
           favoriteFound = true;
 
           if (!favePlayer) {
             playerIdx = draftPlayer(team, allPlayers);
             
-            if (playerIdx) {
-              // console.log('playerID', playerID)
-              // let idx = playerIdx;
+      console.log('playerIdx draftFavorite no fave found', playerIdx)
+            // if (playerIdx) {
               let player = allPlayers[playerIdx];
-              // console.log('id, idx', id, idx)
-              // console.log('player', player);
               pos = player["pos"];
               team[pos].push(player);
               allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
               details = extractInfo(i, player, pos);
               drafted.push(`${details}, user`);           
-            }
+            // }
           } else {
             let player = allPlayers[favePlayer];
             pos = player["pos"];
@@ -58,13 +51,15 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           playerIdx = draftPlayer(team, allPlayers);
           // console.log('playerID', playerID)
           // if (playerID === false) console.log('false result', i, team)
+      console.log('playerIdx user odd round before check', playerIdx)
           
           if (playerIdx === false) {
             let playerNeeded = fillRole(team);
             playerIdx = draftRoleplayer(playerInfo, playerNeeded);    
           }
+      console.log('playerIdx user odd round after check', playerIdx)
 
-          if (playerIdx) {
+          // if (playerIdx) {
             let player = allPlayers[playerIdx];  
             pos = player["pos"];
             team[pos].push(player);
@@ -76,19 +71,21 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           // fullDetails[playerID]['drafted'] = true;
             // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
             // details = extractInfo(i, fullDetails[playerID[0]], pos);
-          } 
+          // } 
         }
       } else {
         playerIdx = draftPlayer(team, allPlayers);
         //   console.log('playerID', playerID)
         // if (playerID === false) console.log('false result', i, team)
+      console.log('playerIdx odd round before check', playerIdx)
 
         if (playerIdx === false) {
           let playerNeeded = fillRole(team);
           playerIdx = draftRoleplayer(playerInfo, playerNeeded);    
         }
+      console.log('playerIdx odd round After check', playerIdx)
 
-        if (playerIdx) {          
+        // if (playerIdx) {          
             let player = allPlayers[playerIdx];  
             pos = player["pos"];
             team[pos].push(player);
@@ -106,7 +103,7 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
           // details = extractInfo(i, fullDetails[playerID[0]], pos);
           // drafted.push(`${details}`);       
           // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-        }
+        // }
       }
     }
 
@@ -114,18 +111,20 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
 
     for (let i = teams.length - 1; i >= 0; i--) {
       team = teams[i];
+      if (checkTeam(team)) continue;
       // if (i === userPlacement) console.log('currentTeam', team, i);
 
       playerIdx = draftPlayer(team, allPlayers);
       // console.log('playerID', playerID)
       // if (playerIdx === false) console.log('false result', i, team)
+      console.log('playerIdx even round before check', playerIdx)
       
       if (playerIdx === false) {
         let playerNeeded = fillRole(team);
         playerIdx = draftRoleplayer(playerInfo, playerNeeded);    
       }
-
-      if (playerIdx) {
+      console.log('playerIdx even round after check', playerIdx)
+      // if (playerIdx) {
         // pos = fullDetails[playerID[0]]["pos"];
         // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
         // team[pos].push(fullDetails[playerID[0]]);
@@ -142,16 +141,16 @@ function draftTeams(fullDetails, userInput, sortedScores, playerInfo) {
         } else {
           drafted.push(`${details}`);                     
         }
-      }
+      // }
     }
-    console.log('currentTeams', teams)
+    // console.log('currentTeams', teams)
     // console.log('draftProgress', fullDetails)
     count++;
 
   }
   console.log('final count', count)
   console.log(teams)
-  resetPlayers(playerInfo, fullDetails);
+  // resetPlayers(playerInfo, fullDetails);
   draftLog(drafted);
 
   let draftedCount = 0;
