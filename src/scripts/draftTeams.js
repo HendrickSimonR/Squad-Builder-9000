@@ -144,31 +144,19 @@ function draftLog(drafted) {
       let team = `Team ${info[0]}`
       teamLi.innerHTML = team;
       
-      if (info.length > 5) {
-        item.innerHTML = details;
-        container.setAttribute('id', 'user-team-container');
-        item.setAttribute('id', 'user-team');
-        teamLi.setAttribute('id', 'user-team');
-        avg.setAttribute('id', 'user-team');
+      let teamAttribute = info.length > 5 ? 'user-team' : 'other-team'; 
 
-        container.appendChild(teamLi);
-        container.appendChild(item);
-        container.appendChild(avg);
-        draftLog.appendChild(container);
-        draftLog.appendChild(gap);
-      } else {
-        item.innerHTML = details;
-        container.setAttribute('id', 'other-team-container');
-        item.setAttribute('id', 'other-team');
-        teamLi.setAttribute('id', 'other-team');
-        avg.setAttribute('id', 'other-team');
+      item.innerHTML = details;
+      container.setAttribute('id', `${teamAttribute}-container`);
+      item.setAttribute('id', teamAttribute);
+      teamLi.setAttribute('id', teamAttribute);
+      avg.setAttribute('id', teamAttribute);
 
-        container.appendChild(teamLi);
-        container.appendChild(item);
-        container.appendChild(avg);
-        draftLog.appendChild(container);
-        draftLog.appendChild(gap);
-      }
+      container.appendChild(teamLi);
+      container.appendChild(item);
+      container.appendChild(avg);
+      draftLog.appendChild(container);
+      draftLog.appendChild(gap);
     }
   }
 
