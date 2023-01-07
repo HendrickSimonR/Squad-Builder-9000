@@ -43,7 +43,7 @@ function returnInput(fullDetails, sortedScores, playerInfo) {
       placement: order 
     };
 
-    let team = draftTeams(fullDetails, userValues, sortedScores, playerInfo);
+    let team = draftTeams(fullDetails, userValues, sortedScores);
     console.log('userInputTeam', team)
     displayPlayers(team);
     renderTeam(team);

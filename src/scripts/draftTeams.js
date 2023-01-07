@@ -1,6 +1,6 @@
 import getTeam from "./getTeam";
 
-function draftTeams(fullDetails, userInput, playerInfo) {
+function draftTeams(fullDetails, userInput) {
   clearDraftLog();
 
   let error = document.getElementById('form-error');
@@ -17,6 +17,7 @@ function draftTeams(fullDetails, userInput, playerInfo) {
   while (count < 5) {
     for (let i = 0; i < teams.length; i++) {
       team = teams[i];
+      if (checkTeam(team)) continue;
 
       if (i === userPlacement) {
         if (favoriteFound === false) {
@@ -25,84 +26,37 @@ function draftTeams(fullDetails, userInput, playerInfo) {
 
           if (!favePlayer) {
             playerIdx = draftPlayer(team, allPlayers);
-            
-            // console.log('playerIdx draftFavorite no fave found', playerIdx)
-            // if (playerIdx) {
             let player = allPlayers[playerIdx];
             pos = player["pos"];
             team[pos].push(player);
-            allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
+            allPlayers[playerIdx] = `${player.name} drafted!`;
             details = extractInfo(i, player, pos);
             drafted.push(`${details}, user`);           
-            // }
           } else {
             let player = allPlayers[favePlayer];
             pos = player["pos"];
-            // pos = fullDetails[favePlayer[0]]["pos"];
             team[pos].push(player);
-            // team[pos].push(fullDetails[favePlayer[0]]);
-          // fullDetails[favePlayer]['drafted'] = true;
-            allPlayers = allPlayers.slice(0, favePlayer).concat(allPlayers.slice(favePlayer + 1));
+            allPlayers[playerIdx] = `${player.name} drafted!`;
             details = extractInfo(i, player, pos);
             drafted.push(`${details}, user`);               
           }
         } else {
           playerIdx = draftPlayer(team, allPlayers);
-          // console.log('playerID', playerID)
-          // if (playerID === false) console.log('false result', i, team)
-          // console.log('playerIdx user odd round before check', playerIdx)
-          
-          if (playerIdx === false) {
-            let playerNeeded = fillRole(team);
-            playerIdx = draftRoleplayer(playerInfo, playerNeeded);    
-          }
-          // console.log('playerIdx user odd round after check', playerIdx)
-
-          // if (playerIdx) {
           let player = allPlayers[playerIdx];  
           pos = player["pos"];
           team[pos].push(player);
-          allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
+          allPlayers[playerIdx] = `${player.name} drafted!`;
           details = extractInfo(i, player, pos);
           drafted.push(`${details}, user`);                             
-            // pos = fullDetails[playerID[0]]["pos"];
-            // team[pos].push(fullDetails[playerID[0]]);
-          // fullDetails[playerID]['drafted'] = true;
-            // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-            // details = extractInfo(i, fullDetails[playerID[0]], pos);
-          // } 
         }
       } else {
-        playerIdx = draftPlayer(team, allPlayers);
-        //   console.log('playerID', playerID)
-        // if (playerID === false) console.log('false result', i, team)
-        // console.log('playerIdx odd round before check', playerIdx)
-
-        if (playerIdx === false) {
-          let playerNeeded = fillRole(team);
-          playerIdx = draftRoleplayer(playerInfo, playerNeeded);    
-        }
-        // console.log('playerIdx odd round After check', playerIdx)
-
-        // if (playerIdx) {          
+        playerIdx = draftPlayer(team, allPlayers);       
         let player = allPlayers[playerIdx];  
         pos = player["pos"];
         team[pos].push(player);
-        allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
+        allPlayers[playerIdx] = `${player.name} drafted!`;
         details = extractInfo(i, player, pos);
         drafted.push(`${details}, user`);                             
-            // pos = fullDetails[playerID[0]]["pos"];
-            // team[pos].push(fullDetails[playerID[0]]);
-          // fullDetails[playerID]['drafted'] = true;
-            // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-            // details = extractInfo(i, fullDetails[playerID[0]], pos);
-          // pos = fullDetails[playerID[0]]["pos"];
-          // team[pos].push(fullDetails[playerID[0]]);
-          // // fullDetails[playerID]['drafted'] = true;
-          // details = extractInfo(i, fullDetails[playerID[0]], pos);
-          // drafted.push(`${details}`);       
-          // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-        // }
       }
     }
 
@@ -111,66 +65,28 @@ function draftTeams(fullDetails, userInput, playerInfo) {
     for (let i = teams.length - 1; i >= 0; i--) {
       team = teams[i];
 
-      // if (i === userPlacement) console.log('currentTeam', team, i);
+      if (checkTeam(team)) continue;
 
       playerIdx = draftPlayer(team, allPlayers);
-      // console.log('playerID', playerID)
-      // if (playerIdx === false) console.log('false result', i, team)
-      console.log('playerIdx even round before check', playerIdx)
-      
-      if (playerIdx === false) {
-        let playerNeeded = fillRole(team);
-        playerIdx = draftRoleplayer(playerInfo, playerNeeded);    
-      }
-      console.log('playerIdx even round after check', playerIdx)
-      // if (playerIdx) {
-        // pos = fullDetails[playerID[0]]["pos"];
-        // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-        // team[pos].push(fullDetails[playerID[0]]);
-        // details = extractInfo(i, fullDetails[playerID[0]], pos);
-        // let idx = playerID;
-        let player = allPlayers[playerIdx];  
-        pos = player["pos"];
-        team[pos].push(player);
-        allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
-        details = extractInfo(i, player, pos);
 
-        if (i === userPlacement) {
-          drafted.push(`${details}, user`);                                     
-        } else {
-          drafted.push(`${details}`);                     
-        }
-      // }
+      let player = allPlayers[playerIdx];  
+      pos = player["pos"];
+      team[pos].push(player);
+      allPlayers[playerIdx] = `${player.name} drafted!`;
+      details = extractInfo(i, player, pos);
+
+      i === userPlacement ? drafted.push(`${details}, user`) : drafted.push(`${details}`);                     
     }
-    // console.log('currentTeams', teams)
-    // console.log('draftProgress', fullDetails)
+
     count++;
+    console.log('draftProgress', allPlayers)
   }
   console.log('final count', count)
   console.log(teams)
-  // resetPlayers(playerInfo, fullDetails);
   draftLog(drafted);
-
-  let draftedCount = 0;
-  for (let draftedTeam of teams) {
-    let teamCount = getTeam(draftedTeam);
-    draftedCount += teamCount.length;
-  }
-
-  console.log('draftedCount', draftedCount)
 
   return teams[userPlacement];
 }
-
-function draftRoleplayer(playerInfo, playerNeeded) {
-  for (let i = 0; i < playerInfo.length; i++) {
-    let player = playerInfo[i];
-    let playerID = player[1];
-    let pos = player[2];
-    if (pos === playerNeeded) return playerID;
-  }
-}
-
 
 const checkTeam = team => {
   team = getTeam(team);
@@ -178,7 +94,6 @@ const checkTeam = team => {
 }
 
 const checkAvailability = (team, pos) => {
-  // console.log('pos availability', pos, team[pos].length)
   if (pos === 'C') {
     return team[pos].length < 1 ? true : false;
   } else {
@@ -187,92 +102,31 @@ const checkAvailability = (team, pos) => {
 }
 
 function draftFavorite(name, allPlayers) {
-  // let playerIdx = null;
-  // let caseSensitiveName = name.toLowerCase();
-
-  // console.log('draftfavoriteallplayers', allPlayers)
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
-    if (player.name.toLowerCase() === name.toLowerCase()) {
+
+    if (typeof player === 'string') {
+      continue;
+    } else if (player.name.toLowerCase() === name.toLowerCase()) {
       return i;
-    // console.log('playerIdx', playerIdx)
     }
   }
 
   return false;
 }
-  // if (playerIdx) return false;
-  // if (playerIdx) {
-  //   let player = allPlayers[playerIdx];
-  //   return [player.id, playerIdx]; 
-    // for (let i = 0; i < playerInfo.length; i++) {
-    //   let player = playerInfo[i];
-    //   let playerID = player[1], pos = player[2];
-    //   // let status = fullDetails[playerID]["drafted"];
-    //   let available = checkAvailability(team, pos);
-
-    //   if (player) {
-    //     if (player.includes(name) && available) {
-    //       // fullDetails[playerID]["drafted"] = true;
-    //       allPlayers = allPlayers.slice(0, playerIdx).concat(allPlayers.slice(playerIdx + 1));
-    //       return [playerID, i];
-    //     }
-    //   }
-  // } else {
-  //   return false;
-  // }
-
-
-// if all positions filled, need to draft player that can fill role
 
 function draftPlayer(team, allPlayers) {
   for (let i = allPlayers.length - 1; i >= 0; i--) {
     let player = allPlayers[i];
-    // let status = fullDetails[playerID]["drafted"];
 
-    if (checkAvailability(team, player["pos"])) {
+    if (typeof player === 'string') {
+      continue;
+    } else if (checkAvailability(team, player["pos"])) {
       return i;
-    } else {
-      console.log('role filled', player, team);
     }
-        
-        // if (i === allPlayers.length - 1) {
-        //   console.log('before first if', allPlayers, allPlayers[allPlayers.length - 1].name)
-        //   // allPlayers.pop();
-        //   console.log('after first if', allPlayers, allPlayers[allPlayers.length - 1].name)
-        // } else {
-        //   console.log('before second if', allPlayers, allPlayers[i].name)
-        //   // allPlayers = allPlayers.slice(0, i).concat(allPlayers.slice(i + 1));
-        //   console.log('after second if', allPlayers, allPlayers[i].name)
-        // }
-
-        // fullDetails[playerID]["drafted"] = true;
-    // }
   }
 
   return false;
-}
-
-const playerDrafted = (fullDetails, playerID) => {
-  fullDetails[playerID]['drafted'] = true;
-  return fullDetails;
-}
-
-const fillRole = team => {
-  if (team['G'].length < 2) return 'G';
-  if (team['F'].length < 2) return 'F';
-  if (team['C'].length < 1) return 'C';
-}
-
-function resetPlayers(playerInfo, fullDetails) {
-  for (let i = 0; i < playerInfo.length; i++) {
-    let player = playerInfo[i];
-    let playerID = player[1];
-    let playerFull = fullDetails[playerID];
-    playerFull["drafted"] = false;
-  }
-
-  return;
 }
 
 function extractInfo(placement, player, pos) {
@@ -335,91 +189,7 @@ function draftLog(drafted) {
 
 function clearDraftLog() {
   let draftLog = document.getElementById('draft-log-results');
-
-  for (let i = draftLog.children.length - 1; i >= 0; i--) {
-    draftLog.children[i].remove();
-  }
+  for (let i = draftLog.children.length - 1; i >= 0; i--) draftLog.children[i].remove();
 }
 
-
 export default draftTeams;
-
-
-
-// junkyard lol
-
-/* 
-    // console.log(teams);
-    // for (let i = 0; i < teams.length; i++) {
-    //   let draftedTeam = teams[i];
-      
-    //   if (!checkTeam(draftedTeam)) {
-    //     break;
-    //   } else if (i === teams.length - 1 && checkTeam(draftedTeam)) {
-    //     resetPlayers(playerInfo, fullDetails);
-    //     draftLog(drafted);
-    //     return teams[userPlacement];
-    //   }
-    // }
-    //   let playerNeeded = null;
-//   if (team['F'].length === 2 || team['G'].length === 2) playerNeeded = fillRole(team);
-
-//   for (let i = 0; i < sortedScores.length; i++) {
-//     let score = sortedScores[i];
-
-//     for (let j = 0; j < playerInfo.length; j++) {
-//       let player = playerInfo[j];
-//       let playerID = player[1];
-//       let pos = player[2];
-//       let status = fullDetails[playerID]["drafted"];
-//       let available = checkAvailability(team, pos);
-//       // console.log('status', status)
-//       // if (playerNeeded !== pos) continue;
-
-//       if (player) {
-//         if (player.includes(score) && available && status === false) {
-//             // fullDetails[playerID]["drafted"] = true;
-//           fullDetails = playerDrafted(fullDetails, playerID);
-//           console.log('player', player)
-//           console.log('status after found', fullDetails[playerID]['drafted']);
-//           console.log('check', fullDetails)
-//           return playerID;
-//         } 
-//       }
-//     }
-//   }
-
-//   return false; 
-// }  let playerIdx = null;
-  
-  // for (let i = 0; i < allPlayers.length; i++) {
-  //   let player = allPlayers[i];
-  //   if (player[name]) playerIdx = i;
-  // }
-
-  // if (playerIdx) return false;
-
-      - draft from end of allPlayers. if draft successful, pop
-    - if draft not successful, traverse until player found. then remove 
-      player from that index. 
-  
-          // fullDetails[playerID]['drafted'] = true;
-  // for (let player in fullDetails) allPlayers.push(fullDetails[player]);
-  
-              let [ id, idx ] = playerID;
-              let player = allPlayers[idx];
-              console.log('id, idx', id, idx)
-              console.log('allPlayersIdx', allPlayers[idx], fullDetails[playerID[0]]["pos"]);
-              pos = player["pos"];// fullDetails[playerID[0]]["pos"];
-              team[pos].push(player); //team[pos].push(fullDetails[playerID[0]]);
-              allPlayers = allPlayers.slice(0, idx).concat(allPlayers.slice(idx + 1));
-              // allPlayers = allPlayers.slice(0, playerID[1]).concat(allPlayers.slice(playerID[1] + 1));
-              details = extractInfo(i, player, pos);
-              drafted.push(`${details}, user`);    
-
-                    if (checkTeam(team)) {
-        console.log(`${i}, done`)
-        continue;
-      }
-  */
-
