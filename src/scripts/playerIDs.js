@@ -16,7 +16,7 @@ const playerIDs2022 = [
 ];
 
 const hofIDs = [
-
+  1037, 2931, 2994, 115, 567, 2871, 1039
 ];
 
 export { playerIDs2021, playerIDs2022, hofIDs };

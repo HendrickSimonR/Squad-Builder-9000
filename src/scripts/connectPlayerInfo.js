@@ -6,6 +6,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     // for legends = season is an array that has same indices as playerIDs.
     // callfetchPlayerStats(playerID, season[i]);
     let playerObj = await fetchPlayerStats(playerID, playerSeason); // async here before
+    console.log(playerObj, playerID)
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];

@@ -157,7 +157,23 @@ const players2022 = {
 }
 
 const hofPlayers = {
-  
+  1037: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/947.png", name: "Allen Iverson", pos: "G", team: "Philadelphia 76ers" },
+  2931: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/893.png", name: "Michael Jordan", pos: "G", team: "Chicago Bulls" },
+  2994: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png", name: "Magic Johnson", pos: "G", team: "Los Angeles Lakers" },
+  115: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png", name: "Steph Curry", pos: "G", team: "Golden State Warriors" },
+  567: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/78318.png", name: "Isiah Thomas", pos: "G", team: "Detroit Pistons" },
+  2871: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/304.png", name: "John Stockton", pos: "G", team: "Utah Jazz" },
+  1039: { image: "", name: "Steve Nash", pos: "G", team: "Phoenix Suns" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
 }
 
 export { players2021, players2022, hofPlayers };
