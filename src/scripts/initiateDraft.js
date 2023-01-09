@@ -11,7 +11,7 @@ import { startCountdown, switchForm } from "./cooldown";
 
 async function initiateDraft(season, seasonSelected) {
   let scores = [], nameAndID = [];
-  seasonSelected.innerHTML = `${season} - ${season + 1}`;
+  seasonSelected.innerHTML = typeof season === 'number' ? `${season} - ${season + 1}` : `Hall of Fame`;
   document.getElementById("draft-button").disabled = true;
   document.getElementById("draft-button").value = "Loading...";
   let loader = document.getElementById("loader");
