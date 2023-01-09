@@ -21,13 +21,14 @@ async function initiateDraft(season, seasonSelected) {
 
   selectSeason();
   
-  if (season === 2021) {
-    await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021, 2021);
+  if (typeof season === 'number') { // dont need if condition, array logic needs to be adapted in connectPlayerInfo
+    await connectPlayerInfo(playerIDs2021, fullDetails, nameAndID, scores, players2021, season);
     startCountdown();
-  } else {
-    await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
-    startCountdown();
-  }
+  } 
+  // else {
+  //   await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
+  //   startCountdown();
+  // }
 
   let sortedScores = scores.sort().reverse();
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);

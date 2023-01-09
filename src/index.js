@@ -1,4 +1,5 @@
 import initiateDraft from "./scripts/initiateDraft";
+// import a seasons array for hall of famers
 import { displayModal, closeModal } from "./scripts/modal";
 
 document.addEventListener("DOMContentLoaded", async () => { 
@@ -12,5 +13,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   season21.addEventListener('click', () => initiateDraft(2021, seasonSelected));
   season22.addEventListener('click', () => initiateDraft(2022, seasonSelected));
-  // hallOfFame.addEventListener('click', () => initiateDraft(seasonSelected))
+  // hallOfFame.addEventListener('click', () => initiateDraft(hofSeasons, seasonSelected))
 });
