@@ -15,4 +15,8 @@ const playerIDs2022 = [
   15 /* 185, 274, 227, 17896055, 335, 315, 443, 375, 666848 */
 ];
 
-export { playerIDs2021, playerIDs2022 };
+const hofIDs = [
+
+];
+
+export { playerIDs2021, playerIDs2022, hofIDs };

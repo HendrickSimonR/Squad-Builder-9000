@@ -156,7 +156,11 @@ const players2022 = {
   666848: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1629673.png", name: "Jordan Poole", pos: "G", team: "Golden State Warriors" } */
 }
 
-export { players2021, players2022 };
+const hofPlayers = {
+  
+}
+
+export { players2021, players2022, hofPlayers };
 
 // : { image: "", name: "", pos: "", team: "" },
 
