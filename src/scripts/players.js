@@ -171,7 +171,7 @@ const legendPlayers = {
   363: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2225.png", name: "Tony Parker", pos: "G", team: "San Antonio Spurs" },
   228: { image: "https://i.ibb.co/mXJgR0x/pngfind-com-dwyane-wade-png-659115.png", name: "Kyrie Irving", pos: "G", team: "Cleveland Cavaliers" }, 
   401: { image: "https://i.ibb.co/Jm0vsDx/imgbin-derrick-rose-chicago-bulls-cleveland-cavaliers-nba-minnesota-timberwolves-png.png", name: "Derrick Rose", pos: "G", team: "New York Knicks" },
-  1043: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/977.png", name: "Kobe Bryant", pos: "G", team: "Los Angeles Lakers" },
+  1043: { image: "https://i.ibb.co/r7T50DJ/Png-Item-1192125-2-1-1.png", name: "Kobe Bryant", pos: "G", team: "Los Angeles Lakers" },
   461: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2548.png", name: "Dwyane Wade", pos: "G", team: "Miami Heat" },
   192: { image: "https://i.ibb.co/ByGQsjJ/James-Harden-PNG-File.png", name: "James Harden", pos: "G", team: "Houston Rockets" },
   632: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/17.png", name: "Clyde Drexler", pos: "G", team: "Portland Trailblazers" },
