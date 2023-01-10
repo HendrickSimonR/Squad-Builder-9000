@@ -203,7 +203,7 @@ const legendPlayers = {
   2854: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1450.png", name: "Kevin McHale", pos: "F", team: "Boston Celtics" },
   170: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2200.png", name: "Pau Gasol", pos: "F", team: "Los Angeles Lakers" },
   1482: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2547.png", name: "Chris Bosh", pos: "F", team: "Toronto Raptors" },
-  552: { image: "https://i.ibb.co/Nstfd2v/pngegg-2.png", name: "Dennis Rodman", pos: "F", team: "Detroit Pistons" },
+  552: { image: "https://i.ibb.co/0XG4GK2/pngegg-2-1.png", name: "Dennis Rodman", pos: "F", team: "Detroit Pistons" },
   847: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/185.png", name: "Chris Webber", pos: "F", team: "Sacramento Kings" },
   2247: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/76003.png", name: "Kareem Abdul-Jabbar", pos: "C", team: "Los Angeles Lakers" },
   735: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/406.png", name: "Shaquille O'Neal", pos: "C", team: "Los Angeles Lakers" },
