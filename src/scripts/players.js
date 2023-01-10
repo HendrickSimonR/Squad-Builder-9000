@@ -163,7 +163,7 @@ const legendPlayers = {
   115: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png", name: "Steph Curry", pos: "G", team: "Golden State Warriors" },
   567: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/78318.png", name: "Isiah Thomas", pos: "G", team: "Detroit Pistons" },
   2871: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/304.png", name: "John Stockton", pos: "G", team: "Utah Jazz" },
-  1039: { image: "https://i.ibb.co/P6dS3TK/steve-nash.png", name: "Steve Nash", pos: "G", team: "Phoenix Suns" },
+  1039: { image: "https://i.ibb.co/7rrJSNt/steve-nash-1.png", name: "Steve Nash", pos: "G", team: "Phoenix Suns" },
   367: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png", name: "Chris Paul", pos: "G", team: "New Orleans Hornets" },
   908: { image: "https://i.ibb.co/WyNVFJy/jasonkidd.png", name: "Jason Kidd", pos: "G", team: "Phoenix Suns" },
   2968: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/56.png", name: "Gary Payton", pos: "G", team: "Seattle SuperSonics" },
