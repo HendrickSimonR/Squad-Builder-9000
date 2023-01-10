@@ -176,7 +176,7 @@ const legendPlayers = {
   192: { image: "https://i.ibb.co/ByGQsjJ/James-Harden-PNG-File.png", name: "James Harden", pos: "G", team: "Houston Rockets" },
   632: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/17.png", name: "Clyde Drexler", pos: "G", team: "Portland Trailblazers" },
   2890: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/397.png", name: "Reggie Miller", pos: "G", team: "Indiana Pacers" },
-  1036: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/951.png", name: "Ray Allen", pos: "G", team: "Seattle SuperSonics" },
+  1036: { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/9.png&w=350&h=254", name: "Ray Allen", pos: "G", team: "Seattle SuperSonics" },
   88: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1713.png", name: "Vince Carter", pos: "G", team: "Toronto Raptors" },
   1087: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1503.png", name: "Tracy McGrady", pos: "G", team: "Houston Rockets" },
   1412: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1938.png", name: "Manu Ginobili", pos: "G", team: "San Antonio Spurs" },
