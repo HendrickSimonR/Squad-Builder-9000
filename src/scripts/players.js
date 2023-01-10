@@ -183,7 +183,7 @@ const legendPlayers = {
   443: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202691.png", name: "Klay Thompson", pos: "G", team: "Golden State Warriors" },
   237: { image: "https://i.ibb.co/wRZGb1X/youngbron.png", name: "Lebron James", pos: "F", team: "Cleveland Cavaliers" },
   2851: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1449.png", name: "Larry Bird", pos: "F", team: "Boston Celtics" },
-  140: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png", name: "Kevin Durant", pos: "F", team: "Brooklyn Nets" },
+  140: { image: "https://i.ibb.co/5nZprKZ/youngKD.png", name: "Kevin Durant", pos: "F", team: "Oklahoma City Thunder" },
   2283: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/76681.png", name: "Julius Erving", pos: "F", team: "Philadelphia 76ers" },
   2933: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/937.png", name: "Scottie Pippen", pos: "F", team: "Chicago Bulls" },
   274: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202695.png", name: "Kawhi Leonard", pos: "F", team: "Los Angeles Clippers" },
