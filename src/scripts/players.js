@@ -158,7 +158,7 @@ const players2022 = {
 
 const legendPlayers = {
   1037: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/947.png", name: "Allen Iverson", pos: "G", team: "Philadelphia 76ers" },
-  2931: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/893.png", name: "Michael Jordan", pos: "G", team: "Chicago Bulls" },
+  2931: { image: "https://i.ibb.co/41nYznW/893-1.png", name: "Michael Jordan", pos: "G", team: "Chicago Bulls" },
   2994: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png", name: "Magic Johnson", pos: "G", team: "Los Angeles Lakers" },
   115: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png", name: "Steph Curry", pos: "G", team: "Golden State Warriors" },
   567: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/78318.png", name: "Isiah Thomas", pos: "G", team: "Detroit Pistons" },
@@ -186,7 +186,7 @@ const legendPlayers = {
   140: { image: "https://i.ibb.co/5nZprKZ/youngKD.png", name: "Kevin Durant", pos: "F", team: "Oklahoma City Thunder" },
   2283: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/76681.png", name: "Julius Erving", pos: "F", team: "Philadelphia 76ers" },
   2933: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/937.png", name: "Scottie Pippen", pos: "F", team: "Chicago Bulls" },
-  274: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202695.png", name: "Kawhi Leonard", pos: "F", team: "Los Angeles Clippers" },
+  274: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202695.png", name: "Kawhi Leonard", pos: "F", team: "Toronto Raptors" },
   530: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1122.png", name: "Dominique Wilkins", pos: "F", team: "Atlanta Hawks" },
   2992: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1460.png", name: "James Worthy", pos: "F", team: "Los Angeles Lakers" },
   17: { image: "https://i.ibb.co/hMDd7vn/pngegg.png", name: "Carmelo Anthony", pos: "F", team: "New York Knicks" },
