@@ -242,7 +242,7 @@ body h2 {
 }
 
 .results {
-  width: 800px !important;
+  width: 822px !important;
 }
 
 #instructions, #draft-log, #player-details {
@@ -272,7 +272,7 @@ body h2 {
   width: 680px !important;
   height: 810px !important;
   overflow: auto;
-  margin: 0px 20px !important;
+  margin: 0px 12px !important;
 }
 
 .intro {
@@ -290,7 +290,10 @@ body h2 {
 }
 .player-details {
   display: none;
-  margin: 0px 20px !important;
+  margin: 0px 12px !important;
+  height: 810px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .player-info li {
@@ -326,12 +329,6 @@ body h2 {
 .draft-log-notice {
   color: rgb(255, 136, 0, .95) !important;
   font-size: 14px !important;
-}
-
-.player-details {
-  height: 810px;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 #draftView {
@@ -371,6 +368,8 @@ body h2 {
 
 #player {
   width: 300px;
+  margin-left: -5px;
+  margin-right: -5px;
   animation-name: fadeInLeft;
   animation-duration: 1s;
 }

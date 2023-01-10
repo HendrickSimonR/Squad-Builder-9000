@@ -103,6 +103,7 @@ function addDetails(row, person, idx) {
     if (typeof person[info] === 'object') {
       console.log('person', person)
       let stats = statline(person[info]);
+      col.setAttribute('id', 'statline');
       col.innerHTML = `${stats}`;
       player.appendChild(col);
      
