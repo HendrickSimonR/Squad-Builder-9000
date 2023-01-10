@@ -119,13 +119,9 @@ function addDetails(row, person, idx) {
         player.appendChild(col);
         avg += person[info];
       } else if (info !== 'id') {
-        if (info === 'season' && person['legacyDraft'] === false) {
-          console.log('legacyDraft')
-          continue;
-        } else {
-          col.innerHTML = `Season: ${person[info].toUpperCase()}`;
-          player.appendChild(col);
-        }
+        let season = info === 'season' ? 'BEST SEASON:' : '';
+        col.innerHTML = `${season} ${person[info].toUpperCase()}`;
+        player.appendChild(col);
       }
     }
   }

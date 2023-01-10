@@ -2,6 +2,7 @@ import fetchPlayerStats from "./fetchPlayerStats";
 
 async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, playerVitals, season) {
   console.log('connectPlyaer season', season)
+  console.log('playerIDs', playerIDs)
   for (let i = 0; i < playerIDs.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
     let playerID = playerIDs[i], playerSeason = typeof season === 'number' ? season : season[i];
     // for legends = season is an array that has same indices as playerIDs.

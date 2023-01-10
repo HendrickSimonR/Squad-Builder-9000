@@ -1,6 +1,7 @@
 import selectSeason from "./selectSeason"; 
 import { playerIDs2021, playerIDs2022 } from "./playerIDs";
-import { players2021, players2022 } from "./players";
+import { players2021, players2022, legendPlayers } from "./players";
+import { legendIDs, legendSeasons } from "./legends";
 import sortIDs from "./sortIDs";
 import playerVitals from "./playerVitals";
 import returnInput from "./userInput";
@@ -11,23 +12,25 @@ import { startCountdown, switchForm } from "./cooldown";
 
 async function initiateDraft(season, seasonSelected) {
   let scores = [], nameAndID = [];
-  seasonSelected.innerHTML = typeof season === 'number' ? `${season} - ${season + 1}` : `Hall of Fame`;
+  seasonSelected.innerHTML = typeof season === 'number' ? `${season} - ${season + 1}` : `NBA Legends`;
   document.getElementById("draft-button").disabled = true;
   document.getElementById("draft-button").value = "Loading...";
-  let loader = document.getElementById("loader");
-  let countdown = document.getElementById('countdown');
+  let loader = document.getElementById("loader"), countdown = document.getElementById('countdown');
   loader.style.visibility = 'visible';
   countdown.style.display = 'block';
 
   selectSeason();
+
+  season = typeof season === 'number' ? season : legendSeasons;
+  console.log('season', season)
   
-  if (typeof season === 'number') { // dont need if condition, array logic needs to be adapted in connectPlayerInfo
-    console.log('season', season)
-    let playerIDs = season === 2021 ? playerIDs2021 : playerIDs2022;
-    let players = season === 2021 ? players2021 : players2022
-    await connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, players, season);
-    startCountdown();
-  } 
+  // if (typeof season === 'number') { // dont need if condition, array logic needs to be adapted in connectPlayerInfo
+  let playerIDs = season === 2021 ? playerIDs2021 : season === 2022 ? playerIDs2022 : legendIDs;
+  console.log('playerIDs initiateDraft', playerIDs)
+  let players = season === 2021 ? players2021 : season === 2022 ? players2022 : legendPlayers;
+  await connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, players, season);
+  startCountdown();
+  // } 
   // else {
   //   await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
   //   startCountdown();
