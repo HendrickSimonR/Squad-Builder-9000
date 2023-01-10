@@ -169,7 +169,7 @@ const legendPlayers = {
   2968: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/56.png", name: "Gary Payton", pos: "G", team: "Seattle SuperSonics" },
   472: { image: "https://i.ibb.co/Y3Twnms/Russell-Westbrook-PNG-Pic.png", name: "Russell Westbrook", pos: "G", team: "Oklahoma City Thunder" },
   363: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2225.png", name: "Tony Parker", pos: "G", team: "San Antonio Spurs" },
-  228: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202681.png", name: "Kyrie Irving", pos: "G", team: "Cleveland Cavaliers" }, 
+  228: { image: "https://i.ibb.co/mXJgR0x/pngfind-com-dwyane-wade-png-659115.png", name: "Kyrie Irving", pos: "G", team: "Cleveland Cavaliers" }, 
   401: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201565.png", name: "Derrick Rose", pos: "G", team: "New York Knicks" },
   1043: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/977.png", name: "Kobe Bryant", pos: "G", team: "Los Angeles Lakers" },
   461: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2548.png", name: "Dwyane Wade", pos: "G", team: "Miami Heat" },
