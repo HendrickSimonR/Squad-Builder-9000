@@ -205,16 +205,19 @@ const hofPlayers = {
   1482: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2547.png", name: "Chris Bosh", pos: "F", team: "Toronto Raptors" },
   552: { image: "https://i.ibb.co/Nstfd2v/pngegg-2.png", name: "Dennis Rodman", pos: "F", team: "Detroit Pistons" },
   847: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/185.png", name: "Chris Webber", pos: "F", team: "Sacramento Kings" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
-
+  2247: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/76003.png", name: "Kareem Abdul-Jabbar", pos: "C", team: "Los Angeles Lakers" },
+  735: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/406.png", name: "Shaquille O'Neal", pos: "C", team: "Los Angeles Lakers" },
+  540: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/165.png", name: "Hakeem Olajuwon", pos: "C", team: "Houston Rockets" },
+  593: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/77449.png", name: "Moses Malone", pos: "C", team: "Houston Rockets" },
+  2981: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/764.png", name: "David Robinson", pos: "C", team: "San Antonio Spurs" },  
+  1920: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/121.png", name: "Patrick Ewing", pos: "C", team: "New York Knicks" },
+  246: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png", name: "Nikola Jokic", pos: "C", team: "Denver Nuggets"},
+  2859: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/305.png", name: "Robert Parish", pos: "C", team: "Boston Celtics" },
+  660: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/87.png", name: "Dikembe Mutombo", pos: "C", team: "Denver Nuggets" },
+  220: { image: "https://i.ibb.co/0DMW9MY/howard.png", name: "Dwight Howard", pos: "C", team: "Orlando Magic" }
 }
 
-export { players2021, players2022 };
+export { players2021, players2022, hofPlayers };
 
 // : { image: "", name: "", pos: "", team: "" },
 
