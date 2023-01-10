@@ -163,10 +163,14 @@ const hofPlayers = {
   115: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png", name: "Steph Curry", pos: "G", team: "Golden State Warriors" },
   567: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/78318.png", name: "Isiah Thomas", pos: "G", team: "Detroit Pistons" },
   2871: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/304.png", name: "John Stockton", pos: "G", team: "Utah Jazz" },
-  1039: { image: "", name: "Steve Nash", pos: "G", team: "Phoenix Suns" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
-  : { image: "", name: "", pos: "", team: "" },
+  1039: { image: "https://i.ibb.co/P6dS3TK/steve-nash.png", name: "Steve Nash", pos: "G", team: "Phoenix Suns" },
+  367: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png", name: "Chris Paul", pos: "G", team: "New Orleans Hornets" },
+  908: { image: "https://i.ibb.co/WyNVFJy/jasonkidd.png", name: "Jason Kidd", pos: "G", team: "Phoenix Suns" },
+  2968: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/56.png", name: "Gary Payton", pos: "G", team: "Seattle SuperSonics" },
+  472: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201566.png", name: "Russell Westbrook", pos: "G", team: "Oklahoma City Thunder" },
+  363: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2225.png", name: "Tony Parker", pos: "G", team: "San Antonio Spurs" },
+  228: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202681.png", name: "Kyrie Irving", pos: "G", team: "Cleveland Cavaliers" }, 
+  401: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201565.png", name: "Derrick Rose", pos: "G", team: "New York Knicks" },
   : { image: "", name: "", pos: "", team: "" },
   : { image: "", name: "", pos: "", team: "" },
   : { image: "", name: "", pos: "", team: "" },
@@ -176,7 +180,7 @@ const hofPlayers = {
   : { image: "", name: "", pos: "", team: "" },
 }
 
-export { players2021, players2022, hofPlayers };
+export { players2021, players2022 };
 
 // : { image: "", name: "", pos: "", team: "" },
 
