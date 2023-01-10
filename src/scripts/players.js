@@ -181,11 +181,28 @@ const hofPlayers = {
   1087: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1503.png", name: "Tracy McGrady", pos: "G", team: "Houston Rockets" },
   1412: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1938.png", name: "Manu Ginobili", pos: "G", team: "San Antonio Spurs" },
   443: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202691.png", name: "Klay Thompson", pos: "G", team: "Golden State Warriors" },
+  237: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png", name: "Lebron James", pos: "F", team: "Cleveland Cavaliers" },
+  2851: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1449.png", name: "Larry Bird", pos: "F", team: "Boston Celtics" },
+  140: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png", name: "Kevin Durant", pos: "F", team: "Brooklyn Nets" },
+  2283: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/76681.png", name: "Julius Erving", pos: "F", team: "Philadelphia 76ers" },
+  2933: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/937.png", name: "Scottie Pippen", pos: "F", team: "Chicago Bulls" },
+  274: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/202695.png", name: "Kawhi Leonard", pos: "F", team: "Los Angeles Clippers" },
+  530: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1122.png", name: "Dominique Wilkins", pos: "F", team: "Atlanta Hawks" },
+  2992: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1460.png", name: "James Worthy", pos: "F", team: "Los Angeles Lakers" },
+  17: { image: "https://i.ibb.co/hMDd7vn/pngegg.png", name: "Carmelo Anthony", pos: "F", team: "New York Knicks" },
+  1168: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1718.png", name: "Paul Pierce", pos: "F", team: "Boston Celtics" },
+  588: { image: "https://i.ibb.co/vm7X4hg/Alex-English-2-K.png", name: "Alex English", pos: "F", team: "Denver Nuggets" },
+  639: { image: "https://cdn.nba.com/headshots/nba/latest/1040x760/77264.png", name: "Bernard King", pos: "F", team: "Washington Bullets" },
   : { image: "", name: "", pos: "", team: "" },
   : { image: "", name: "", pos: "", team: "" },
   : { image: "", name: "", pos: "", team: "" },
   : { image: "", name: "", pos: "", team: "" },
   : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+  : { image: "", name: "", pos: "", team: "" },
+
 }
 
 export { players2021, players2022 };
