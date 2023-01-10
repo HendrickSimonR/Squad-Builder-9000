@@ -1,3 +1,5 @@
+import fullDetails from "./fullDetails";
+
 function startCountdown() {
   let counter = 45;
   
@@ -38,6 +40,7 @@ const switchForm = (prompt, countdown = null, result = null) => {
     result.style.display = 'none';
     mainForm.style.display = 'none';
     selectSeason.style.display = 'flex';
+    fullDetails = {};
   } else {
     window.location.reload();
   }

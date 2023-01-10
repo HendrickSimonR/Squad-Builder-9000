@@ -2,7 +2,7 @@ import getTeam from "./getTeam";
 
 function draftTeams(fullDetails, userInput) {
   clearDraftLog();
-
+  console.log('fullDetails', fullDetails)
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
