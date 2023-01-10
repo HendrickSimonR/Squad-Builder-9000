@@ -1,6 +1,7 @@
 import fetchPlayerStats from "./fetchPlayerStats";
 
 async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, playerVitals, season) {
+  console.log('connectPlyaer season', season)
   for (let i = 0; i < playerIDs.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
     let playerID = playerIDs[i], playerSeason = typeof season === 'number' ? season : season[i];
     // for legends = season is an array that has same indices as playerIDs.
@@ -10,7 +11,10 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
-    let playerName, playerPos, playerTeam, playerImg;
+    let playerName, playerPos, playerTeam, playerImg, hofSeason;
+
+    hofSeason = `${playerSeason} - ${playerSeason + 1}`;
+    let legend = typeof season === 'number' ? false : true;
     
     if (playerVitals[playerID]) {
       playerName = playerVitals[playerID].name;
@@ -30,6 +34,8 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
       pos: playerPos,
       team: playerTeam,
       id: playerID,
+      season: hofSeason,
+      legacyDraft: legend, 
       stats: { 
         pts: stats.pts, 
         ast: stats.ast, 

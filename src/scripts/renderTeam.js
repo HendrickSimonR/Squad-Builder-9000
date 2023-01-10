@@ -95,13 +95,15 @@ function addDetails(row, person, idx) {
       keys.push(key);
       values.push(value);
     }
+    console.log('info in addDetails', info)
+    console.log('object.entries', keys, values, person)
 
     if (typeof person[info] === 'object') {
       let stats = statline(person[info]);
       col.innerHTML = `${stats}`;
       player.appendChild(col);
      
-    } else if (person[info] === false) {
+    } else if (info === 'drafted' || info === 'legacyDraft') {
       continue;
     } else {
       if (info === 'image') {
@@ -117,8 +119,13 @@ function addDetails(row, person, idx) {
         player.appendChild(col);
         avg += person[info];
       } else if (info !== 'id') {
-        col.innerHTML = `${person[info].toUpperCase()}`;
-        player.appendChild(col);
+        if (info === 'season' && person['legacyDraft'] === false) {
+          console.log('legacyDraft')
+          continue;
+        } else {
+          col.innerHTML = `Season: ${person[info].toUpperCase()}`;
+          player.appendChild(col);
+        }
       }
     }
   }

@@ -24,7 +24,8 @@ async function initiateDraft(season, seasonSelected) {
   if (typeof season === 'number') { // dont need if condition, array logic needs to be adapted in connectPlayerInfo
     console.log('season', season)
     let playerIDs = season === 2021 ? playerIDs2021 : playerIDs2022;
-    await connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, players2021, season);
+    let players = season === 2021 ? players2021 : players2022
+    await connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, players, season);
     startCountdown();
   } 
   // else {
