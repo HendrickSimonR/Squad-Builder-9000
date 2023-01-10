@@ -67,6 +67,8 @@ function nameTransformer(name) {
 function statline(stats) {
   let selectStats = [];
 
+  console.log('stats', stats);
+
   for (let stat in stats) {
     if (stat === 'pts') {
       selectStats.push(`PPG: ${stats[stat].toString()}  | `);
@@ -95,10 +97,11 @@ function addDetails(row, person, idx) {
       keys.push(key);
       values.push(value);
     }
-    console.log('info in addDetails', info)
-    console.log('object.entries', keys, values, person)
+    // console.log('info in addDetails', info)
+    // console.log('object.entries', keys, values, person)
 
     if (typeof person[info] === 'object') {
+      console.log('person', person)
       let stats = statline(person[info]);
       col.innerHTML = `${stats}`;
       player.appendChild(col);
