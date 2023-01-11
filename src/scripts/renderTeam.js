@@ -1,18 +1,16 @@
 import getTeam from "./getTeam";
 
 function renderTeam(team) {
-  let intro = document.getElementById('intro');
-  let header = document.createElement('h1');
-  let teamAvg = 0;
-
-  for (let i = intro.children.length - 1; i >= 0; i--) intro.children[i].remove();
+  let intro = document.getElementById('intro'), header = document.createElement('h1');
+  let yourSquad =  document.getElementById('your-squad'), teamAvg = 0;
+  intro.style.display = 'none';
 
   let explainButton = document.getElementById('explain-button');
   explainButton.style.visibility = 'visible';
 
   let container = document.createElement('div');
   container.setAttribute('id', 'squad-container');
-  intro.appendChild(container);
+  yourSquad.appendChild(container);
   container.appendChild(header);
   
     

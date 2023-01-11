@@ -691,3 +691,5 @@ function draftRoleplayer(playerInfo, playerNeeded) {
       // // 
 
       // currentUser ? drafted.push(`${details}, user`) : drafted.push(`${details}`);                     
+
+  // for (let i = intro.children.length - 1; i >= 0; i--) intro.children[i].remove();
