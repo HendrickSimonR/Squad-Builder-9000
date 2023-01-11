@@ -14,8 +14,10 @@ import { startCountdown, switchForm } from "./cooldown";
 async function initiateDraft(season, seasonSelected) {
   let scores = [], nameAndID = [];
   seasonSelected.innerHTML = typeof season === 'number' ? `${season} - ${season + 1}` : `NBA Legends`;
-  document.getElementById("draft-button").disabled = true;
-  document.getElementById("draft-button").value = "Loading...";
+  let draftButton = document.getElementById('draft-button');
+  draftButton.disabled = true;
+  draftButton.value = "Loading...";
+  draftButton.style.cursor = 'wait';
   let loader = document.getElementById("loader"), countdown = document.getElementById('countdown');
   loader.style.visibility = 'visible';
   countdown.style.display = 'block';
@@ -56,11 +58,13 @@ async function initiateDraft(season, seasonSelected) {
   };
   
   if (Object.size(fullDetails) >= 50) {
-    document.getElementById("draft-button").disabled = false;
-    document.getElementById("draft-button").value = "Draft!";
+    draftButton.disabled = false;
+    draftButton.value = "Draft!";
+    draftButton.style.cursor = "pointer";
   } else {
     alert('Due to the nature of the API, please refresh the page at the end of the countdown :)');
-    document.getElementById("draft-button").value = "Dx";
+    draftButton.value = "Dx";
+    draftButton.style.cursor = 'default';
     let prompt = document.getElementById('countdownPrompt');
     prompt.innerHTML = 'Refresh page in'
   }
