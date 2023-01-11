@@ -18,6 +18,7 @@ async function initiateDraft(season, seasonSelected) {
   draftButton.disabled = true;
   draftButton.value = "Loading...";
   draftButton.style.cursor = 'wait';
+  
   let loader = document.getElementById("loader"), countdown = document.getElementById('countdown');
   loader.style.visibility = 'visible';
   countdown.style.display = 'block';

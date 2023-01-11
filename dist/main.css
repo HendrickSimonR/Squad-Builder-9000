@@ -364,9 +364,9 @@ body h2 {
   color: rgba(216, 27, 27, 0.8);
 }
 
-.modal-disclaimer {
+/* .modal-disclaimer {
   padding-bottom: 20px;
-}
+} */
 
 .draft-log-notice {
   color: rgb(255, 136, 0, .95) !important;
@@ -493,6 +493,7 @@ footer img:hover {
 
 .instructions-modal {
   height: 75% !important;
+  overflow: hidden !important;
 }
 
 #immortals {

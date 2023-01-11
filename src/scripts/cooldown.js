@@ -1,7 +1,7 @@
 import fullDetails from "./fullDetails";
 
 function startCountdown() {
-  let counter = 45;
+  let counter = 50;
   
   const interval = setInterval(() => {
     counter--;
@@ -37,7 +37,7 @@ const switchForm = (prompt, countdown = null, result = null) => {
     let selectSeason = document.getElementById('select-season');
     let mainForm = document.getElementById('form');
     let countdownPrompt = document.getElementById('countdownPrompt');
-    countdown.innerHTML = '0:45';
+    countdown.innerHTML = '0:50';
     countdownPrompt.style.display = 'block';
     result.style.display = 'none';
     mainForm.style.display = 'none';

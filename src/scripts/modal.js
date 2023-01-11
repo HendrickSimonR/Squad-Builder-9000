@@ -6,9 +6,10 @@ function displayModal(modal) {
     document.body.style.height = '100%';
     document.body.style.overflow = 'hidden';
     close.addEventListener('click', () => closeModal(id, modal));
-    let infoQuestions = document.getElementById('info-modal-questions');
-    let footer = document.getElementById('footer');
-    infoQuestions.appendChild(footer);
+    // let infoQuestions = document.getElementById('info-modal-questions');
+    // let footer = document.getElementById('footer');
+    // let footerClone = footer.cloneNode(true);
+    // infoQuestions.appendChild(footerClone);
   } 
 }
 
