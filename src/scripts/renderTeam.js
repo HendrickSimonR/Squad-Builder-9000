@@ -6,6 +6,8 @@ function renderTeam(team) {
   console.log('intro', intro)
   intro.style.display = 'none';
 
+  for (let i = yourSquad.children.length - 1; i >= 0; i--) yourSquad.children[i].remove();
+
   let mainButtons = document.getElementById('main-buttons');
   mainButtons.style.visibility = 'visible';
 
