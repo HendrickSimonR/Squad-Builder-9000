@@ -4,9 +4,11 @@ import { displayModal, closeModal } from "./scripts/modal";
 document.addEventListener("DOMContentLoaded", async () => { 
   let explainButton = document.getElementById('explain-button'), close = document.getElementById('close-modal');
   let season21 = document.getElementById('season21'), season22 = document.getElementById('season22');
-  let legends = document.getElementById('legends');
+  let legends = document.getElementById('legends'), infoButton = document.getElementById('info-button');
+
   let seasonSelected = document.getElementById('selectedSeason');
   
+  infoButton.addEventListener('click', displayInfo);
   explainButton.addEventListener('click', displayModal);
   close.addEventListener('click', closeModal);
 

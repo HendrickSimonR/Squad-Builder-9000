@@ -5,8 +5,8 @@ function renderTeam(team) {
   let yourSquad =  document.getElementById('your-squad'), teamAvg = 0;
   intro.style.display = 'none';
 
-  let explainButton = document.getElementById('explain-button');
-  explainButton.style.visibility = 'visible';
+  let mainButtons = document.getElementById('main-buttons');
+  mainButtons.style.visibility = 'visible';
 
   let container = document.createElement('div');
   container.setAttribute('id', 'squad-container');

@@ -118,6 +118,7 @@ html {
   margin-bottom: -37px;
   top: 10px;
   padding: 0px 8px;
+  visibility: hidden;
 }
 
 .squad-buttons {
@@ -136,7 +137,6 @@ html {
   top: 25px;
   right: 25px;
   z-index: 9;
-  visibility: hidden;
 }
 .squad-buttons:hover {
   background-color: rgba(255, 136, 0, 0.95);
@@ -151,7 +151,6 @@ html {
   padding-bottom: 3px;
   font-family: system-ui;
   background: rgba(216, 27, 27, 0.8);
-  visibility: visible;
   font-weight: 900;
   border-radius: 24% !important;
   padding-left: 13px;
