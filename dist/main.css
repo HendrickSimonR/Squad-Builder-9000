@@ -111,24 +111,55 @@ html {
   background-color: rgba(255, 136, 0, 0.95);
 }
 
-#explain-button {
+#main-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: -37px;
+  top: 10px;
+  padding: 0px 8px;
+}
+
+.squad-buttons {
   background: rgba(216, 27, 27, 0.8);
-  margin-left: 14px;
+  /* margin-left: 14px; */
   text-shadow: none;
-  padding: 5px 11px;
-  border-radius: 55%;
-  font-weight: 700;
-  font-size: 20px;
+  padding-top: 2px;
+  padding-right: 12px;
+  padding-left: 10px;
+  border-radius: 24%;
+  font-weight: 800;
+  font-size: 23px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  position: absolute;
+  /* position: absolute; */
   top: 25px;
   right: 25px;
   z-index: 9;
   visibility: hidden;
 }
-#explain-button:hover {
+.squad-buttons:hover {
   background-color: rgba(255, 136, 0, 0.95);
+}
+
+#info-button {
+  margin-left: 0px !important;
+  /* position: initial; */
+  color: white;
+  /* z-index: 100; */
+  padding-top: 1px;
+  padding-bottom: 3px;
+  font-family: system-ui;
+  background: rgba(216, 27, 27, 0.8);
+  visibility: visible;
+  font-weight: 900;
+  border-radius: 24% !important;
+  padding-left: 13px;
+  padding-right: 15px;
+}
+
+#info-button:hover {
+  background:rgba(255, 136, 0, 0.95);
 }
 
 #more-info {
@@ -242,6 +273,10 @@ body h2 {
 }
 
 .results {
+  width: 822px !important;
+}
+
+#your-squad {
   width: 822px !important;
 }
 
