@@ -409,7 +409,7 @@ body h2 {
   margin-left: -5px;
   margin-right: -5px;
   animation-name: fadeInLeft;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
 #player h2 {
   margin: 4px;
@@ -489,6 +489,34 @@ footer img:hover {
 
 .instructions-modal {
   height: 75% !important;
+}
+
+#immortals {
+  color: rgba(115, 0, 182, 0.904);
+  font-size: 46px;
+  margin-bottom: 14px;
+}
+
+#immortals-description {
+  color: rgba(216, 27, 27, 0.8);
+  margin-bottom: 36px !important
+}
+
+#immortals-blurb {
+  width: 73%;
+  padding: 0px 12%;
+  overflow: hidden;
+}
+
+.legends-disclaimer {
+  color: rgb(255, 174, 0) !important;
+  font-size: 11px !important;
+  width: 73%;
+  padding: 0px 12%;
+}
+
+.legends-modal {
+  height: 51% !important;
 }
 
 #modal-info {

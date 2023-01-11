@@ -2,6 +2,7 @@ import selectSeason from "./selectSeason";
 import { playerIDs2021, playerIDs2022 } from "./playerIDs";
 import { players2021, players2022, legendPlayers } from "./players";
 import { legendIDs, legendSeasons } from "./legends";
+import { displayModal } from "./modal";
 import sortIDs from "./sortIDs";
 import playerVitals from "./playerVitals";
 import returnInput from "./userInput";
@@ -20,6 +21,8 @@ async function initiateDraft(season, seasonSelected) {
   countdown.style.display = 'block';
 
   selectSeason();
+
+  season === 'legends' ? displayModal(season) : null;
 
   season = typeof season === 'number' ? season : legendSeasons;
   console.log('season', season)
