@@ -1,14 +1,11 @@
 import fetchPlayerStats from "./fetchPlayerStats";
 
 async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, playerVitals, season) {
-  console.log('connectPlyaer season', season)
-  console.log('playerIDs', playerIDs)
-  for (let i = 0; i < playerIDs.length; i++) { // for loop needs playerIDs2021, nameAndID, fullDetails, scores      
+
+  for (let i = 0; i < playerIDs.length; i++) {       
     let playerID = playerIDs[i], playerSeason = typeof season === 'number' ? season : season[i];
-    // for legends = season is an array that has same indices as playerIDs.
-    // callfetchPlayerStats(playerID, season[i]);
-    let playerObj = await fetchPlayerStats(playerID, playerSeason); // async here before
-    console.log(playerObj, playerID)
+    let playerObj = await fetchPlayerStats(playerID, playerSeason); 
+
     if (!playerObj) continue;  
  
     let stats = playerObj.data[0];
@@ -52,7 +49,7 @@ async function connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, play
       avg: fantasyAvg,
       drafted: false
     };
-    console.log(fantasyAvg, playerID, playerName, playerPos)
+    
     fullDetails[playerID] = playerInfo;
     scores.push(fantasyAvg);
   } 

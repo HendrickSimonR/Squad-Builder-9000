@@ -32,19 +32,11 @@ async function initiateDraft(season, seasonSelected) {
   }
 
   season = typeof season === 'number' ? season : legendSeasons;
-  console.log('season', season)
   
-  // if (typeof season === 'number') { // dont need if condition, array logic needs to be adapted in connectPlayerInfo
   let playerIDs = season === 2021 ? playerIDs2021 : season === 2022 ? playerIDs2022 : legendIDs;
-  console.log('playerIDs initiateDraft', playerIDs)
   let players = season === 2021 ? players2021 : season === 2022 ? players2022 : legendPlayers;
   await connectPlayerInfo(playerIDs, fullDetails, nameAndID, scores, players, season);
   startCountdown();
-  // } 
-  // else {
-  //   await connectPlayerInfo(playerIDs2022, fullDetails, nameAndID, scores, players2022, 2022);
-  //   startCountdown();
-  // }
 
   let sortedScores = scores.sort().reverse();
   let sortedIDs = sortIDs(sortedScores, playerIDs2021, fullDetails);
@@ -70,7 +62,6 @@ async function initiateDraft(season, seasonSelected) {
   }
 
   loader.style.visibility = "hidden";
-
   return userInput;
 }
 

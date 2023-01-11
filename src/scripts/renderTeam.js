@@ -3,7 +3,6 @@ import getTeam from "./getTeam";
 function renderTeam(team) {
   let intro = document.getElementById('intro'), header = document.createElement('h1');
   let yourSquad =  document.getElementById('your-squad'), teamAvg = 0;
-  console.log('intro', intro)
   intro.style.display = 'none';
 
   for (let i = yourSquad.children.length - 1; i >= 0; i--) yourSquad.children[i].remove();
@@ -68,8 +67,6 @@ function nameTransformer(name) {
 function statline(stats) {
   let selectStats = [];
 
-  console.log('stats', stats);
-
   for (let stat in stats) {
     if (stat === 'pts') {
       selectStats.push(`PPG: ${stats[stat].toString()}  | `);
@@ -98,11 +95,8 @@ function addDetails(row, person, idx) {
       keys.push(key);
       values.push(value);
     }
-    // console.log('info in addDetails', info)
-    // console.log('object.entries', keys, values, person)
 
     if (typeof person[info] === 'object') {
-      console.log('person', person)
       let stats = statline(person[info]);
       col.setAttribute('id', 'statline');
       col.innerHTML = `${stats}`;

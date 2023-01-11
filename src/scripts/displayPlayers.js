@@ -3,16 +3,11 @@ import getTeam from "./getTeam";
 function displayPlayers(team) {
   let stats = document.getElementsByClassName('player-info');
   if (stats.length > 0) clearStats();
-  console.log('displayPLayersteam', team)
   let teamInfo = getTeam(team);  
   teamInfo.sort((a, b) => b.avg - a.avg);
-  console.log('teamInfo', teamInfo);
 
   for (let i = 0; i < teamInfo.length; i++) {
-    let person = teamInfo[i];
-     console.log(person)
-
-    let playerDetails = document.getElementById('player-details');
+    let person = teamInfo[i], playerDetails = document.getElementById('player-details');
     let playerInfo = document.createElement('div');
     playerInfo.setAttribute('class', 'player-info');
     playerInfo.setAttribute('id', `player-${i + 1}`);
@@ -28,7 +23,6 @@ function displayPlayers(team) {
 }
 
 function renderStats(stats, playerInfo, avg) {
-  console.log('stats', stats)
   let pts = `Points Per Game: ${stats.pts}`
   let ast = `Assists Per Game: ${stats.ast}`
   let blk = `Blocks Per Game: ${stats.blk}`
@@ -39,9 +33,7 @@ function renderStats(stats, playerInfo, avg) {
   let to = `Turnovers Per Game: ${stats.to}`
   let fantasyAvg = `Avg Fantasy Score: ${avg.toFixed(4)}`
 
-  let statArr = [ 
-    pts, ast, reb, stl, blk, to, games, min, fantasyAvg 
-  ];
+  let statArr = [ pts, ast, reb, stl, blk, to, games, min, fantasyAvg ];
 
   for (let i = 0; i < statArr.length; i++) {
     let stat = statArr[i];

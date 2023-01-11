@@ -2,7 +2,6 @@ import getTeam from "./getTeam";
 
 function draftTeams(fullDetails, userInput) {
   clearDraftLog();
-  console.log('fullDetails', fullDetails)
   let error = document.getElementById('form-error');
   error.style.display = 'none';
   
@@ -47,13 +46,9 @@ function draftTeams(fullDetails, userInput) {
     }
 
     count++;
-    console.log('draftProgress', allPlayers)
   }
-  console.log('final count', count)
-  console.log(teams)
-  console.log('drafted', drafted)
-  draftLog(drafted);
 
+  draftLog(drafted);
   return teams[userPlacement];
 }
 
