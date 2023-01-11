@@ -360,6 +360,10 @@ body h2 {
   color: rgba(216, 27, 27, 0.8);
 }
 
+.modal-disclaimer {
+  padding-bottom: 20px;
+}
+
 .draft-log-notice {
   color: rgb(255, 136, 0, .95) !important;
   font-size: 14px !important;
@@ -472,7 +476,7 @@ footer img:hover {
   background: white;
 }
 
-#modal {
+.modal {
   display: none;
   position: fixed;
   top: 0;
@@ -481,6 +485,10 @@ footer img:hover {
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
+}
+
+.instructions-modal {
+  height: 75% !important;
 }
 
 #modal-info {

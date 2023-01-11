@@ -101,9 +101,9 @@
     <div>
     </div>
       
-    <div id="modal">
+    <div id="description-modal" class="modal">
       <div id="modal-info">
-        <h3 id="close-modal">x</h3>
+        <h3 id="close-modal" class="close-description">x</h3>
         <h1>How It Works</h1>
         <div id="points">
           <h2>Head-to-Head Points</h2>
@@ -170,6 +170,34 @@
             <img id="email-question" src="dist/email.png" />
           </a>
         </div>
+      </div>
+    </div>
+
+    <div id="info-modal" class="modal">
+      <div id="modal-info" class="instructions-modal">
+        <h3 id="close-modal" class="close-info">x</h3>
+        <h1 id="instructionTitle">BUILD YOUR SQUAD!</h1>
+        <p id="intro-blurb">
+          Using the average player stats for your chosen NBA season, the algorithm powering this app will present
+          your best* possible starting lineup in a snake-ordered fantasy draft.
+          Data is updated after games, so come back and see how your lineup changes!
+        </p>
+      
+        <h2 id="instructions-header">Instructions</h2>
+        <p class="instructionsList">
+          <li>Provide a favorite player (optional).</li>
+          <li>Pick how many participants will be part of your draft.</li>
+          <li>Select your placement in the draft.</li>
+          <li>Reveal your squad!</li>
+        </p>
+      
+        <p id='disclaimer' class="modal-disclaimer">
+          </br>
+          * Fantasy scores are calculated using player's objective season statistics.
+          </br>
+          This app is powered by the <a href="https://balldontlie.io" target="_blank">BallDontLie API</a>.
+        </p>
+        <div id="info-modal-questions"></div>
       </div>
     </div>
 

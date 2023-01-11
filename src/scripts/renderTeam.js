@@ -3,6 +3,7 @@ import getTeam from "./getTeam";
 function renderTeam(team) {
   let intro = document.getElementById('intro'), header = document.createElement('h1');
   let yourSquad =  document.getElementById('your-squad'), teamAvg = 0;
+  console.log('intro', intro)
   intro.style.display = 'none';
 
   let mainButtons = document.getElementById('main-buttons');
