@@ -1,4 +1,4 @@
-function displayModal(modal) { // takes input which modal 
+function displayModal(modal) {  
   let id = document.getElementById(`${modal}-modal`);
   let close = document.getElementsByClassName(`close-${modal}`)[0];
   if (id) {
@@ -12,7 +12,7 @@ function displayModal(modal) { // takes input which modal
   } 
 }
 
-function closeModal(id, modal) { // takes input which modal
+function closeModal(id, modal) { 
   id.style.display = 'none';
   document.body.style.height = '100%';
   document.body.style.overflowX = 'hidden';

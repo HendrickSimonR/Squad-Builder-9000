@@ -9,6 +9,7 @@ function startCountdown() {
     let countdown = document.getElementById("countdown");
     let countdownResult = document.getElementsByClassName("countdownResult")[0];
     countdown.style.display = 'block';
+    countdown.style.cursor = 'wait';
     countdown.innerHTML = counter >= 10 ? `0:${counter}` : `0:0${counter}`;
 
     if (counter === 0 ) {
@@ -16,6 +17,7 @@ function startCountdown() {
       let draftButton = document.getElementById("draft-button");
       let countdownPrompt = document.getElementById('countdownPrompt');
       countdown.style.display = 'none';
+      countdown.style.cursor = 'pointer';
       countdownPrompt.style.display = 'none';
       countdownResult.style.display = 'block';
 
