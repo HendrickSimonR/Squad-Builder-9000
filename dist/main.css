@@ -519,6 +519,10 @@ footer img:hover {
   height: 51% !important;
 }
 
+.legends-modal-done {
+  display: none;
+}
+
 #modal-info {
   text-align: center;
   position: absolute;
