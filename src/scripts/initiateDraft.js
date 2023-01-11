@@ -22,7 +22,12 @@ async function initiateDraft(season, seasonSelected) {
 
   selectSeason();
 
-  season === 'legends' ? displayModal(season) : null;
+  if (season === 'legends') {
+    displayModal(season);
+    seasonSelected.setAttribute('class', 'legends-season')
+  } else {
+    seasonSelected.setAttribute('class', '');
+  }
 
   season = typeof season === 'number' ? season : legendSeasons;
   console.log('season', season)

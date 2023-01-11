@@ -244,6 +244,10 @@ html {
   content: 'Change season';
 }
 
+.legends-season {
+  background-color: rgb(124, 0, 124) !important;
+}
+
 h3 > span:hover {
   color: black;
   background-color: white;
